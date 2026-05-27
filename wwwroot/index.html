@@ -3,315 +3,319 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>אלקטרה בצמרת מערב | פרויקט מגורים חדש בפתח תקווה</title>
+  <title>אלקטרה בצמרת מערב · פרויקט מגורים בפתח תקווה</title>
   <meta name="description" content="אלקטרה בצמרת מערב — פרויקט מגורים חדש במסגרת מחיר מטרה בשכונת צמרת, פתח תקווה. 222 יחידות דיור, ארבעה בניינים, דירות 3–6 חדרים ופנטהאוזים.">
+
+  <!-- Set js/still classes before paint to avoid FOUC -->
+  <script>
+    (function(){
+      var h=document.documentElement; h.classList.add('js');
+      var p=new URLSearchParams(location.search);
+      if(p.has('still')) h.classList.add('still');
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) h.classList.add('no-motion');
+    })();
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Noto+Sans+Hebrew:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
 
+  <!-- ===================== Starting sequence ===================== -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro__inner">
+      <div class="intro__line"><span class="intro__word">אלקטרה</span></div>
+      <div class="intro__sub">בצמרת מערב · פתח תקווה</div>
+    </div>
+    <span class="intro__bar"></span>
+  </div>
+
+  <div class="scroll-progress" id="progress"></div>
+
   <!-- ===================== Header ===================== -->
-  <header class="site-header" id="top">
-    <div class="container">
-      <nav class="nav" id="nav">
-        <a href="#top" class="nav__logo" aria-label="אלקטרה מגורים">
-          <img src="/assets/images/logo.png" alt="אלקטרה מגורים">
-        </a>
-
-        <ul class="nav__links" id="navLinks">
-          <li><a href="#about-company">אודות החברה</a></li>
-          <li><a href="#project">אודות הפרויקט</a></li>
-          <li><a href="#environment">תרשים סביבה</a></li>
-          <li><a href="#downloads">קבצים להורדה</a></li>
-          <li><a href="#downloads" class="btn btn--primary nav__cta">להורדת מסמכים</a></li>
-        </ul>
-
-        <button class="nav__toggle" id="navToggle" aria-label="תפריט" aria-expanded="false" aria-controls="navLinks">
-          <span></span><span></span><span></span>
-        </button>
+  <header class="header" id="header">
+    <div class="wrap header__row">
+      <a href="#top" class="header__logo" aria-label="אלקטרה מגורים">
+        <img src="/assets/images/logo.png" alt="אלקטרה מגורים">
+      </a>
+      <nav class="menu" id="menu">
+        <a href="#company" class="ulink">אודות החברה</a>
+        <a href="#project" class="ulink">הפרויקט</a>
+        <a href="#environment" class="ulink">תרשים סביבה</a>
+        <a href="#downloads" class="ulink">קבצים</a>
+        <a href="#downloads" class="ulink menu__cta">להורדת מסמכים ↗</a>
       </nav>
+      <button class="burger" id="burger" aria-label="תפריט" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <!-- ===================== Hero ===================== -->
-    <section class="hero">
-      <div class="hero__bg" role="img" aria-label="הדמיית פרויקט אלקטרה בצמרת מערב"></div>
+    <section class="hero" id="hero">
+      <div class="hero__media">
+        <img src="/assets/images/hero.jpg" alt="הדמיית פרויקט אלקטרה בצמרת מערב">
+      </div>
       <div class="hero__inner">
-        <div class="container">
-          <span class="eyebrow">מחיר מטרה · שכונת צמרת, פתח תקווה</span>
-          <h1 class="hero__title">אלקטרה בצמרת מערב</h1>
-          <p class="hero__subtitle">
-            פרויקט מגורים חדש בלב רובע עירוני מתוכנן מהיסוד — 222 יחידות דיור,
-            ארבעה בניינים ואדריכלות עכשווית, במרחק הליכה מפארקים, מסחר ותחבורה.
+        <div class="wrap">
+          <span class="kicker hero__kicker">מחיר מטרה · שכונת צמרת</span>
+          <h1 class="display h-xl hero__title">
+            <span class="line"><span>אלקטרה</span></span>
+            <span class="line"><span>בצמרת מערב</span></span>
+          </h1>
+          <p class="hero__meta">
+            רובע מגורים חדש המתוכנן מהיסוד — 222 יחידות דיור, ארבעה בניינים
+            ואדריכלות עכשווית, בלב מרחב ירוק במזרח פתח תקווה.
           </p>
           <div class="hero__actions">
-            <a href="#project" class="btn btn--primary">לפרטי הפרויקט
+            <a href="#project" class="btn">לגילוי הפרויקט
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
             </a>
             <a href="#downloads" class="btn btn--ghost">קבצים להורדה</a>
           </div>
         </div>
       </div>
+      <div class="hero__side">צמרת מערב · 2026</div>
+      <span class="hero__scroll">גלול למטה <i></i></span>
     </section>
 
-    <!-- ===================== Stats ===================== -->
-    <section class="stats" aria-label="נתוני הפרויקט">
-      <div class="container">
-        <div class="stats__grid">
-          <div class="stat"><div class="stat__num">222</div><div class="stat__label">יחידות דיור</div></div>
-          <div class="stat"><div class="stat__num">4</div><div class="stat__label">בניינים</div></div>
-          <div class="stat"><div class="stat__num">21</div><div class="stat__label">קומות במגדל</div></div>
-          <div class="stat"><div class="stat__num"><span dir="ltr">3&#8211;6</span></div><div class="stat__label">חדרים ופנטהאוזים</div></div>
-        </div>
+    <!-- ===================== Marquee ===================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>מחיר מטרה</span><span>222 יחידות דיור</span><span>אדריכלות עכשווית</span><span>פארקים ירוקים</span><span>מטרו M2</span><span>צמרת מערב</span>
+        <span>מחיר מטרה</span><span>222 יחידות דיור</span><span>אדריכלות עכשווית</span><span>פארקים ירוקים</span><span>מטרו M2</span><span>צמרת מערב</span>
       </div>
-    </section>
+    </div>
 
-    <!-- ===================== About company ===================== -->
-    <section class="section" id="about-company">
-      <div class="container">
-        <div class="split">
-          <div class="split__content reveal">
-            <div class="section-head">
-              <span class="eyebrow">אודות החברה</span>
-              <h2 class="section-title">אלקטרה מגורים</h2>
-            </div>
-            <div class="prose">
-              <p>
-                חברת אלקטרה מגורים, מקבוצת אלקטרה בע"מ, ממנפת את העוצמה והניסיון המוכח של חברת האם
-                ליצירת סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.
-              </p>
-              <p>
-                לאלקטרה מגורים עשרות פרויקטים המציעים חוויית מגורים מודרנית וייחודית, בתפיסה אדריכלית
-                מוקפדת ובאיכות בנייה בסטנדרטים הגבוהים ביותר. החברה מתכננת ומשווקת אלפי יחידות דיור
-                ברחבי הארץ, תוך יכולת מוכחת באיתור הזדמנויות נדל"ניות, בחירת שותפים עסקיים והובלת
-                תהליכי תכנון וביצוע ברמה גבוהה.
-              </p>
-            </div>
-            <div class="mini-stat">
+    <!-- ===================== 01 · About company ===================== -->
+    <section class="section section--cream" id="company">
+      <div class="wrap">
+        <div class="block-head">
+          <div class="block-head__main">
+            <span class="kicker" data-reveal>01 — אודות החברה</span>
+            <h2 class="display h-lg" data-reveal data-delay="1">אלקטרה מגורים</h2>
+          </div>
+          <span class="index-num" data-reveal>01</span>
+        </div>
+
+        <div class="editorial">
+          <div class="prose" data-reveal>
+            <p class="lead" style="margin-bottom:1.6rem">
+              ממנפת את העוצמה והניסיון המוכח של קבוצת אלקטרה ליצירת סטנדרט גבוה של מצוינות
+              וחדשנות בשוק המגורים בישראל.
+            </p>
+            <p>
+              לאלקטרה מגורים עשרות פרויקטים המציעים חוויית מגורים מודרנית וייחודית, בתפיסה
+              אדריכלית מוקפדת ובאיכות בנייה בסטנדרטים הגבוהים ביותר. החברה מתכננת ומשווקת
+              אלפי יחידות דיור ברחבי הארץ, תוך יכולת מוכחת באיתור הזדמנויות, בחירת שותפים
+              והובלת תהליכי תכנון וביצוע ברמה גבוהה.
+            </p>
+            <div class="figure-stat" style="margin-top:2.4rem">
               <b>כ־7,750</b>
-              <span>יחידות דיור בשלבי תכנון, שיווק וביצוע</span>
+              <span>יחידות דיור בשלבי תכנון, שיווק וביצוע ברחבי הארץ</span>
             </div>
           </div>
-          <div class="split__media reveal">
-            <img src="/assets/images/complex.jpg" alt="הדמיית מתחם המגורים אלקטרה בצמרת מערב" loading="lazy">
-            <span class="figure-badge">הדמיה להמחשה בלבד</span>
+          <div class="editorial__media" data-reveal data-delay="1">
+            <img src="/assets/images/complex.jpg" alt="הדמיית מתחם אלקטרה בצמרת מערב" data-parallax="0.12" loading="lazy">
+            <span class="editorial__tag">הדמיה להמחשה בלבד</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== About project ===================== -->
-    <section class="section section--surface" id="project">
-      <div class="container">
-        <div class="section-head section-head--center reveal">
-          <span class="eyebrow">אודות הפרויקט</span>
-          <h2 class="section-title">הפרויקט — אלקטרה בצמרת מערב</h2>
-          <p class="lead">
-            במסגרת תוכנית מחיר מטרה, אלקטרה מגורים מקימה פרויקט הכולל 222 יחידות דיור —
-            178 יחידות לזכאי התוכנית לצד 44 יחידות לשוק החופשי.
-          </p>
+    <!-- ===================== 02 · The project ===================== -->
+    <section class="section section--dark" id="project">
+      <div class="wrap">
+        <div class="block-head">
+          <div class="block-head__main">
+            <span class="kicker" data-reveal>02 — אודות הפרויקט</span>
+            <h2 class="display h-lg" data-reveal data-delay="1">אלקטרה בצמרת מערב</h2>
+            <p class="lead" data-reveal data-delay="2" style="margin-top:1.4rem;max-width:54ch">
+              במסגרת תוכנית מחיר מטרה — 222 יחידות דיור, מתוכן 178 לזכאי התוכנית
+              ו־44 לשוק החופשי. תכנון אדריכלי של קיקה בראז אדריכלים.
+            </p>
+          </div>
+          <span class="index-num" data-reveal>02</span>
         </div>
 
-        <div class="prose reveal" style="max-width:760px;margin-inline:auto;text-align:center;">
-          <p>
-            הפרויקט כולל ארבעה בניינים — שלושה בניינים מרקמיים בני 10 קומות ומגדל מגורים בן 21 קומות.
-            התכנון האדריכלי מבוצע על ידי קיקה בראז אדריכלים, מהמשרדים המובילים בישראל, תוך שילוב בין
-            אדריכלות עכשווית, פונקציונליות ותכנון עירוני מוקפד.
-          </p>
+        <div class="statline">
+          <div class="statline-item figure-stat" data-reveal><b>222</b><span>יחידות דיור</span></div>
+          <div class="statline-item figure-stat" data-reveal data-delay="1"><b>4</b><span>בניינים במתחם</span></div>
+          <div class="statline-item figure-stat" data-reveal data-delay="2"><b>21</b><span>קומות במגדל</span></div>
+          <div class="statline-item figure-stat" data-reveal data-delay="3"><b><span dir="ltr">3&#8211;6</span></b><span>חדרים ופנטהאוזים</span></div>
         </div>
 
-        <div class="feature-grid">
-          <div class="feature reveal">
-            <div class="feature__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg>
-            </div>
-            <h3>ארבעה בניינים</h3>
-            <p>שלושה בניינים מרקמיים בני 10 קומות ומגדל מגורים בן 21 קומות.</p>
+        <div class="flist">
+          <div class="fitem" data-reveal>
+            <span class="fitem__no">01</span>
+            <span class="fitem__t">ארבעה בניינים</span>
+            <span class="fitem__d">שלושה בניינים מרקמיים בני 10 קומות ומגדל מגורים בן 21 קומות.</span>
           </div>
-          <div class="feature reveal">
-            <div class="feature__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-            </div>
-            <h3>תמהיל דירות מגוון</h3>
-            <p>דירות 3–6 חדרים ופנטהאוזים, בתכנון פונקציונלי מוקפד ומפרט טכני עשיר.</p>
+          <div class="fitem" data-reveal>
+            <span class="fitem__no">02</span>
+            <span class="fitem__t">אדריכלות קיקה בראז</span>
+            <span class="fitem__d">תכנון עכשווי ומוקפד מאת אחד המשרדים המובילים בישראל למגורים בקנה מידה גדול.</span>
           </div>
-          <div class="feature reveal">
-            <div class="feature__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 7l9-4 9 4M5 21V11M19 21V11M9 21v-5h6v5"/></svg>
-            </div>
-            <h3>קומת מסחר ומעונות</h3>
-            <p>במגדל מתוכננת קומת מסחר הכוללת חנויות ומעונות יום — שירותים יומיומיים במרחק הליכה.</p>
+          <div class="fitem" data-reveal>
+            <span class="fitem__no">03</span>
+            <span class="fitem__t">מסחר ומעונות יום</span>
+            <span class="fitem__d">קומת מסחר במגדל הכוללת חנויות ומעונות — שירותים יומיומיים במרחק הליכה.</span>
           </div>
-          <div class="feature reveal">
-            <div class="feature__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3>מועדון דיירים</h3>
-            <p>הבניינים המרקמיים כוללים מועדון דיירים כחלק מתכנון קהילתי לאורך זמן.</p>
+          <div class="fitem" data-reveal>
+            <span class="fitem__no">04</span>
+            <span class="fitem__t">מועדון דיירים</span>
+            <span class="fitem__d">הבניינים המרקמיים כוללים מועדון דיירים כחלק מתכנון קהילתי לאורך זמן.</span>
           </div>
         </div>
 
         <div class="gallery">
-          <figure class="reveal"><img src="/assets/images/courtyard.jpg" alt="הדמיית חצר ושטחים משותפים בפרויקט" loading="lazy"></figure>
-          <figure class="reveal"><img src="/assets/images/tower-street.jpg" alt="הדמיית המגדל וקומת המסחר מצד הרחוב" loading="lazy"></figure>
+          <figure data-reveal><img src="/assets/images/courtyard.jpg" alt="הדמיית חצר ושטחים משותפים" data-parallax="0.1" loading="lazy"></figure>
+          <figure data-reveal data-delay="1"><img src="/assets/images/tower-street.jpg" alt="הדמיית המגדל וקומת המסחר" data-parallax="0.16" loading="lazy"></figure>
         </div>
       </div>
     </section>
 
-    <!-- ===================== Environment ===================== -->
-    <section class="section" id="environment">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">תרשים סביבה</span>
-          <h2 class="section-title">סביבת הפרויקט — שכונת צמרת</h2>
-          <p class="lead">
-            רובע עירוני חדש בחלקה המזרחי של פתח תקווה, בין כפר סירקין לגבעת השלושה, הגובל בנחל
-            שילה ובמרחבים ירוקים פתוחים — כ־12,000 יחידות דיור וכ־50,000 תושבים בתכנון.
-          </p>
+    <!-- ===================== 03 · Environment ===================== -->
+    <section class="section section--paper" id="environment">
+      <div class="wrap">
+        <div class="block-head">
+          <div class="block-head__main">
+            <span class="kicker" data-reveal>03 — תרשים סביבה</span>
+            <h2 class="display h-lg" data-reveal data-delay="1">סביבת הפרויקט</h2>
+            <p class="lead" data-reveal data-delay="2" style="margin-top:1.4rem;max-width:50ch">
+              רובע עירוני חדש במזרח פתח תקווה, בין כפר סירקין לגבעת השלושה — כ־12,000
+              יחידות דיור וכ־50,000 תושבים בתכנון, מוקפים במרחבים ירוקים.
+            </p>
+          </div>
+          <span class="index-num" data-reveal>03</span>
         </div>
 
         <div class="env">
-          <div class="env__map reveal">
+          <div class="env__map" data-reveal>
             <iframe
-              title="מפת מיקום הפרויקט — שכונת צמרת, פתח תקווה"
+              title="מפת מיקום — שכונת צמרת, פתח תקווה"
               src="https://maps.google.com/maps?q=%D7%9B%D7%A4%D7%A8%20%D7%A1%D7%99%D7%A8%D7%A7%D7%99%D7%9F%20%D7%A4%D7%AA%D7%97%20%D7%AA%D7%A7%D7%95%D7%95%D7%94&z=14&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-
-          <div class="env__content reveal">
-            <ul class="env-list">
-              <li class="env-item">
-                <span class="env-item__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-7M9 9a3 3 0 1 1 6 0c0 1.5-1 2.5-3 4-2-1.5-3-2.5-3-4Z"/><path d="M5 13a3 3 0 1 0 4 4M19 13a3 3 0 1 1-4 4"/></svg>
-                </span>
-                <div>
-                  <h3>פארקים ושטחים ירוקים</h3>
-                  <p>למעלה מ־700 דונם שטחים ציבוריים פתוחים, ובהם הפארק העירוני (כ־330 דונם), פארק הנחל וחורשת האקליפטוסים.</p>
-                </div>
-              </li>
-              <li class="env-item">
-                <span class="env-item__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l2-4M16 21l-2-4"/><circle cx="8.5" cy="14" r=".6"/><circle cx="15.5" cy="14" r=".6"/></svg>
-                </span>
-                <div>
-                  <h3>תחבורה ונגישות</h3>
-                  <p>קו המטרו M2 מתוכנן לעבור בשכונה (תחנות סירקין צפון ודרום), לצד הרכבת הקלה וחיבור ישיר לכבישים 471 ו־40.</p>
-                </div>
-              </li>
-              <li class="env-item">
-                <span class="env-item__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg>
-                </span>
-                <div>
-                  <h3>חינוך וקהילה</h3>
-                  <p>במרכז השכונה מתוכננת קריית חינוך משולבת — גני ילדים, בית ספר יסודי, מרכז קהילתי, ספרייה ומתקני ספורט.</p>
-                </div>
-              </li>
-            </ul>
+          <div class="env-rows" data-reveal data-delay="1">
+            <div class="env-row">
+              <span class="env-row__fig">700</span>
+              <div>
+                <div class="env-row__t">דונם שטחים ירוקים</div>
+                <div class="env-row__d">הפארק העירוני (כ־330 דונם), פארק הנחל וחורשת האקליפטוסים.</div>
+              </div>
+            </div>
+            <div class="env-row">
+              <span class="env-row__fig">M2</span>
+              <div>
+                <div class="env-row__t">קו מטרו מתוכנן</div>
+                <div class="env-row__d">תחנות סירקין צפון ודרום, לצד הרכבת הקלה וחיבור לכבישים 471 ו־40.</div>
+              </div>
+            </div>
+            <div class="env-row">
+              <span class="env-row__fig">12K</span>
+              <div>
+                <div class="env-row__t">יחידות דיור בשכונה</div>
+                <div class="env-row__d">רובע עירוני חדש המתוכנן מהיסוד, לכ־50,000 תושבים.</div>
+              </div>
+            </div>
+            <div class="env-row">
+              <span class="env-row__fig" style="font-size:1.4rem">חינוך</span>
+              <div>
+                <div class="env-row__t">קריית חינוך משולבת</div>
+                <div class="env-row__d">גני ילדים, בית ספר יסודי, מרכז קהילתי, ספרייה ומתקני ספורט.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== Downloads ===================== -->
-    <section class="section section--surface" id="downloads">
-      <div class="container">
-        <div class="section-head section-head--center reveal">
-          <span class="eyebrow">קבצים להורדה</span>
-          <h2 class="section-title">מסמכי הפרויקט</h2>
-          <p class="lead">מפרט טכני, נספחים ומסמכי ההגרלה החתומים — זמינים להורדה ישירה.</p>
+    <!-- ===================== 04 · Downloads ===================== -->
+    <section class="section section--dark" id="downloads">
+      <div class="wrap">
+        <div class="block-head">
+          <div class="block-head__main">
+            <span class="kicker" data-reveal>04 — קבצים להורדה</span>
+            <h2 class="display h-lg" data-reveal data-delay="1">מסמכי הפרויקט</h2>
+          </div>
+          <span class="index-num" data-reveal>04</span>
         </div>
 
-        <div class="downloads-grid">
-          <!-- Spec PDF -->
-          <article class="dl-card reveal">
-            <div class="dl-card__top">
-              <span class="dl-card__badge dl-card__badge--pdf">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/></svg>
-              </span>
-              <div>
-                <h3>מפרט טכני מחייב</h3>
-                <div class="dl-card__meta">PDF · ‎2.0 MB</div>
-              </div>
-            </div>
-            <p>מפרט טכני חתום של הפרויקט (הגרלה 2256) — פירוט סטנדרט הבנייה והגימור.</p>
-            <a class="btn btn--outline" href="/assets/files/lottery-2256-spec.pdf" download="הגרלה 2256 - מפרט טכני חתום.pdf">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              הורדת המפרט
-            </a>
-          </article>
+        <div class="dl" data-reveal>
+          <a class="dl-row" href="/assets/files/lottery-2256-spec.pdf" download="הגרלה 2256 - מפרט טכני חתום.pdf">
+            <span class="dl-row__no">01</span>
+            <span class="dl-row__t">מפרט טכני מחייב</span>
+            <span class="dl-row__meta">PDF · 2.0MB</span>
+            <span class="dl-row__type">PDF</span>
+            <span class="dl-row__arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </span>
+          </a>
+          <a class="dl-row" href="/assets/files/lottery-2256-g4.pdf" download="הגרלה 2256 - נספח ג4 חתום.pdf">
+            <span class="dl-row__no">02</span>
+            <span class="dl-row__t">נספח ג'4 — הגרלה 2256</span>
+            <span class="dl-row__meta">PDF · 339KB</span>
+            <span class="dl-row__type">PDF</span>
+            <span class="dl-row__arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </span>
+          </a>
+          <a class="dl-row" href="/assets/files/appendix-g4.xlsx" download="נספח ג4 - חתום 19.04.2026.xlsx">
+            <span class="dl-row__no">03</span>
+            <span class="dl-row__t">נספח ג4 — טבלת נתונים</span>
+            <span class="dl-row__meta">XLSX · 225KB · 19.04.26</span>
+            <span class="dl-row__type">XLSX</span>
+            <span class="dl-row__arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-          <!-- G4 lottery PDF -->
-          <article class="dl-card reveal">
-            <div class="dl-card__top">
-              <span class="dl-card__badge dl-card__badge--pdf">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/></svg>
-              </span>
-              <div>
-                <h3>נספח ג'4 — הגרלה 2256</h3>
-                <div class="dl-card__meta">PDF · ‎339 KB</div>
-              </div>
-            </div>
-            <p>נספח ג'4 החתום למסמכי ההגרלה — תנאי ופרטי תוכנית מחיר מטרה לפרויקט.</p>
-            <a class="btn btn--outline" href="/assets/files/lottery-2256-g4.pdf" download="הגרלה 2256 - נספח ג4 חתום.pdf">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              הורדת הנספח
-            </a>
-          </article>
-
-          <!-- XLSX -->
-          <article class="dl-card reveal">
-            <div class="dl-card__top">
-              <span class="dl-card__badge dl-card__badge--xls">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/><path d="m9 13 6 5M15 13l-6 5"/></svg>
-              </span>
-              <div>
-                <h3>נספח ג4 — טבלת נתונים</h3>
-                <div class="dl-card__meta">XLSX · ‎225 KB · 19.04.2026</div>
-              </div>
-            </div>
-            <p>נספח ג4 החתום בפורמט גיליון אלקטרוני — טבלת הדירות והנתונים הנלווים.</p>
-            <a class="btn btn--outline" href="/assets/files/appendix-g4.xlsx" download="נספח ג4 - חתום 19.04.2026.xlsx">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              הורדת הקובץ
-            </a>
-          </article>
+    <!-- ===================== CTA ===================== -->
+    <section class="cta">
+      <div class="cta__ghost" aria-hidden="true">ELECTRA</div>
+      <div class="wrap cta__inner">
+        <span class="kicker" data-reveal style="justify-content:center">מחיר מטרה · הגרלה 2256</span>
+        <h2 class="display h-lg" data-reveal data-delay="1" style="margin-top:1.2rem">בית חדש, בצמרת מערב</h2>
+        <p class="lead" data-reveal data-delay="2">
+          כל מסמכי הפרויקט זמינים להורדה ישירה — מפרט טכני, נספחים ומסמכי ההגרלה החתומים.
+        </p>
+        <div data-reveal data-delay="3">
+          <a href="#downloads" class="btn btn--ghost">למסמכי הפרויקט
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
   <!-- ===================== Footer ===================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-brand__name">אלקטרה מגורים</div>
-          <div class="footer-brand__tag">העתיד כבר כאן</div>
-          <p>
-            פרויקט אלקטרה בצמרת מערב — מגורים חדשים במסגרת מחיר מטרה בשכונת צמרת, פתח תקווה.
-          </p>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__name">אלקטרה מגורים</div>
+          <div class="footer__tag">העתיד כבר כאן</div>
+          <p>פרויקט אלקטרה בצמרת מערב — מגורים חדשים במסגרת מחיר מטרה בשכונת צמרת, פתח תקווה.</p>
         </div>
-
-        <div class="footer-col">
+        <div>
           <h4>ניווט</h4>
           <ul>
-            <li><a href="#about-company">אודות החברה</a></li>
-            <li><a href="#project">אודות הפרויקט</a></li>
-            <li><a href="#environment">תרשים סביבה</a></li>
-            <li><a href="#downloads">קבצים להורדה</a></li>
+            <li><a href="#company" class="ulink">אודות החברה</a></li>
+            <li><a href="#project" class="ulink">הפרויקט</a></li>
+            <li><a href="#environment" class="ulink">תרשים סביבה</a></li>
+            <li><a href="#downloads" class="ulink">קבצים להורדה</a></li>
           </ul>
         </div>
-
-        <div class="footer-col">
+        <div>
           <h4>פרטי הפרויקט</h4>
-          <ul class="footer-contact">
+          <ul class="contact">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
               שכונת צמרת, פתח תקווה
@@ -327,13 +331,11 @@
           </ul>
         </div>
       </div>
-
-      <div class="footer-bottom">
+      <div class="footer__bottom">
         <small>© <span id="year"></span> אלקטרה מגורים · כל הזכויות שמורות</small>
-        <small>אתר זה הוקם באמצעות JetVaults</small>
+        <small>נבנה באמצעות JetVaults</small>
       </div>
-
-      <p class="footer-disclaimer">
+      <p class="footer__legal">
         התמונות, ההדמיות, התכניות והנתונים המופיעים באתר הינם להמחשה בלבד ואינם מהווים התחייבות
         מצד החברה. ייתכנו שינויים. אין באמור באתר כדי להוות הצעה או התחייבות כלשהי, והכל בכפוף
         להוראות מכרז מחיר מטרה, למסמכי ההגרלה ולהסכמי המכר המחייבים.
@@ -342,44 +344,88 @@
   </footer>
 
   <script>
-    // Current year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    (function(){
+      var html = document.documentElement;
+      var still = html.classList.contains('still');
+      var reduced = html.classList.contains('no-motion');
 
-    // Header shadow on scroll
-    const header = document.querySelector('.site-header');
-    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+      document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile nav toggle
-    const nav = document.getElementById('nav');
-    const toggle = document.getElementById('navToggle');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    document.getElementById('navLinks').addEventListener('click', (e) => {
-      if (e.target.closest('a')) {
-        nav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
+      var hero = document.getElementById('hero');
+      function startHero(){ if(hero) hero.classList.add('in'); }
+
+      /* ---- Starting sequence ---- */
+      var intro = document.getElementById('intro');
+      if (still || reduced || !intro) {
+        if (intro) intro.remove();
+        startHero();
+      } else {
+        document.body.style.overflow = 'hidden';
+        window.scrollTo(0,0);
+        setTimeout(function(){ intro.classList.add('is-done'); }, 2200);
+        setTimeout(function(){
+          intro.remove();
+          document.body.style.overflow = '';
+          startHero();
+        }, 3200);
       }
-    });
 
-    // Reveal on scroll
-    const revealEls = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-      revealEls.forEach((el) => io.observe(el));
-    } else {
-      revealEls.forEach((el) => el.classList.add('is-visible'));
-    }
+      /* ---- Header solidify + scroll progress ---- */
+      var header = document.getElementById('header');
+      var progress = document.getElementById('progress');
+      function onScroll(){
+        var y = window.scrollY || 0;
+        header.classList.toggle('is-solid', y > 60);
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        if (progress) progress.style.transform = 'scaleX(' + (h>0 ? y/h : 0) + ')';
+      }
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      /* ---- Mobile nav ---- */
+      var burger = document.getElementById('burger');
+      var menu = document.getElementById('menu');
+      function closeNav(){ document.body.classList.remove('nav-open'); burger.setAttribute('aria-expanded','false'); }
+      burger.addEventListener('click', function(){
+        var open = document.body.classList.toggle('nav-open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      menu.addEventListener('click', function(e){ if (e.target.closest('a')) closeNav(); });
+
+      /* ---- Reveal on scroll ---- */
+      var reveals = document.querySelectorAll('[data-reveal]');
+      if (!still && !reduced && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(en){
+            if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+          });
+        }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+        reveals.forEach(function(el){ io.observe(el); });
+      } else {
+        reveals.forEach(function(el){ el.classList.add('in'); });
+      }
+
+      /* ---- Parallax ---- */
+      var px = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+      if (px.length && !reduced && !still) {
+        var ticking = false;
+        function applyPx(){
+          var vh = window.innerHeight;
+          px.forEach(function(el){
+            var r = el.getBoundingClientRect();
+            if (r.bottom < -200 || r.top > vh + 200) return;
+            var speed = parseFloat(el.getAttribute('data-parallax')) || 0.1;
+            var offset = (r.top + r.height/2 - vh/2) * -speed;
+            el.style.transform = 'translate3d(0,' + offset.toFixed(1) + 'px,0) scale(1.06)';
+          });
+          ticking = false;
+        }
+        window.addEventListener('scroll', function(){
+          if (!ticking){ ticking = true; requestAnimationFrame(applyPx); }
+        }, { passive: true });
+        applyPx();
+      }
+    })();
   </script>
 </body>
 </html>
