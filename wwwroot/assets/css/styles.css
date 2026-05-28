@@ -229,9 +229,8 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
   min-height: clamp(620px, 96vh, 980px);
   border-radius: clamp(20px, 2.4vw, 36px);
   overflow: hidden;
-  display: flex; flex-direction: column;
-  background:
-    radial-gradient(120% 60% at 50% 0%, #f7e8e3 0%, #f1edef 38%, #e9e1de 100%);
+  isolation: isolate;
+  background: #e7e1de;   /* fallback while image loads */
   color: var(--ink);
 }
 
@@ -282,7 +281,7 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 .hero__iconbtn--dark:hover { background: var(--accent); }
 .hero__iconbtn svg { width: 16px; height: 16px; }
 
-/* Centered title block */
+/* Centered title block — overlaid on the image */
 .hero__center {
   position: relative; z-index: 2;
   text-align: center;
@@ -334,19 +333,32 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
   background: #fff; border-color: rgba(23,21,27,.08); transform: translateY(-2px);
 }
 
-/* Image fills bottom */
+/* Image fills the whole hero card as the background */
 .hero__image {
-  position: relative; flex: 1 1 auto;
-  min-height: clamp(260px, 36vw, 520px);
+  position: absolute; inset: 0; z-index: 0;
   overflow: hidden;
-  margin-top: auto;
 }
 .hero__image img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center 32%;
+  width: 100%; height: 100%; object-fit: cover; object-position: center 8%;
   display: block; will-change: transform;
   animation: heroZoom 16s ease-out forwards;
 }
 @keyframes heroZoom { from { transform: scale(1.06); } to { transform: scale(1); } }
+.hero__image::after {
+  content: "";
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 68% 50% at 50% 22%,
+      rgba(247,232,227,.92) 0%,
+      rgba(247,232,227,.65) 45%,
+      rgba(247,232,227,.18) 75%,
+      rgba(247,232,227,0)  100%),
+    linear-gradient(180deg,
+      rgba(247,232,227,.35) 0%,
+      rgba(247,232,227,0)   55%,
+      rgba(65,41,37,.10)    90%,
+      rgba(65,41,37,.28)   100%);
+}
 
 /* Hotspot dot + tooltip */
 .hero__dot {
@@ -360,8 +372,8 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
   0%,100% { box-shadow: 0 0 0 5px rgba(255,255,255,.35), 0 1px 4px rgba(0,0,0,.18); }
   50%     { box-shadow: 0 0 0 14px rgba(255,255,255,0),    0 1px 4px rgba(0,0,0,.18); }
 }
-.hero__dot--top { top: 22%; left: 30%; }
-.hero__dot--bot { top: 62%; left: 64%; }
+.hero__dot--top { top: 62%; left: 24%; }
+.hero__dot--bot { top: 78%; left: 62%; }
 
 .hero__tip {
   position: absolute; background: rgba(23,21,27,.78); color: #fff;
@@ -373,7 +385,7 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
   white-space: nowrap;
 }
 .hero__tip i { width: 9px; height: 9px; border-radius: 50%; background: #fff; }
-.hero__tip--main { top: 54%; left: 46%; transform: translate(-50%,-50%); }
+.hero__tip--main { top: 62%; left: 24%; transform: translate(-50%, -170%); }
 
 /* Subtle edge label */
 .hero__edge {
