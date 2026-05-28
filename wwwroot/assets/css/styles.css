@@ -34,7 +34,7 @@ html { -webkit-text-size-adjust: 100%; }
 html.js body { } /* hook */
 body {
   font-family: var(--sans);
-  background: var(--cream);
+  background: #fdfcfb;
   color: var(--ink);
   line-height: 1.75;
   font-size: clamp(1rem, 1.05vw, 1.08rem);
@@ -63,7 +63,7 @@ body::after {
 .section--cream { background: var(--cream); }
 .section--paper { background: var(--paper); }
 
-#tzameret { background: #fefefd; }
+#tzameret { background: #fdfcfb; }
 .prose-actions { margin-top: 1.4rem; }
 
 /* Eyebrow / kicker */
@@ -226,7 +226,7 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 /* Hero — Vistora-style light rounded card with floating nav pill            */
 /* ========================================================================= */
 .hero-wrap {
-  background: var(--cream);
+  background: #fdfcfb;
   padding-block: clamp(.8rem, 1.8vw, 1.6rem);
 }
 .hero {
