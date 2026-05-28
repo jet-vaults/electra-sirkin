@@ -18,7 +18,7 @@
   --line:       rgba(65,41,37,.16);
   --line-dark:  rgba(255,255,255,.16);
 
-  --maxw: 1320px;
+  --maxw: 1440px;
   --gutter: clamp(1.15rem, 5vw, 5rem);
 
   --serif: "Noto Sans Hebrew", Arial, sans-serif; /* unified to reference site font */
