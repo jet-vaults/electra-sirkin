@@ -124,22 +124,24 @@
               </a>
             </div>
           </div>
-          <div class="editorial__media" data-reveal data-delay="1">
-            <div class="carousel" data-carousel>
-              <div class="carousel__track">
-                <figure class="carousel__slide"><img src="/assets/images/courtyard.jpg" alt="הדמיית חצר ושטחים משותפים" loading="lazy"></figure>
-                <figure class="carousel__slide"><img src="/assets/images/hero.jpg" alt="הדמיית המתחם הכללי" loading="lazy"></figure>
-                <figure class="carousel__slide"><img src="/assets/images/tower-street.jpg" alt="הדמיית המגדל וקומת המסחר" loading="lazy"></figure>
-                <figure class="carousel__slide"><img src="/assets/images/complex.jpg" alt="הדמיית הפרויקט והסביבה הירוקה" loading="lazy"></figure>
+          <div class="editorial-col" data-reveal data-delay="1">
+            <div class="editorial__media">
+              <div class="carousel" data-carousel>
+                <div class="carousel__track">
+                  <figure class="carousel__slide"><img src="/assets/images/courtyard.jpg" alt="הדמיית חצר ושטחים משותפים" loading="lazy"></figure>
+                  <figure class="carousel__slide"><img src="/assets/images/hero.jpg" alt="הדמיית המתחם הכללי" loading="lazy"></figure>
+                  <figure class="carousel__slide"><img src="/assets/images/tower-street.jpg" alt="הדמיית המגדל וקומת המסחר" loading="lazy"></figure>
+                  <figure class="carousel__slide"><img src="/assets/images/complex.jpg" alt="הדמיית הפרויקט והסביבה הירוקה" loading="lazy"></figure>
+                </div>
+                <button class="carousel__btn carousel__btn--prev" aria-label="הקודם" type="button">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <button class="carousel__btn carousel__btn--next" aria-label="הבא" type="button">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
               </div>
-              <button class="carousel__btn carousel__btn--prev" aria-label="הקודם" type="button">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-              </button>
-              <button class="carousel__btn carousel__btn--next" aria-label="הבא" type="button">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-              </button>
-              <div class="carousel__dots" aria-hidden="true"></div>
             </div>
+            <div class="carousel__dots" aria-hidden="true"></div>
           </div>
         </div>
       </div>
@@ -422,7 +424,7 @@
         var slides = c.querySelectorAll('.carousel__slide');
         var prev = c.querySelector('.carousel__btn--prev');
         var next = c.querySelector('.carousel__btn--next');
-        var dotsWrap = c.querySelector('.carousel__dots');
+        var dotsWrap = c.querySelector('.carousel__dots') || (c.parentElement && c.parentElement.parentElement && c.parentElement.parentElement.querySelector('.carousel__dots'));
         if (!track || !slides.length) return;
         var dir = getComputedStyle(c).direction === 'rtl' ? 1 : -1; // RTL slides right
         var idx = 0;
