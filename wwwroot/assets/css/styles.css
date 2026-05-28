@@ -182,6 +182,11 @@ body::after {
   font-size: clamp(2.6rem, 10vw, 7rem); line-height: 1; letter-spacing: -.02em;
   transform: translateY(110%);
 }
+.intro__word--logo {
+  height: clamp(4.5rem, 16vw, 11rem);
+  width: auto;
+  filter: brightness(0) invert(1);
+}
 .intro__sub {
   margin-top: 1.2rem; font-size: .8rem; letter-spacing: .35em; text-transform: uppercase;
   color: var(--rose); opacity: 0;
