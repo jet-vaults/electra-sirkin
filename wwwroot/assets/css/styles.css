@@ -221,8 +221,8 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 /* Hero — Vistora-style light rounded card with floating nav pill            */
 /* ========================================================================= */
 .hero-wrap {
-  padding: clamp(.7rem, 1.6vw, 1.4rem) clamp(1.2rem, 7vw, 6.5rem);
   background: var(--cream);
+  padding-block: clamp(.8rem, 1.8vw, 1.6rem);
 }
 .hero {
   position: relative;
