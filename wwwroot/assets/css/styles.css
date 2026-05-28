@@ -63,6 +63,9 @@ body::after {
 .section--cream { background: var(--cream); }
 .section--paper { background: var(--paper); }
 
+#tzameret { background: #fefefd; }
+.prose-actions { margin-top: 1.4rem; }
+
 /* Eyebrow / kicker */
 .kicker {
   display: inline-flex; align-items: center; gap: .7rem;
