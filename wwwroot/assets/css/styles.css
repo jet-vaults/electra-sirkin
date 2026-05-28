@@ -66,6 +66,15 @@ body::after {
 #tzameret { background: #fdfcfb; }
 .prose-actions { margin-top: 1.4rem; }
 
+/* tzameret-specific overrides */
+#tzameret .block-head__main { max-width: none; }
+#tzameret .display.h-lg { white-space: nowrap; }
+#tzameret .prose p { max-width: none; }
+
+.editorial-stack { display: flex; flex-direction: column; gap: clamp(.5rem, 1.4vw, 1.1rem); min-height: 100%; }
+.editorial-stack > .index-num { align-self: flex-start; line-height: .85; }
+.editorial-stack > .editorial__media { flex: 1; min-height: 320px; }
+
 /* Eyebrow / kicker */
 .kicker {
   display: inline-flex; align-items: center; gap: .7rem;
