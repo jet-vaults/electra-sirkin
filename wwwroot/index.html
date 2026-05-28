@@ -232,29 +232,19 @@
       </div>
     </section>
 
-    <!-- ===================== 04 · Environment ===================== -->
-    <section class="section section--paper" id="environment">
-      <div class="wrap">
-        <div class="block-head">
-          <div class="block-head__main">
-            <span class="kicker" data-reveal>04 — תרשים סביבה</span>
-            <h2 class="display h-lg" data-reveal data-delay="1">סביבת הפרויקט</h2>
-            <p class="lead" data-reveal data-delay="2" style="margin-top:1.4rem;max-width:50ch">
-              רובע עירוני חדש במזרח פתח תקווה, בין כפר סירקין לגבעת השלושה — כ־12,000
-              יחידות דיור וכ־50,000 תושבים בתכנון, מוקפים במרחבים ירוקים.
-            </p>
+    <!-- ===================== 04 · Environment — scroll-pinned reveal ===================== -->
+    <section class="env-pin" id="environment" data-env-pin>
+      <div class="env-pin__viewport">
+        <div class="wrap">
+          <div class="block-head">
+            <div class="block-head__main">
+              <span class="kicker" data-reveal>04 — תרשים סביבה</span>
+              <h2 class="display h-lg" data-reveal data-delay="1">סביבת הפרויקט</h2>
+            </div>
+            <span class="index-num" data-reveal>04</span>
           </div>
-          <span class="index-num" data-reveal>04</span>
-        </div>
 
-        <div class="env">
-          <div class="env__map" data-reveal>
-            <iframe
-              title="מפת מיקום — שכונת צמרת, פתח תקווה"
-              src="https://maps.google.com/maps?q=%D7%9B%D7%A4%D7%A8%20%D7%A1%D7%99%D7%A8%D7%A7%D7%99%D7%9F%20%D7%A4%D7%AA%D7%97%20%D7%AA%D7%A7%D7%95%D7%95%D7%94&z=14&output=embed"
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <div class="env-rows" data-reveal data-delay="1">
+          <div class="env-rows env-rows--steps">
             <div class="env-row">
               <span class="env-row__fig">700</span>
               <div>
@@ -277,7 +267,7 @@
               </div>
             </div>
             <div class="env-row">
-              <span class="env-row__fig" style="font-size:1.4rem">חינוך</span>
+              <span class="env-row__fig" style="font-size:1.6rem">חינוך</span>
               <div>
                 <div class="env-row__t">קריית חינוך משולבת</div>
                 <div class="env-row__d">גני ילדים, בית ספר יסודי, מרכז קהילתי, ספרייה ומתקני ספורט.</div>
@@ -414,6 +404,41 @@
           startHero();
         }, 3200);
       }
+
+      /* ---- Pinned env reveal ---- */
+      (function(){
+        var pin = document.querySelector('[data-env-pin]');
+        if (!pin || still || reduced) {
+          if (pin) pin.querySelectorAll('.env-rows--steps .env-row').forEach(function(r){ r.classList.add('is-shown'); });
+          return;
+        }
+        var rows = pin.querySelectorAll('.env-rows--steps .env-row');
+        var total = rows.length;
+        function tick(){
+          var rect = pin.getBoundingClientRect();
+          var vh = window.innerHeight;
+          if (rect.bottom <= 0) {
+            rows.forEach(function(r){ r.classList.add('is-shown'); });
+            return;
+          }
+          if (rect.top >= vh) {
+            rows.forEach(function(r){ r.classList.remove('is-shown'); });
+            return;
+          }
+          var maxScroll = pin.offsetHeight - vh;
+          var progress = Math.max(0, Math.min(1, -rect.top / maxScroll));
+          var stepThreshold = 1 / (total + 1);  // first reveal early, last just before end
+          var shown = Math.min(total, Math.floor(progress / stepThreshold));
+          rows.forEach(function(r, i){ r.classList.toggle('is-shown', i < shown); });
+        }
+        var ticking = false;
+        window.addEventListener('scroll', function(){
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function(){ tick(); ticking = false; });
+        }, { passive: true });
+        tick();
+      })();
 
       /* ---- Carousel ---- */
       document.querySelectorAll('[data-carousel]').forEach(function(c){
