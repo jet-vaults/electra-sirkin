@@ -331,6 +331,22 @@ body.nav-open .side-nav { transform: translateX(0); }
 .side-nav__close:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.45); }
 .side-nav__close svg { width: 18px; height: 18px; }
 
+.side-nav__brand {
+  margin-top: clamp(1rem, 2.5vw, 1.8rem);
+  display: flex; justify-content: center; align-items: center;
+}
+.side-nav__brand img {
+  height: 48px; width: auto; display: block;
+  filter: brightness(0) invert(1);
+}
+
+.side-nav__sep {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,.16);
+  margin: clamp(1.4rem, 3vw, 2.2rem) 0 0;
+  width: 100%;
+}
+
 .side-nav__links {
   margin-top: clamp(2rem, 5vw, 3.5rem);
   flex: 1;
@@ -363,6 +379,12 @@ body.nav-open .side-nav { transform: translateX(0); }
   margin-top: clamp(1.5rem, 3vw, 2rem);
   padding-top: clamp(1.2rem, 2vw, 1.8rem);
   border-top: 1px solid rgba(255,255,255,.14);
+}
+.side-nav__cta .hero__navcta {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-block: 1.05rem;
 }
 
 .side-nav__backdrop {

@@ -12,6 +12,7 @@
       var h=document.documentElement; h.classList.add('js');
       var p=new URLSearchParams(location.search);
       if(p.has('still')) h.classList.add('still');
+      if(p.has('navopen')) document.addEventListener('DOMContentLoaded', function(){ document.body.classList.add('nav-open'); });
       if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) h.classList.add('no-motion');
     })();
   </script>
@@ -74,6 +75,10 @@
       <button class="side-nav__close" id="navClose" aria-label="סגור תפריט">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
       </button>
+      <div class="side-nav__brand">
+        <img src="/assets/images/logo.png" alt="אלקטרה מגורים">
+      </div>
+      <hr class="side-nav__sep">
       <nav class="side-nav__links">
         <a href="#tzameret">על הפרויקט</a>
         <a href="#company">אודות החברה</a>
