@@ -125,7 +125,21 @@
             </div>
           </div>
           <div class="editorial__media" data-reveal data-delay="1">
-            <img src="/assets/images/courtyard.jpg" alt="הדמיית סביבת הפרויקט בצמרת מערב" loading="lazy">
+            <div class="carousel" data-carousel>
+              <div class="carousel__track">
+                <figure class="carousel__slide"><img src="/assets/images/courtyard.jpg" alt="הדמיית חצר ושטחים משותפים" loading="lazy"></figure>
+                <figure class="carousel__slide"><img src="/assets/images/hero.jpg" alt="הדמיית המתחם הכללי" loading="lazy"></figure>
+                <figure class="carousel__slide"><img src="/assets/images/tower-street.jpg" alt="הדמיית המגדל וקומת המסחר" loading="lazy"></figure>
+                <figure class="carousel__slide"><img src="/assets/images/complex.jpg" alt="הדמיית הפרויקט והסביבה הירוקה" loading="lazy"></figure>
+              </div>
+              <button class="carousel__btn carousel__btn--prev" aria-label="הקודם" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="carousel__btn carousel__btn--next" aria-label="הבא" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+              <div class="carousel__dots" aria-hidden="true"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -401,6 +415,37 @@
           startHero();
         }, 3200);
       }
+
+      /* ---- Carousel ---- */
+      document.querySelectorAll('[data-carousel]').forEach(function(c){
+        var track = c.querySelector('.carousel__track');
+        var slides = c.querySelectorAll('.carousel__slide');
+        var prev = c.querySelector('.carousel__btn--prev');
+        var next = c.querySelector('.carousel__btn--next');
+        var dotsWrap = c.querySelector('.carousel__dots');
+        if (!track || !slides.length) return;
+        var dir = getComputedStyle(c).direction === 'rtl' ? 1 : -1; // RTL slides right
+        var idx = 0;
+        function update(){
+          track.style.transform = 'translateX(' + (dir * idx * 100) + '%)';
+          if (dotsWrap) Array.prototype.forEach.call(dotsWrap.children, function(d, k){
+            d.classList.toggle('is-active', k === idx);
+          });
+        }
+        if (dotsWrap) {
+          slides.forEach(function(_, k){
+            var b = document.createElement('button');
+            b.className = 'carousel__dot';
+            b.type = 'button';
+            b.setAttribute('aria-label', 'תמונה ' + (k+1));
+            b.addEventListener('click', function(){ idx = k; update(); });
+            dotsWrap.appendChild(b);
+          });
+        }
+        if (prev) prev.addEventListener('click', function(){ idx = (idx - 1 + slides.length) % slides.length; update(); });
+        if (next) next.addEventListener('click', function(){ idx = (idx + 1) % slides.length; update(); });
+        update();
+      });
 
       /* ---- Side nav ---- */
       (function(){
