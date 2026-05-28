@@ -183,8 +183,9 @@ body::after {
   transform: translateY(110%);
 }
 .intro__word--logo {
-  height: clamp(4.5rem, 16vw, 11rem);
-  width: auto;
+  width: 709px;       /* native PNG width — no upscaling */
+  height: auto;
+  max-width: 90vw;    /* prevent overflow on narrow viewports */
   filter: brightness(0) invert(1);
 }
 .intro__sub {
