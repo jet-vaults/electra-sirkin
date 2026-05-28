@@ -221,7 +221,7 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 /* Hero — Vistora-style light rounded card with floating nav pill            */
 /* ========================================================================= */
 .hero-wrap {
-  padding: clamp(.7rem, 1.6vw, 1.4rem);
+  padding: clamp(.7rem, 1.6vw, 1.4rem) clamp(1.2rem, 7vw, 6.5rem);
   background: var(--cream);
 }
 .hero {
@@ -281,11 +281,11 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 .hero__iconbtn--dark:hover { background: var(--accent); }
 .hero__iconbtn svg { width: 16px; height: 16px; }
 
-/* Centered title block — overlaid on the image */
+/* Centered title block — overlaid on the image, anchored to top */
 .hero__center {
   position: relative; z-index: 2;
   text-align: center;
-  padding: clamp(1.6rem,4vw,3.2rem) clamp(1rem,3vw,2rem) clamp(1rem,2.5vw,1.6rem);
+  padding: clamp(.6rem,1.4vw,1.2rem) clamp(1rem,3vw,2rem) clamp(.8rem,2vw,1.4rem);
 }
 .hero__t {
   font-family: var(--sans);
@@ -339,7 +339,7 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
   overflow: hidden;
 }
 .hero__image img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center 8%;
+  width: 100%; height: 100%; object-fit: cover; object-position: center 0%;
   display: block; will-change: transform;
   animation: heroZoom 16s ease-out forwards;
 }
@@ -347,17 +347,11 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 .hero__image::after {
   content: "";
   position: absolute; inset: 0; pointer-events: none;
-  background:
-    radial-gradient(ellipse 68% 50% at 50% 22%,
-      rgba(247,232,227,.92) 0%,
-      rgba(247,232,227,.65) 45%,
-      rgba(247,232,227,.18) 75%,
-      rgba(247,232,227,0)  100%),
-    linear-gradient(180deg,
-      rgba(247,232,227,.35) 0%,
-      rgba(247,232,227,0)   55%,
-      rgba(65,41,37,.10)    90%,
-      rgba(65,41,37,.28)   100%);
+  background: linear-gradient(180deg,
+    rgba(247,232,227,0)   0%,
+    rgba(247,232,227,0)   78%,
+    rgba(65,41,37,.10)   95%,
+    rgba(65,41,37,.20)  100%);
 }
 
 /* Hotspot dot + tooltip */
