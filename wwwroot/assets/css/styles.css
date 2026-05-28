@@ -77,9 +77,9 @@ body::after {
   left: clamp(.6rem, 1.4vw, 1.2rem) !important;
   z-index: 5;
   line-height: .85;
-  color: transparent !important;
-  -webkit-text-stroke: 2.5px #ffffff !important;
-  filter: drop-shadow(0 2px 12px rgba(0,0,0,.55));
+  color: #ffffff !important;
+  -webkit-text-stroke: 0 !important;
+  filter: drop-shadow(0 3px 14px rgba(0,0,0,.45));
   pointer-events: none;
 }
 
