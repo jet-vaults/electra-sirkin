@@ -81,9 +81,8 @@
       <hr class="side-nav__sep">
       <nav class="side-nav__links">
         <a href="#tzameret">על הפרויקט</a>
-        <a href="#company">אודות החברה</a>
+        <a href="#company">על המיקום</a>
         <a href="#project">אודות הפרויקט</a>
-        <a href="#environment">תרשים סביבה</a>
         <a href="#downloads">קבצים להורדה</a>
       </nav>
       <div class="side-nav__cta">
@@ -147,33 +146,59 @@
       </div>
     </section>
 
-    <!-- ===================== 02 · על המיקום ===================== -->
-    <section class="section section--cream" id="company">
-      <div class="wrap">
-        <div class="block-head">
-          <div class="block-head__main">
-            <span class="kicker" data-reveal>02 — על המיקום</span>
-            <h2 class="display h-lg" data-reveal data-delay="1">מיקום הפרויקט</h2>
+    <!-- ===================== 02 · על המיקום + pinned env reveal ===================== -->
+    <section class="env-pin section--cream" id="company" data-env-pin>
+      <div class="env-pin__viewport">
+        <div class="wrap">
+          <div class="block-head">
+            <div class="block-head__main">
+              <span class="kicker" data-reveal>02 — על המיקום</span>
+              <h2 class="display h-lg" data-reveal data-delay="1">מיקום הפרויקט</h2>
+            </div>
+            <span class="index-num" data-reveal>02</span>
           </div>
-          <span class="index-num" data-reveal>02</span>
-        </div>
 
-        <div class="editorial">
-          <div class="prose" data-reveal>
-            <p>
-              השכונה ממוקמת בחלקה המזרחי של פתח תקווה, בין כפר סירקין לגבעת השלושה, וגובלת בנחל שילה ובמרחבים ירוקים פתוחים.
-            </p>
-            <p>
-              סביבתה כוללת שכונות מבוססות כגון בילינסון, הדר גנים–עמישב, קריית אלון, קריית דוד אלעזר ויוספטל – מה שמייצר חיבור ישיר בין שכונה חדשה לבין מרקם עירוני קיים ומבוסס.
-            </p>
-            <p>
-              החלק המערבי של שכונת צמרת נהנה מקרבה לפארק העירוני המרכזי ולשטחים ירוקים רחבי היקף, ומהווה מוקד מגורים מבוקש בזכות השילוב בין מרחב פתוח, תכנון עירוני מתקדם ונגישות גבוהה.
-            </p>
-          </div>
-          <div class="editorial__media editorial__media--placeholder" data-reveal data-delay="1" role="img" aria-label="מקום שמור לתמונת מיקום הפרויקט">
-            <div class="img-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              <span>תמונה תוצב כאן</span>
+          <div class="editorial">
+            <div class="prose" data-reveal>
+              <p>
+                השכונה ממוקמת בחלקה המזרחי של פתח תקווה, בין כפר סירקין לגבעת השלושה, וגובלת בנחל שילה ובמרחבים ירוקים פתוחים.
+              </p>
+              <p>
+                סביבתה כוללת שכונות מבוססות כגון בילינסון, הדר גנים–עמישב, קריית אלון, קריית דוד אלעזר ויוספטל – מה שמייצר חיבור ישיר בין שכונה חדשה לבין מרקם עירוני קיים ומבוסס.
+              </p>
+              <p>
+                החלק המערבי של שכונת צמרת נהנה מקרבה לפארק העירוני המרכזי ולשטחים ירוקים רחבי היקף, ומהווה מוקד מגורים מבוקש בזכות השילוב בין מרחב פתוח, תכנון עירוני מתקדם ונגישות גבוהה.
+              </p>
+            </div>
+            <div class="env-rows env-rows--steps" data-reveal data-delay="1">
+              <div class="env-row">
+                <span class="env-row__fig">700</span>
+                <div>
+                  <div class="env-row__t">דונם שטחים ירוקים</div>
+                  <div class="env-row__d">הפארק העירוני (כ־330 דונם), פארק הנחל וחורשת האקליפטוסים.</div>
+                </div>
+              </div>
+              <div class="env-row">
+                <span class="env-row__fig">M2</span>
+                <div>
+                  <div class="env-row__t">קו מטרו מתוכנן</div>
+                  <div class="env-row__d">תחנות סירקין צפון ודרום, לצד הרכבת הקלה וחיבור לכבישים 471 ו־40.</div>
+                </div>
+              </div>
+              <div class="env-row">
+                <span class="env-row__fig">12K</span>
+                <div>
+                  <div class="env-row__t">יחידות דיור בשכונה</div>
+                  <div class="env-row__d">רובע עירוני חדש המתוכנן מהיסוד, לכ־50,000 תושבים.</div>
+                </div>
+              </div>
+              <div class="env-row">
+                <span class="env-row__fig" style="font-size:1.6rem">חינוך</span>
+                <div>
+                  <div class="env-row__t">קריית חינוך משולבת</div>
+                  <div class="env-row__d">גני ילדים, בית ספר יסודי, מרכז קהילתי, ספרייה ומתקני ספורט.</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -232,61 +257,15 @@
       </div>
     </section>
 
-    <!-- ===================== 04 · Environment — scroll-pinned reveal ===================== -->
-    <section class="env-pin" id="environment" data-env-pin>
-      <div class="env-pin__viewport">
-        <div class="wrap">
-          <div class="block-head">
-            <div class="block-head__main">
-              <span class="kicker" data-reveal>04 — תרשים סביבה</span>
-              <h2 class="display h-lg" data-reveal data-delay="1">סביבת הפרויקט</h2>
-            </div>
-            <span class="index-num" data-reveal>04</span>
-          </div>
-
-          <div class="env-rows env-rows--steps">
-            <div class="env-row">
-              <span class="env-row__fig">700</span>
-              <div>
-                <div class="env-row__t">דונם שטחים ירוקים</div>
-                <div class="env-row__d">הפארק העירוני (כ־330 דונם), פארק הנחל וחורשת האקליפטוסים.</div>
-              </div>
-            </div>
-            <div class="env-row">
-              <span class="env-row__fig">M2</span>
-              <div>
-                <div class="env-row__t">קו מטרו מתוכנן</div>
-                <div class="env-row__d">תחנות סירקין צפון ודרום, לצד הרכבת הקלה וחיבור לכבישים 471 ו־40.</div>
-              </div>
-            </div>
-            <div class="env-row">
-              <span class="env-row__fig">12K</span>
-              <div>
-                <div class="env-row__t">יחידות דיור בשכונה</div>
-                <div class="env-row__d">רובע עירוני חדש המתוכנן מהיסוד, לכ־50,000 תושבים.</div>
-              </div>
-            </div>
-            <div class="env-row">
-              <span class="env-row__fig" style="font-size:1.6rem">חינוך</span>
-              <div>
-                <div class="env-row__t">קריית חינוך משולבת</div>
-                <div class="env-row__d">גני ילדים, בית ספר יסודי, מרכז קהילתי, ספרייה ומתקני ספורט.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== 05 · Downloads ===================== -->
+    <!-- ===================== 04 · Downloads ===================== -->
     <section class="section section--dark" id="downloads">
       <div class="wrap">
         <div class="block-head">
           <div class="block-head__main">
-            <span class="kicker" data-reveal>05 — קבצים להורדה</span>
+            <span class="kicker" data-reveal>04 — קבצים להורדה</span>
             <h2 class="display h-lg" data-reveal data-delay="1">מסמכי הפרויקט</h2>
           </div>
-          <span class="index-num" data-reveal>05</span>
+          <span class="index-num" data-reveal>04</span>
         </div>
 
         <div class="dl" data-reveal>
