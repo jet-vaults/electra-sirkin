@@ -39,19 +39,18 @@
     <div class="hero-wrap">
       <div class="wrap">
       <section class="hero" id="hero">
-        <!-- Floating nav pill -->
-        <div class="hero__pill">
-          <a href="#top" class="hero__brand" aria-label="אלקטרה מגורים">
-            <img src="/assets/images/logo.png" alt="אלקטרה מגורים">
-          </a>
-          <nav class="hero__menu">
-            <a href="#company">אודות החברה</a>
-            <a href="#project">הפרויקט</a>
-            <a href="#environment">תרשים סביבה</a>
-            <a href="#downloads">קבצים להורדה</a>
-          </nav>
-          <a href="#inventory" class="hero__navcta">מלאי דירות</a>
-        </div>
+        <!-- Top-right logo -->
+        <a href="#top" class="hero__logo" aria-label="אלקטרה מגורים">
+          <img src="/assets/images/logo.png" alt="אלקטרה מגורים">
+        </a>
+        <!-- Top-left burger -->
+        <button class="hero__burger" id="navBurger" aria-label="פתח תפריט" aria-expanded="false" aria-controls="sideNav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="4" y1="7"  x2="20" y2="7"/>
+            <line x1="4" y1="12" x2="20" y2="12"/>
+            <line x1="4" y1="17" x2="20" y2="17"/>
+          </svg>
+        </button>
 
         <!-- Centered title -->
         <div class="hero__center">
@@ -68,6 +67,26 @@
       </section>
       </div>
     </div>
+
+    <!-- ===================== Side nav (slide-out from left) ===================== -->
+    <div class="side-nav__backdrop" id="navBackdrop" aria-hidden="true"></div>
+    <aside class="side-nav" id="sideNav" aria-hidden="true">
+      <button class="side-nav__close" id="navClose" aria-label="סגור תפריט">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+      <nav class="side-nav__links">
+        <a href="#tzameret">על הפרויקט</a>
+        <a href="#company">אודות החברה</a>
+        <a href="#project">אודות הפרויקט</a>
+        <a href="#environment">תרשים סביבה</a>
+        <a href="#downloads">קבצים להורדה</a>
+      </nav>
+      <div class="side-nav__cta">
+        <a href="#inventory" class="hero__navcta">מלאי דירות
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;margin-inline-start:.45rem"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        </a>
+      </div>
+    </aside>
 
     <!-- ===================== 01 · על הפרויקט · אלקטרה בצמרת מערב ===================== -->
     <section class="section" id="tzameret">
@@ -377,6 +396,22 @@
           startHero();
         }, 3200);
       }
+
+      /* ---- Side nav ---- */
+      (function(){
+        var burger = document.getElementById('navBurger');
+        var sideNav = document.getElementById('sideNav');
+        var closeBtn = document.getElementById('navClose');
+        var backdrop = document.getElementById('navBackdrop');
+        if (!burger || !sideNav) return;
+        function open(){ document.body.classList.add('nav-open'); burger.setAttribute('aria-expanded','true'); sideNav.setAttribute('aria-hidden','false'); backdrop.setAttribute('aria-hidden','false'); }
+        function close(){ document.body.classList.remove('nav-open'); burger.setAttribute('aria-expanded','false'); sideNav.setAttribute('aria-hidden','true'); backdrop.setAttribute('aria-hidden','true'); }
+        burger.addEventListener('click', open);
+        closeBtn.addEventListener('click', close);
+        backdrop.addEventListener('click', close);
+        sideNav.addEventListener('click', function(e){ if (e.target.closest('a')) close(); });
+        document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+      })();
 
       /* ---- Scroll progress ---- */
       var progress = document.getElementById('progress');
