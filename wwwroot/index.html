@@ -18,7 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Noto+Sans+Hebrew:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
@@ -34,60 +34,52 @@
 
   <div class="scroll-progress" id="progress"></div>
 
-  <!-- ===================== Header ===================== -->
-  <header class="header" id="header">
-    <div class="wrap header__row">
-      <a href="#top" class="header__logo" aria-label="אלקטרה מגורים">
-        <img src="/assets/images/logo.png" alt="אלקטרה מגורים">
-      </a>
-      <nav class="menu" id="menu">
-        <a href="#company" class="ulink">אודות החברה</a>
-        <a href="#project" class="ulink">הפרויקט</a>
-        <a href="#environment" class="ulink">תרשים סביבה</a>
-        <a href="#downloads" class="ulink">קבצים</a>
-        <a href="#downloads" class="ulink menu__cta">להורדת מסמכים ↗</a>
-      </nav>
-      <button class="burger" id="burger" aria-label="תפריט" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
   <main id="top">
-    <!-- ===================== Hero ===================== -->
-    <section class="hero" id="hero">
-      <div class="hero__media">
-        <img src="/assets/images/hero.jpg" alt="הדמיית פרויקט אלקטרה בצמרת מערב">
-      </div>
-      <div class="hero__inner">
-        <div class="wrap">
-          <span class="kicker hero__kicker">מחיר מטרה · שכונת צמרת</span>
-          <h1 class="display h-xl hero__title">
-            <span class="line"><span>אלקטרה</span></span>
-            <span class="line"><span>בצמרת מערב</span></span>
-          </h1>
-          <p class="hero__meta">
-            רובע מגורים חדש המתוכנן מהיסוד — 222 יחידות דיור, ארבעה בניינים
-            ואדריכלות עכשווית, בלב מרחב ירוק במזרח פתח תקווה.
-          </p>
-          <div class="hero__actions">
-            <a href="#project" class="btn">לגילוי הפרויקט
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    <!-- ===================== Hero (Vistora-style) ===================== -->
+    <div class="hero-wrap">
+      <section class="hero" id="hero">
+        <!-- Floating nav pill -->
+        <div class="hero__pill">
+          <a href="#top" class="hero__brand" aria-label="אלקטרה מגורים">
+            <img src="/assets/images/logo.png" alt="אלקטרה מגורים">
+          </a>
+          <nav class="hero__menu">
+            <a href="#company">אודות החברה</a>
+            <a href="#project">הפרויקט</a>
+            <a href="#environment">תרשים סביבה</a>
+            <a href="#downloads">קבצים להורדה</a>
+          </nav>
+          <div class="hero__icons">
+            <a href="#downloads" class="hero__iconbtn" aria-label="קבצים להורדה">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
-            <a href="#downloads" class="btn btn--ghost">קבצים להורדה</a>
+            <a href="#project" class="hero__iconbtn hero__iconbtn--dark" aria-label="לפרטים נוספים">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </a>
           </div>
         </div>
-      </div>
-      <div class="hero__side">צמרת מערב · 2026</div>
-      <span class="hero__scroll">גלול למטה <i></i></span>
-    </section>
 
-    <!-- ===================== Marquee ===================== -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>מחיר מטרה</span><span>222 יחידות דיור</span><span>אדריכלות עכשווית</span><span>פארקים ירוקים</span><span>מטרו M2</span><span>צמרת מערב</span>
-        <span>מחיר מטרה</span><span>222 יחידות דיור</span><span>אדריכלות עכשווית</span><span>פארקים ירוקים</span><span>מטרו M2</span><span>צמרת מערב</span>
-      </div>
+        <!-- Centered title -->
+        <div class="hero__center">
+          <h1 class="hero__t">אלקטרה <em>בצמרת מערב</em></h1>
+          <p class="hero__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
+          <div class="hero__cta">
+            <a href="#project" class="is-primary">על הפרויקט
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            </a>
+            <a href="#inventory" class="is-secondary">מלאי דירות</a>
+          </div>
+        </div>
+
+        <!-- Image fills bottom -->
+        <div class="hero__image">
+          <img src="/assets/images/hero.jpg" alt="הדמיית פרויקט אלקטרה בצמרת מערב">
+          <span class="hero__dot hero__dot--top" aria-hidden="true"></span>
+          <span class="hero__tip hero__tip--main"><i></i> המגדל · 21 קומות</span>
+        </div>
+
+        <span class="hero__edge">צמרת מערב · 2026</span>
+      </section>
     </div>
 
     <!-- ===================== 01 · About company ===================== -->
@@ -145,7 +137,7 @@
           <div class="statline-item figure-stat" data-reveal><b>222</b><span>יחידות דיור</span></div>
           <div class="statline-item figure-stat" data-reveal data-delay="1"><b>4</b><span>בניינים במתחם</span></div>
           <div class="statline-item figure-stat" data-reveal data-delay="2"><b>21</b><span>קומות במגדל</span></div>
-          <div class="statline-item figure-stat" data-reveal data-delay="3"><b><span dir="ltr">3&#8211;6</span></b><span>חדרים ופנטהאוזים</span></div>
+          <div class="statline-item figure-stat figure-stat--text" data-reveal data-delay="3"><b>מחיר מטרה</b><span>תוכנית הזכאות · הגרלה 2256</span></div>
         </div>
 
         <div class="flist">
@@ -361,27 +353,15 @@
         }, 3200);
       }
 
-      /* ---- Header solidify + scroll progress ---- */
-      var header = document.getElementById('header');
+      /* ---- Scroll progress ---- */
       var progress = document.getElementById('progress');
       function onScroll(){
         var y = window.scrollY || 0;
-        header.classList.toggle('is-solid', y > 60);
         var h = document.documentElement.scrollHeight - window.innerHeight;
         if (progress) progress.style.transform = 'scaleX(' + (h>0 ? y/h : 0) + ')';
       }
       onScroll();
       window.addEventListener('scroll', onScroll, { passive: true });
-
-      /* ---- Mobile nav ---- */
-      var burger = document.getElementById('burger');
-      var menu = document.getElementById('menu');
-      function closeNav(){ document.body.classList.remove('nav-open'); burger.setAttribute('aria-expanded','false'); }
-      burger.addEventListener('click', function(){
-        var open = document.body.classList.toggle('nav-open');
-        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      menu.addEventListener('click', function(e){ if (e.target.closest('a')) closeNav(); });
 
       /* ---- Reveal on scroll ---- */
       var reveals = document.querySelectorAll('[data-reveal]');
