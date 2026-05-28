@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" fill="#ffffff" role="img" aria-label="אלקטרה מגורים">
+  <!-- Swoosh "E" icon (left side), from the official Electra vector -->
+  <g transform="translate(20 40) scale(3)">
+    <path transform="translate(-149 -7)" d="M164.369,38.908l25.137-11.445c-0.396,9.81-8.475,17.641-18.381,17.641c-10.158,0-18.395-8.236-18.395-18.396c0-10.159,8.236-18.395,18.395-18.395c2.943,0,5.725,0.691,8.191,1.92l-13.125,6.047c-0.32,0.176-0.627,0.431-0.898,0.702c-1.109,1.108-1.408,2.714-0.91,4.099l24.664-11.354c0.137,0.472,0.203,0.99,0.203,1.507c0,2.109-1.242,3.923-3.033,4.767l-20.035,9.22c-0.322,0.175-0.631,0.397-0.902,0.67c-1.107,1.108-1.408,2.714-0.91,4.098l24.689-11.352c0.137,0.472,0.191,0.989,0.191,1.506c0,2.109-1.242,3.923-3.033,4.766l-20.045,9.229c-0.32,0.175-0.635,0.41-0.906,0.681C164.156,35.926,163.871,37.525,164.369,38.908"/>
+  </g>
+  <!-- Hebrew wordmark (right side, RTL) -->
+  <text x="880" y="115" text-anchor="end" font-family="'Noto Sans Hebrew', Arial, sans-serif" font-size="110" font-weight="700" letter-spacing="-3" fill="#ffffff">אלקטרה מגורים</text>
+  <text x="880" y="170" text-anchor="end" font-family="'Noto Sans Hebrew', Arial, sans-serif" font-size="30" font-weight="500" fill="#ffffff" opacity=".7">העתיד כבר כאן</text>
+</svg>
