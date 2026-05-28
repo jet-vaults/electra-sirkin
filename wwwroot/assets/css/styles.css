@@ -632,6 +632,26 @@ html.js .hero.in .hero__tip { opacity: 1; transition: opacity .8s ease 1.1s; }
   font-size: .76rem; letter-spacing: .05em; padding: .45rem .9rem; border-radius: 100px;
 }
 
+/* Placeholder media slot */
+.editorial__media--placeholder { background: #efe6e1; }
+.editorial__media--placeholder .img-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: .9rem;
+  color: var(--accent);
+  background:
+    repeating-linear-gradient(45deg, rgba(142,89,82,.04) 0 12px, transparent 12px 24px);
+}
+.editorial__media--placeholder .img-placeholder svg { width: 56px; height: 56px; opacity: .85; }
+.editorial__media--placeholder .img-placeholder span {
+  font-size: .92rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: var(--accent-deep);
+  opacity: .8;
+}
+
 /* Big figure stat */
 .figure-stat { display: flex; flex-direction: column; }
 .figure-stat b {
