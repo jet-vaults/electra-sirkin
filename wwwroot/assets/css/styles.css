@@ -268,18 +268,16 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 .hero__menu a:hover { background: rgba(23,21,27,.06); }
 .hero__menu a.is-active { background: var(--accent); color: #fff; }
 
-.hero__icons { display: inline-flex; gap: .35rem; }
-.hero__iconbtn {
-  width: 38px; height: 38px; border-radius: 50%;
-  display: grid; place-items: center;
-  background: rgba(23,21,27,.06); color: var(--ink);
-  border: 0; cursor: pointer; text-decoration: none;
-  transition: background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease);
+.hero__navcta {
+  display: inline-flex; align-items: center;
+  padding: .58rem 1.35rem;
+  border-radius: 100px;
+  background: var(--accent); color: #fff;
+  font-family: var(--sans); font-size: .92rem; font-weight: 500;
+  transition: background .3s var(--ease), transform .25s var(--ease);
+  white-space: nowrap;
 }
-.hero__iconbtn:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-.hero__iconbtn--dark { background: var(--ink); color: #fff; }
-.hero__iconbtn--dark:hover { background: var(--accent); }
-.hero__iconbtn svg { width: 16px; height: 16px; }
+.hero__navcta:hover { background: var(--accent-deep); transform: translateY(-1px); }
 
 /* Centered title block — overlaid on the image, anchored to top */
 .hero__center {
@@ -303,9 +301,9 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 .hero__sub {
   margin: 1rem auto 0;
   max-width: 54ch;
-  color: var(--muted);
+  color: var(--accent-deep);
   font-size: clamp(.96rem, 1.25vw, 1.08rem);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.75;
 }
 
