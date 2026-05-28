@@ -415,7 +415,7 @@ body.nav-open { overflow: hidden; }
 }
 .hero__t em {
   display: block;
-  font-style: normal; font-weight: 400; color: var(--accent);
+  font-style: normal; font-weight: 400; color: #ffffff;
 }
 .hero__sub {
   margin: 1rem auto 0;
