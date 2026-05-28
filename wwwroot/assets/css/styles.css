@@ -71,9 +71,17 @@ body::after {
 #tzameret .display.h-lg { white-space: nowrap; }
 #tzameret .prose p { max-width: none; }
 
-.editorial-stack { display: flex; flex-direction: column; gap: clamp(.5rem, 1.4vw, 1.1rem); min-height: 100%; }
-.editorial-stack > .index-num { align-self: flex-start; line-height: .85; }
-.editorial-stack > .editorial__media { flex: 1; min-height: 320px; }
+.index-num--over {
+  position: absolute !important;
+  top: clamp(.6rem, 1.4vw, 1.2rem) !important;
+  left: clamp(.6rem, 1.4vw, 1.2rem) !important;
+  z-index: 5;
+  line-height: .85;
+  color: transparent !important;
+  -webkit-text-stroke: 2.5px #ffffff !important;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,.55));
+  pointer-events: none;
+}
 
 /* Eyebrow / kicker */
 .kicker {
