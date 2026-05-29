@@ -183,9 +183,9 @@ body::after {
   transform: translateY(110%);
 }
 .intro__word--logo {
-  width: 709px;       /* native PNG width — no upscaling */
+  width: 420px;       /* downscaled from native 709px — sharp */
   height: auto;
-  max-width: 90vw;    /* prevent overflow on narrow viewports */
+  max-width: 80vw;    /* prevent overflow on narrow viewports */
   filter: brightness(0) invert(1);
 }
 .intro__sub {
