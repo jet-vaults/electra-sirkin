@@ -655,7 +655,7 @@ html.js .hero.in .hero__tip { opacity: 1; transition: opacity .8s ease 1.1s; }
   background: var(--cream);
   padding-block: clamp(2.2rem, 4.5vw, 3.8rem);
 }
-.full-banner + #education.section { padding-top: 0; }
+.full-banner + #education.section { padding-top: clamp(2.4rem, 5vw, 4.5rem); }
 .education-prose .kicker { margin-bottom: .9rem; }
 .education-prose__title { margin-bottom: 1.2rem; }
 #education .index-num--over { color: transparent !important; -webkit-text-stroke: 1.5px rgba(142,89,82,.45) !important; }
