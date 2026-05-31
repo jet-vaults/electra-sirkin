@@ -447,7 +447,7 @@
           }
           var maxScroll = pin.offsetHeight - vh;
           var progress = Math.max(0, Math.min(1, -rect.top / maxScroll));
-          var stepThreshold = 1 / (total + 1);  // first reveal early, last just before end
+          var stepThreshold = 1 / total;  // all rows revealed exactly at progress 1.0 (end of sticky)
           var shown = Math.min(total, Math.floor(progress / stepThreshold));
           rows.forEach(function(r, i){ r.classList.toggle('is-shown', i < shown); });
         }
