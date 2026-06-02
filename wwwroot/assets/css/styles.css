@@ -84,7 +84,7 @@ body::after {
 }
 
 .editorial__media--family > img {
-  object-fit: contain !important;
+  object-fit: cover !important;
   object-position: center !important;
 }
 #project .editorial__media > img {
