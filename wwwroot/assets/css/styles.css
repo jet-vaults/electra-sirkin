@@ -860,7 +860,7 @@ html.no-motion .env-rows--steps .env-row {
   color: rgba(255,255,255,.03); white-space: nowrap; pointer-events: none; line-height: 1;
 }
 .cta__inner { position: relative; z-index: 2; text-align: center; }
-.cta__inner .lead { margin: 1.4rem auto 2rem; max-width: 44ch; }
+.cta__inner .lead { margin: 1.4rem auto 2rem; max-width: 44ch; color: rgba(255,255,255,.92); }
 
 /* CTA contact form */
 .cta-form {
