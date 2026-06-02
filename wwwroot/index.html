@@ -357,13 +357,28 @@
         <span class="kicker" data-reveal style="justify-content:center">מחיר מטרה · הגרלה 2256</span>
         <h2 class="display h-lg" data-reveal data-delay="1" style="margin-top:1.2rem">בית חדש, בצמרת מערב</h2>
         <p class="lead" data-reveal data-delay="2">
-          כל מסמכי הפרויקט זמינים להורדה ישירה — מפרט טכני, נספחים ומסמכי ההגרלה החתומים.
+          השאירו פרטים ונחזור אליכם בהקדם.
         </p>
-        <div data-reveal data-delay="3">
-          <a href="#downloads" class="btn btn--ghost">למסמכי הפרויקט
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-          </a>
-        </div>
+        <form class="cta-form" data-reveal data-delay="3" action="#" method="post" novalidate>
+          <div class="cta-form__fields">
+            <label class="cta-form__field">
+              <span class="visually-hidden">שם מלא</span>
+              <input type="text" name="name" placeholder="שם מלא" autocomplete="name" required>
+            </label>
+            <label class="cta-form__field">
+              <span class="visually-hidden">טלפון</span>
+              <input type="tel" name="phone" placeholder="טלפון" autocomplete="tel" inputmode="tel" required>
+            </label>
+            <label class="cta-form__field">
+              <span class="visually-hidden">אימייל</span>
+              <input type="email" name="email" placeholder="אימייל" autocomplete="email">
+            </label>
+          </div>
+          <button type="submit" class="btn cta-form__submit">צרו קשר
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          </button>
+          <p class="cta-form__note">המידע שלכם נשמר אצלנו בלבד ולא יועבר לצדדים שלישיים.</p>
+        </form>
       </div>
     </section>
   </main>
