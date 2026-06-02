@@ -103,13 +103,18 @@ body::after {
   inset: auto !important;
 }
 
-/* Small decorative icon above a title */
+/* Small decorative icon next to a kicker */
+.kicker-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: .8rem;
+}
 .title-icon {
   display: block;
   width: clamp(56px, 5vw, 78px);
   height: auto;
-  margin-top: .65rem;
-  margin-bottom: -.35rem;
 }
 #project .editorial__media > img {
   object-fit: cover !important;
