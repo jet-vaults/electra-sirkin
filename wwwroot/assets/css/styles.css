@@ -83,8 +83,10 @@ body::after {
   pointer-events: none;
 }
 
-.editorial__media--family > img {
-  object-position: center bottom;
+.editorial__media--family > img,
+#project .editorial__media > img {
+  object-fit: contain !important;
+  object-position: center !important;
 }
 
 /* Eyebrow / kicker */
