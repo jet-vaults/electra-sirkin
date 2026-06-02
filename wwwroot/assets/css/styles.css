@@ -195,6 +195,10 @@ body::after {
   color: var(--ink);
   font-weight: 600;
 }
+.section--dark .prose-list li { color: rgba(255,255,255,.74); }
+.section--dark .prose-list li strong { color: #ffffff; }
+.section--dark .prose-list li::before { background: var(--rose); }
+.section--dark .prose-sub { color: #ffffff; }
 
 /* --- Buttons / links ----------------------------------------------------- */
 .btn {
