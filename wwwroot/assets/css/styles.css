@@ -92,6 +92,7 @@ body::after {
   object-position: center !important;
 }
 #project .index-num--over {
+  color: #ffffff !important;
   -webkit-text-stroke: 0 !important;
   filter: none !important;
 }
