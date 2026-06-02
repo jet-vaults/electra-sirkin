@@ -87,6 +87,21 @@ body::after {
   object-fit: cover !important;
   object-position: center !important;
 }
+.editorial__media--logo {
+  background: #fcfafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.editorial__media--logo > img {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 80% !important;
+  max-height: 60% !important;
+  object-fit: contain !important;
+  inset: auto !important;
+}
 #project .editorial__media > img {
   object-fit: cover !important;
   object-position: center !important;
