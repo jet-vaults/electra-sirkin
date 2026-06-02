@@ -168,6 +168,34 @@ body::after {
   letter-spacing: -.01em;
 }
 
+.prose-list {
+  list-style: none;
+  padding: 0;
+  margin: .2rem 0 1rem;
+  display: grid;
+  gap: .65rem;
+}
+.prose-list li {
+  position: relative;
+  padding-inline-start: 1.2rem;
+  color: #4a4248;
+  line-height: 1.7;
+  font-size: .98rem;
+}
+.prose-list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: .75em;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.prose-list li strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 /* --- Buttons / links ----------------------------------------------------- */
 .btn {
   --bg: var(--accent); --fg: #fff;
