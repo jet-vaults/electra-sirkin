@@ -89,7 +89,11 @@ body::after {
 }
 #project .editorial__media > img {
   object-fit: cover !important;
-  object-position: center top !important;
+  object-position: center !important;
+}
+#project .index-num--over {
+  -webkit-text-stroke: 0 !important;
+  filter: none !important;
 }
 
 /* Eyebrow / kicker */
