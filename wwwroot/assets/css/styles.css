@@ -102,6 +102,36 @@ body::after {
   object-fit: contain !important;
   inset: auto !important;
 }
+
+/* Company "claim" card with construction-helmet icon */
+.company-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.6rem;
+  padding: 1.1rem 1.3rem;
+  background: rgba(255,255,255,.6);
+  border: 1px solid rgba(65,41,37,.10);
+  border-radius: 12px;
+}
+.company-badge img {
+  width: 52px; height: 52px;
+  flex: none;
+  object-fit: contain;
+}
+.company-badge > div { display: flex; flex-direction: column; gap: .15rem; }
+.company-badge strong {
+  font-family: var(--sans);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -.01em;
+}
+.company-badge span {
+  font-size: .9rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
 #project .editorial__media > img {
   object-fit: cover !important;
   object-position: center !important;
