@@ -128,6 +128,15 @@ body::after {
 .prose .lead { margin-bottom: 1rem; }
 .prose .figure-stat { margin-top: 1.2rem; }
 .prose p:last-child { margin-bottom: 0; }
+.prose-sub {
+  font-family: var(--sans);
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 1.6rem;
+  margin-bottom: .55rem;
+  letter-spacing: -.01em;
+}
 
 /* --- Buttons / links ----------------------------------------------------- */
 .btn {
