@@ -486,16 +486,23 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 .mobile-header { display: none; }
 
 @media (max-width: 900px) {
+  /* Make sure the safe-area strip at the very top of iOS is white
+     even if the page rubber-bands or content briefly extends up. */
+  html, body { background-color: #ffffff; }
+
   .mobile-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: fixed;
     top: 0; left: 0; right: 0;
-    height: 72px;
-    padding: 0 16px;
+    /* Extend into the iOS safe area (notch / status-bar strip) with white
+       background; the inner content is padded down below the inset. */
+    height: calc(72px + env(safe-area-inset-top, 0px));
+    padding: env(safe-area-inset-top, 0px) calc(16px + env(safe-area-inset-right, 0px)) 0 calc(16px + env(safe-area-inset-left, 0px));
     background: #ffffff;
-    z-index: 500;
+    /* Sit above absolutely everything (intro is 9999) */
+    z-index: 10000;
     transition: box-shadow .25s var(--ease);
   }
   .mobile-header.scrolled { box-shadow: 0 6px 14px rgba(0,0,0,.06); }
@@ -521,10 +528,10 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
   .mobile-header__logo img { height: 48px; width: auto; display: block; }
 
   /* Push the scroll-progress bar below the sticky header on mobile */
-  .scroll-progress { top: 72px !important; }
+  .scroll-progress { top: calc(72px + env(safe-area-inset-top, 0px)) !important; }
 
   /* Push the hero down so it doesn't slide under the fixed header */
-  .hero-wrap { padding-top: 72px; }
+  .hero-wrap { padding-top: calc(72px + env(safe-area-inset-top, 0px)); }
 
   /* Hide the in-hero logo and burger on mobile (they live in the header now) */
   .hero__logo, .hero__burger { display: none !important; }
