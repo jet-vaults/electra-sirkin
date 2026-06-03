@@ -492,18 +492,18 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
     justify-content: space-between;
     position: fixed;
     top: 0; left: 0; right: 0;
-    height: 58px;
-    padding: 0 14px;
+    height: 72px;
+    padding: 0 16px;
     background: #ffffff;
     z-index: 500;
     transition: box-shadow .25s var(--ease);
   }
   .mobile-header.scrolled { box-shadow: 0 6px 14px rgba(0,0,0,.06); }
 
-  /* Burger: left side, tinted circle */
+  /* Burger: right side (HTML order: logo first, burger second) */
   .mobile-header__burger {
     direction: ltr;
-    width: 40px; height: 40px;
+    width: 44px; height: 44px;
     display: grid; place-items: center;
     background: rgba(23,21,27,.06);
     color: var(--ink);
@@ -514,17 +514,17 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
     transition: background .25s var(--ease), color .25s var(--ease);
   }
   .mobile-header__burger:hover { background: var(--accent); color: #fff; }
-  .mobile-header__burger svg { width: 20px; height: 20px; }
+  .mobile-header__burger svg { width: 22px; height: 22px; }
 
-  /* Logo: right side, 32px tall */
+  /* Logo: left side, larger */
   .mobile-header__logo { display: inline-flex; align-items: center; text-decoration: none; }
-  .mobile-header__logo img { height: 32px; width: auto; display: block; }
+  .mobile-header__logo img { height: 48px; width: auto; display: block; }
 
   /* Push the scroll-progress bar below the sticky header on mobile */
-  .scroll-progress { top: 58px !important; }
+  .scroll-progress { top: 72px !important; }
 
   /* Push the hero down so it doesn't slide under the fixed header */
-  .hero-wrap { padding-top: 58px; }
+  .hero-wrap { padding-top: 72px; }
 
   /* Hide the in-hero logo and burger on mobile (they live in the header now) */
   .hero__logo, .hero__burger { display: none !important; }
