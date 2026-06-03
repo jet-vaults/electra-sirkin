@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=20260602f">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20260602g">
 </head>
 <body>
 
@@ -41,6 +41,20 @@
   <div class="scroll-progress" id="progress"></div>
 
   <main id="top">
+    <!-- ===================== Mobile sticky header (mobile only) ===================== -->
+    <header class="mobile-header" id="mobileHeader">
+      <button class="mobile-header__burger" data-nav-toggle aria-label="פתח תפריט" aria-expanded="false" aria-controls="sideNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="4" y1="7"  x2="20" y2="7"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+      </button>
+      <a href="#top" class="mobile-header__logo" aria-label="אלקטרה מגורים">
+        <img src="/assets/images/logo@2x.png" srcset="/assets/images/logo@2x.png 2x, /assets/images/logo@4x.png 4x" alt="אלקטרה מגורים">
+      </a>
+    </header>
+
     <!-- ===================== Hero (Vistora-style) ===================== -->
     <div class="hero-wrap">
       <div class="wrap">
@@ -50,7 +64,7 @@
           <img src="/assets/images/logo@2x.png" srcset="/assets/images/logo@2x.png 2x, /assets/images/logo@4x.png 4x" alt="אלקטרה מגורים">
         </a>
         <!-- Top-left burger -->
-        <button class="hero__burger" id="navBurger" aria-label="פתח תפריט" aria-expanded="false" aria-controls="sideNav">
+        <button class="hero__burger" id="navBurger" data-nav-toggle aria-label="פתח תפריט" aria-expanded="false" aria-controls="sideNav">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
             <line x1="4" y1="7"  x2="20" y2="7"/>
             <line x1="4" y1="12" x2="20" y2="12"/>
@@ -609,18 +623,31 @@
 
       /* ---- Side nav ---- */
       (function(){
-        var burger = document.getElementById('navBurger');
+        var toggles = document.querySelectorAll('[data-nav-toggle]');
         var sideNav = document.getElementById('sideNav');
         var closeBtn = document.getElementById('navClose');
         var backdrop = document.getElementById('navBackdrop');
-        if (!burger || !sideNav) return;
-        function open(){ document.body.classList.add('nav-open'); burger.setAttribute('aria-expanded','true'); sideNav.setAttribute('aria-hidden','false'); backdrop.setAttribute('aria-hidden','false'); }
-        function close(){ document.body.classList.remove('nav-open'); burger.setAttribute('aria-expanded','false'); sideNav.setAttribute('aria-hidden','true'); backdrop.setAttribute('aria-hidden','true'); }
-        burger.addEventListener('click', open);
-        closeBtn.addEventListener('click', close);
-        backdrop.addEventListener('click', close);
+        if (!toggles.length || !sideNav) return;
+        function setExpanded(v){ for (var i=0;i<toggles.length;i++) toggles[i].setAttribute('aria-expanded', v ? 'true' : 'false'); }
+        function open(){ document.body.classList.add('nav-open'); setExpanded(true); sideNav.setAttribute('aria-hidden','false'); backdrop.setAttribute('aria-hidden','false'); }
+        function close(){ document.body.classList.remove('nav-open'); setExpanded(false); sideNav.setAttribute('aria-hidden','true'); backdrop.setAttribute('aria-hidden','true'); }
+        for (var i=0;i<toggles.length;i++) toggles[i].addEventListener('click', open);
+        if (closeBtn) closeBtn.addEventListener('click', close);
+        if (backdrop) backdrop.addEventListener('click', close);
         sideNav.addEventListener('click', function(e){ if (e.target.closest('a')) close(); });
         document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+      })();
+
+      /* ---- Mobile header scroll-shadow ---- */
+      (function(){
+        var mh = document.getElementById('mobileHeader');
+        if (!mh) return;
+        function onMhScroll(){
+          if ((window.scrollY || 0) > 40) mh.classList.add('scrolled');
+          else mh.classList.remove('scrolled');
+        }
+        onMhScroll();
+        window.addEventListener('scroll', onMhScroll, { passive: true });
       })();
 
       /* ---- Scroll progress ---- */

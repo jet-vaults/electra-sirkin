@@ -477,45 +477,59 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
   transition: background .3s var(--ease), transform .25s var(--ease), color .3s var(--ease);
   color: var(--ink);
 }
+/* =========================================================================
+   Mobile-only sticky header (Minimal White Bar)
+   - hidden on desktop
+   - fixed full-width white bar with burger left, logo right
+   - subtle drop-shadow appears only after the page is scrolled
+   ========================================================================= */
+.mobile-header { display: none; }
+
 @media (max-width: 900px) {
-  /* Burger sits inside the hero card, pinned to the physical LEFT edge.
-     direction: ltr isolates from the document's RTL direction so left/right
-     behave as physical-left/right with no risk of logical flipping. */
-  .hero .hero__burger,
-  .hero__burger {
-    direction: ltr !important;
-    position: absolute !important;
-    top: 14px !important;
-    left: 14px !important;
-    right: auto !important;
-    inset-block-start: 14px !important;
-    inset-block-end: auto !important;
-    inset-inline-start: 14px !important;
-    inset-inline-end: auto !important;
-    z-index: 6 !important;
-    display: grid !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    width: 46px !important;
-    height: 46px !important;
-    background: #ffffff !important;
-    color: #17151b !important;
-    border: 1px solid rgba(0,0,0,.08) !important;
-    box-shadow: 0 6px 18px rgba(0,0,0,.22) !important;
-    border-radius: 50% !important;
-    place-items: center !important;
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 58px;
+    padding: 0 14px;
+    background: #ffffff;
+    z-index: 500;
+    transition: box-shadow .25s var(--ease);
   }
-  /* Logo: slightly right of center, shift scales with viewport
-     so iPad gets a more visible offset than a small phone */
-  .hero__logo {
-    top: 1rem !important;
-    left: calc(50% + max(24px, 5vw)) !important;
-    right: auto !important;
-    transform: translateX(-50%);
+  .mobile-header.scrolled { box-shadow: 0 6px 14px rgba(0,0,0,.06); }
+
+  /* Burger: left side, tinted circle */
+  .mobile-header__burger {
+    direction: ltr;
+    width: 40px; height: 40px;
+    display: grid; place-items: center;
+    background: rgba(23,21,27,.06);
+    color: var(--ink);
+    border: 1px solid rgba(0,0,0,.06);
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    transition: background .25s var(--ease), color .25s var(--ease);
   }
-  /* Make room for the centered logo above the title */
-  .hero__center { padding-top: clamp(6rem, 22vw, 8rem) !important; }
-  /* Subtitle: 70% width, centered on mobile */
+  .mobile-header__burger:hover { background: var(--accent); color: #fff; }
+  .mobile-header__burger svg { width: 20px; height: 20px; }
+
+  /* Logo: right side, 32px tall */
+  .mobile-header__logo { display: inline-flex; align-items: center; text-decoration: none; }
+  .mobile-header__logo img { height: 32px; width: auto; display: block; }
+
+  /* Push the scroll-progress bar below the sticky header on mobile */
+  .scroll-progress { top: 58px !important; }
+
+  /* Push the hero down so it doesn't slide under the fixed header */
+  .hero-wrap { padding-top: 58px; }
+
+  /* Hide the in-hero logo and burger on mobile (they live in the header now) */
+  .hero__logo, .hero__burger { display: none !important; }
+
+  /* Subtitle: 70% width, centered on mobile (kept from earlier) */
   .hero__sub {
     width: 70% !important;
     max-width: 70% !important;
