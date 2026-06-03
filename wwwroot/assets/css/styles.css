@@ -1095,12 +1095,7 @@ html.no-motion .env-rows--steps .env-row {
   font-size: .76rem;
   line-height: 1.7;
   color: rgba(255,255,255,.35);
-  text-align: justify;
-  column-count: 3;
-  column-gap: clamp(1.4rem, 3vw, 2.4rem);
-}
-@media (max-width: 760px) {
-  .footer__legal { column-count: 1; }
+  text-align: center;
 }
 
 /* ========================================================================= */
