@@ -479,10 +479,14 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 }
 @media (max-width: 760px) {
   .hero__burger {
-    position: fixed; z-index: 50;
+    position: fixed; z-index: 999;
     box-shadow: 0 8px 24px rgba(65,41,37,.22);
     -webkit-backdrop-filter: blur(8px) saturate(140%);
     backdrop-filter: blur(8px) saturate(140%);
+  }
+  .hero__logo {
+    top: .55rem !important;
+    right: .55rem !important;
   }
 }
 .hero__burger:hover { background: var(--accent); color: #fff; transform: translateY(-1px); }
