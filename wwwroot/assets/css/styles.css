@@ -505,10 +505,11 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
     border-radius: 50% !important;
     place-items: center !important;
   }
-  /* Logo: slightly right of center on mobile */
+  /* Logo: slightly right of center, shift scales with viewport
+     so iPad gets a more visible offset than a small phone */
   .hero__logo {
     top: 1rem !important;
-    left: calc(50% + 24px) !important;
+    left: calc(50% + max(24px, 5vw)) !important;
     right: auto !important;
     transform: translateX(-50%);
   }
