@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=20260602j">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20260602k">
 </head>
 <body>
 
@@ -630,10 +630,32 @@
         var closeBtn = document.getElementById('navClose');
         var backdrop = document.getElementById('navBackdrop');
         if (!toggles.length || !sideNav) return;
+
+        var savedScrollY = 0;
         function setExpanded(v){ for (var i=0;i<toggles.length;i++) toggles[i].setAttribute('aria-expanded', v ? 'true' : 'false'); }
-        function open(){ document.body.classList.add('nav-open'); setExpanded(true); sideNav.setAttribute('aria-hidden','false'); backdrop.setAttribute('aria-hidden','false'); }
-        function close(){ document.body.classList.remove('nav-open'); setExpanded(false); sideNav.setAttribute('aria-hidden','true'); backdrop.setAttribute('aria-hidden','true'); }
-        for (var i=0;i<toggles.length;i++) toggles[i].addEventListener('click', open);
+        function open(){
+          if (document.body.classList.contains('nav-open')) return;
+          savedScrollY = window.scrollY || window.pageYOffset || 0;
+          document.body.classList.add('nav-open');
+          document.body.style.top = '-' + savedScrollY + 'px';
+          setExpanded(true);
+          sideNav.setAttribute('aria-hidden','false');
+          if (backdrop) backdrop.setAttribute('aria-hidden','false');
+        }
+        function close(){
+          if (!document.body.classList.contains('nav-open')) return;
+          document.body.classList.remove('nav-open');
+          document.body.style.top = '';
+          window.scrollTo(0, savedScrollY);
+          setExpanded(false);
+          sideNav.setAttribute('aria-hidden','true');
+          if (backdrop) backdrop.setAttribute('aria-hidden','true');
+        }
+        function toggle(){
+          if (document.body.classList.contains('nav-open')) close();
+          else open();
+        }
+        for (var i=0;i<toggles.length;i++) toggles[i].addEventListener('click', toggle);
         if (closeBtn) closeBtn.addEventListener('click', close);
         if (backdrop) backdrop.addEventListener('click', close);
         sideNav.addEventListener('click', function(e){ if (e.target.closest('a')) close(); });

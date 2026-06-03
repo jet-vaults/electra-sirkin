@@ -525,6 +525,48 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
   .mobile-header__burger:hover { background: var(--accent); color: #fff; }
   .mobile-header__burger svg { width: 22px; height: 22px; }
 
+  /* Burger lines morph into an X when the menu is open */
+  .mobile-header__burger svg line {
+    transition: transform .28s var(--ease), opacity .15s var(--ease);
+    transform-origin: 12px 12px;
+  }
+  body.nav-open .mobile-header__burger {
+    background: var(--accent);
+    color: #fff;
+  }
+  body.nav-open .mobile-header__burger svg line:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+  }
+  body.nav-open .mobile-header__burger svg line:nth-child(2) {
+    opacity: 0;
+  }
+  body.nav-open .mobile-header__burger svg line:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+
+  /* When the menu is open on mobile:
+     - Menu fills the entire viewport (no page content visible behind it)
+     - In-menu close button is hidden (header burger is the close action)
+     - Side-nav top padding clears the fixed header so its own logo is visible */
+  .side-nav {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding-top: calc(72px + env(safe-area-inset-top, 0px) + clamp(1.2rem, 3vw, 2rem)) !important;
+    padding-bottom: calc(clamp(1.4rem, 3vw, 2.4rem) + env(safe-area-inset-bottom, 0px)) !important;
+  }
+  .side-nav__close { display: none !important; }
+  .side-nav__backdrop {
+    background: rgba(23,21,27,.96) !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Hard scroll-lock for iOS when the menu is open */
+  body.nav-open {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+  }
+
   /* Logo: left side, larger */
   .mobile-header__logo { display: inline-flex; align-items: center; text-decoration: none; }
   .mobile-header__logo img { height: 48px; width: auto; display: block; }
@@ -1127,6 +1169,12 @@ html.no-motion .env-rows--steps .env-row {
 }
 @media (max-width: 720px) {
   .cta-form__fields { grid-template-columns: 1fr; }
+  /* Submit button width matches the form fields */
+  .cta-form__submit {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .footer { background: var(--espresso-2); color: rgba(255,255,255,.7); padding-block: clamp(3rem,6vw,4.5rem) 2rem; }
