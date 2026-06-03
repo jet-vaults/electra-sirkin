@@ -1070,6 +1070,23 @@ html.no-motion .env-rows--steps .env-row {
   .env-pin__viewport { position: static !important; height: auto !important; padding-block: clamp(5rem, 10vw, 8rem) !important; }
 }
 
+/* Mobile-only: hide the large outlined section numbers and disable the
+   pinned scroll animation on section 2 so the full text is visible. */
+@media (max-width: 900px) {
+  .index-num { display: none !important; }
+  .env-pin { height: auto !important; }
+  .env-pin__viewport {
+    position: static !important;
+    height: auto !important;
+    padding-block: clamp(3rem, 8vw, 5rem) !important;
+  }
+  .env-rows--steps .env-row {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 /* ========================================================================= */
 /* Downloads — elegant rows                                                  */
 /* ========================================================================= */
