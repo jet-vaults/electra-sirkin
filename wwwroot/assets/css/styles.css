@@ -1089,7 +1089,19 @@ html.no-motion .env-rows--steps .env-row {
   transition: color .2s ease;
 }
 .footer__bottom small a:hover { color: rgba(255,255,255,.95); }
-.footer__legal { margin: 0 0 1.4rem; max-width: none; font-size: .76rem; line-height: 1.7; color: rgba(255,255,255,.35); text-align: center; }
+.footer__legal {
+  margin: 0 0 1.4rem;
+  max-width: none;
+  font-size: .76rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,.35);
+  text-align: justify;
+  column-count: 3;
+  column-gap: clamp(1.4rem, 3vw, 2.4rem);
+}
+@media (max-width: 760px) {
+  .footer__legal { column-count: 1; }
+}
 
 /* ========================================================================= */
 /* Reveal system                                                             */
