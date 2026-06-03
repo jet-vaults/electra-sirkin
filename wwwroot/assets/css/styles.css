@@ -1089,7 +1089,7 @@ html.no-motion .env-rows--steps .env-row {
   transition: color .2s ease;
 }
 .footer__bottom small a:hover { color: rgba(255,255,255,.95); }
-.footer__legal { margin: 0 0 1.4rem; width: 100%; max-width: none; font-size: .76rem; line-height: 1.7; color: rgba(255,255,255,.35); text-align: center; }
+.footer__legal { margin: 0 auto 1.4rem; max-width: 100ch; font-size: .76rem; line-height: 1.7; color: rgba(255,255,255,.35); text-align: center; }
 
 /* ========================================================================= */
 /* Reveal system                                                             */
