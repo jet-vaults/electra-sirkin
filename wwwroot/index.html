@@ -50,14 +50,6 @@
           <img src="/assets/images/logo@2x.png" srcset="/assets/images/logo@2x.png 2x, /assets/images/logo@4x.png 4x" alt="אלקטרה מגורים">
         </a>
         <!-- Top-left burger -->
-        <button class="hero__burger" id="navBurger" aria-label="פתח תפריט" aria-expanded="false" aria-controls="sideNav">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <line x1="4" y1="7"  x2="20" y2="7"/>
-            <line x1="4" y1="12" x2="20" y2="12"/>
-            <line x1="4" y1="17" x2="20" y2="17"/>
-          </svg>
-        </button>
-
         <!-- Centered title -->
         <div class="hero__center">
           <h1 class="hero__t">אלקטרה <em>בצמרת מערב</em></h1>
@@ -73,6 +65,15 @@
       </section>
       </div>
     </div>
+
+    <!-- Sticky burger menu button (outside hero so the hero overflow doesn't clip it) -->
+    <button class="hero__burger" id="navBurger" aria-label="פתח תפריט" aria-expanded="false" aria-controls="sideNav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="7"  x2="20" y2="7"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="17" x2="20" y2="17"/>
+      </svg>
+    </button>
 
     <!-- ===================== Side nav (slide-out from left) ===================== -->
     <div class="side-nav__backdrop" id="navBackdrop" aria-hidden="true"></div>
