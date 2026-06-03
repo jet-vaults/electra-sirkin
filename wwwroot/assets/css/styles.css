@@ -478,23 +478,24 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
   color: var(--ink);
 }
 @media (max-width: 760px) {
+  /* Burger sits inside the hero card, top-left with a small inset */
   .hero__burger {
-    position: fixed !important;
+    position: absolute !important;
     top: 14px !important;
     left: 14px !important;
     right: auto !important;
     inset-inline-start: auto !important;
     inset-inline-end: auto !important;
-    z-index: 10000 !important;
+    z-index: 6 !important;
     display: grid !important;
     visibility: visible !important;
     opacity: 1 !important;
-    width: 50px !important;
-    height: 50px !important;
+    width: 46px !important;
+    height: 46px !important;
     background: #ffffff !important;
     color: #17151b !important;
-    border: 1px solid rgba(0,0,0,.12) !important;
-    box-shadow: 0 6px 20px rgba(0,0,0,.35) !important;
+    border: 1px solid rgba(0,0,0,.08) !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,.22) !important;
     border-radius: 50% !important;
     place-items: center !important;
   }
