@@ -505,16 +505,15 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
     border-radius: 50% !important;
     place-items: center !important;
   }
-  /* Logo: slightly right of center on mobile, larger size */
+  /* Logo centered at top on mobile */
   .hero__logo {
     top: 1rem !important;
-    left: calc(50% + 28px) !important;
+    left: 50% !important;
     right: auto !important;
     transform: translateX(-50%);
   }
-  .hero__logo img { height: 44px !important; }
   /* Make room for the centered logo above the title */
-  .hero__center { padding-top: clamp(6.5rem, 24vw, 9rem) !important; }
+  .hero__center { padding-top: clamp(6rem, 22vw, 8rem) !important; }
   /* Subtitle: 70% width, centered on mobile */
   .hero__sub {
     width: 70% !important;
