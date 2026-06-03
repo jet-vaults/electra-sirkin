@@ -505,15 +505,23 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
     border-radius: 50% !important;
     place-items: center !important;
   }
-  /* Logo centered at top on mobile */
+  /* Logo: slightly right of center on mobile, larger size */
   .hero__logo {
     top: 1rem !important;
-    left: 50% !important;
+    left: calc(50% + 28px) !important;
     right: auto !important;
     transform: translateX(-50%);
   }
+  .hero__logo img { height: 44px !important; }
   /* Make room for the centered logo above the title */
-  .hero__center { padding-top: clamp(6rem, 22vw, 8rem) !important; }
+  .hero__center { padding-top: clamp(6.5rem, 24vw, 9rem) !important; }
+  /* Subtitle: 70% width, centered on mobile */
+  .hero__sub {
+    width: 70% !important;
+    max-width: 70% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 .hero__burger:hover { background: var(--accent); color: #fff; transform: translateY(-1px); }
 .hero__burger svg { width: 22px; height: 22px; }
