@@ -451,6 +451,29 @@
       </div>
     </section>
 
+    <!-- ===================== Inventory (real-estate widget mount) ===================== -->
+    <section class="section section--inventory" id="inventory">
+      <div class="wrap">
+        <div class="block-head">
+          <div class="block-head__main">
+            <span class="kicker" data-reveal>מלאי דירות</span>
+            <h2 class="display h-md" data-reveal data-delay="1">דירות זמינות בפרויקט</h2>
+          </div>
+        </div>
+        <!--
+          JetVaults real-estate auto-mount widget. The script tag renders
+          the inventory in place at this location. Replace
+          data-project="REPLACE_WITH_PROJECT_ID" with the project id from
+          JetVaults Manager for this site, then push.
+          Note: no defer/async — auto-mount uses document.currentScript.
+        -->
+        <script
+          src="/assets/jetvaults-real-estate.js"
+          data-container="electra-sirkin"
+          data-project="REPLACE_WITH_PROJECT_ID"></script>
+      </div>
+    </section>
+
     <!-- ===================== CTA ===================== -->
     <section class="cta">
       <div class="cta__ghost" aria-hidden="true">ELECTRA</div>
