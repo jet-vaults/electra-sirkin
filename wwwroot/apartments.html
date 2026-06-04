@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>מלאי דירות · אלקטרה בצמרת מערב</title>
+  <meta name="description" content="מלאי דירות בפרויקט אלקטרה בצמרת מערב, פתח תקווה. דירות 3–6 חדרים ופנטהאוזים.">
+
+  <script>
+    (function(){
+      var h=document.documentElement; h.classList.add('js');
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) h.classList.add('no-motion');
+    })();
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20260603b">
+
+  <style>
+    /* Local tweaks just for the apartments page */
+    .apartments-page { padding-block: clamp(2rem, 6vw, 5rem); }
+    .apartments-page__head { text-align: center; margin-bottom: clamp(1.5rem, 4vw, 2.8rem); }
+    .apartments-page__title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 600;
+      letter-spacing: -.01em;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+    .apartments-page__sub {
+      margin-top: .8rem;
+      color: var(--muted);
+      font-size: clamp(.96rem, 1.2vw, 1.05rem);
+    }
+    .apartments-page__back {
+      display: inline-flex; align-items: center; gap: .4rem;
+      margin-top: 1.2rem;
+      color: var(--accent);
+      font-weight: 500;
+      font-size: .95rem;
+    }
+    .apartments-page__back:hover { color: var(--accent-deep); }
+    .jv-realestate-mount { min-height: 240px; }
+  </style>
+</head>
+<body>
+
+  <main id="top">
+    <!-- Mobile sticky header (mobile only) -->
+    <header class="mobile-header" id="mobileHeader">
+      <a href="/" class="mobile-header__logo" aria-label="אלקטרה מגורים">
+        <img src="/assets/images/logo@2x.png" srcset="/assets/images/logo@2x.png 2x, /assets/images/logo@4x.png 4x" alt="אלקטרה מגורים">
+      </a>
+      <button class="mobile-header__burger" data-nav-toggle aria-label="פתח תפריט" aria-expanded="false" aria-controls="sideNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="4" y1="7"  x2="20" y2="7"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Side nav (slide-out) -->
+    <div class="side-nav__backdrop" id="navBackdrop" aria-hidden="true"></div>
+    <aside class="side-nav" id="sideNav" aria-hidden="true">
+      <button class="side-nav__close" id="navClose" aria-label="סגור תפריט">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+      <div class="side-nav__brand">
+        <img src="/assets/images/logo.png" alt="אלקטרה מגורים">
+      </div>
+      <hr class="side-nav__sep">
+      <nav class="side-nav__links">
+        <a href="/#tzameret">על הפרויקט</a>
+        <a href="/#company">על המיקום</a>
+        <a href="/#education">מוסדות ציבור וחינוך</a>
+        <a href="/#parks">פארקים ושטחים ירוקים</a>
+        <a href="/#transport">תחבורה ונגישות</a>
+        <a href="/#project">פתח תקווה</a>
+        <a href="/#company-about">על החברה</a>
+        <a href="/#downloads">קבצים להורדה</a>
+      </nav>
+      <div class="side-nav__cta">
+        <a href="/apartments" class="hero__navcta">מלאי דירות
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;margin-inline-start:.45rem"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ===================== Apartments / inventory ===================== -->
+    <section class="apartments-page">
+      <div class="wrap">
+        <div class="apartments-page__head">
+          <h1 class="apartments-page__title">מלאי דירות</h1>
+          <p class="apartments-page__sub">דירות זמינות בפרויקט אלקטרה בצמרת מערב</p>
+          <a href="/" class="apartments-page__back">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            חזרה לעמוד הבית
+          </a>
+        </div>
+
+        <!--
+          JetVaults real-estate auto-mount widget. Renders in place at this
+          script tag. Replace data-project="REPLACE_WITH_PROJECT_ID" with
+          the project id from JetVaults Manager when ready, then push.
+        -->
+        <script
+          src="/assets/jetvaults-real-estate.js"
+          data-container="electra-sirkin"
+          data-project="REPLACE_WITH_PROJECT_ID"></script>
+      </div>
+    </section>
+  </main>
+
+  <!-- Side-nav toggle script (shared behaviour with the home page) -->
+  <script>
+    (function(){
+      var toggles = document.querySelectorAll('[data-nav-toggle]');
+      var sideNav = document.getElementById('sideNav');
+      var closeBtn = document.getElementById('navClose');
+      var backdrop = document.getElementById('navBackdrop');
+      if (!toggles.length || !sideNav) return;
+
+      var savedScrollY = 0;
+      function setExpanded(v){ for (var i=0;i<toggles.length;i++) toggles[i].setAttribute('aria-expanded', v ? 'true' : 'false'); }
+      function open(){
+        if (document.body.classList.contains('nav-open')) return;
+        savedScrollY = window.scrollY || window.pageYOffset || 0;
+        document.body.classList.add('nav-open');
+        document.body.style.top = '-' + savedScrollY + 'px';
+        setExpanded(true);
+        sideNav.setAttribute('aria-hidden','false');
+        if (backdrop) backdrop.setAttribute('aria-hidden','false');
+      }
+      function close(){
+        if (!document.body.classList.contains('nav-open')) return;
+        document.body.classList.remove('nav-open');
+        document.body.style.top = '';
+        window.scrollTo(0, savedScrollY);
+        setExpanded(false);
+        sideNav.setAttribute('aria-hidden','true');
+        if (backdrop) backdrop.setAttribute('aria-hidden','true');
+      }
+      function toggle(){
+        if (document.body.classList.contains('nav-open')) close();
+        else open();
+      }
+      for (var i=0;i<toggles.length;i++) toggles[i].addEventListener('click', toggle);
+      if (closeBtn) closeBtn.addEventListener('click', close);
+      if (backdrop) backdrop.addEventListener('click', close);
+      sideNav.addEventListener('click', function(e){ if (e.target.closest('a')) close(); });
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+    })();
+  </script>
+</body>
+</html>
