@@ -1178,6 +1178,60 @@ html.no-motion .env-rows--steps .env-row {
   background: rgba(255,255,255,.10);
 }
 .cta-form__submit { margin-top: .4rem; }
+
+/* Marketing consent checkbox */
+.cta-form__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: .7rem;
+  width: 100%;
+  max-width: 640px;
+  margin: .2rem auto 0;
+  cursor: pointer;
+  user-select: none;
+}
+.cta-form__consent input[type="checkbox"] {
+  position: absolute;
+  width: 1px; height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+.cta-form__consent-box {
+  flex: 0 0 auto;
+  width: 18px; height: 18px;
+  margin-top: .25rem;
+  border: 1.5px solid rgba(255,255,255,.35);
+  border-radius: 4px;
+  background: rgba(255,255,255,.04);
+  display: inline-grid; place-items: center;
+  transition: border-color .2s var(--ease), background .2s var(--ease);
+}
+.cta-form__consent-box::after {
+  content: "";
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 2px;
+  transform: scale(0);
+  transition: transform .15s var(--ease);
+}
+.cta-form__consent input[type="checkbox"]:checked + .cta-form__consent-box {
+  border-color: var(--accent);
+  background: rgba(255,255,255,.10);
+}
+.cta-form__consent input[type="checkbox"]:checked + .cta-form__consent-box::after {
+  transform: scale(1);
+}
+.cta-form__consent input[type="checkbox"]:focus-visible + .cta-form__consent-box {
+  outline: 2px solid var(--rose);
+  outline-offset: 2px;
+}
+.cta-form__consent-text {
+  font-size: .82rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,.62);
+  text-align: start;
+}
+
 .cta-form__note {
   margin-top: .25rem;
   font-size: .8rem;
