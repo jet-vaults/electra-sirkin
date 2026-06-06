@@ -656,7 +656,6 @@ body.nav-open .side-nav { transform: translateX(0); }
   gap: clamp(1rem, 2vw, 1.4rem);
 }
 .side-nav__links a {
-  position: relative;
   display: inline-flex; align-items: center;
   font-family: var(--sans);
   font-size: clamp(1.15rem, 1.8vw, 1.45rem);
@@ -665,17 +664,7 @@ body.nav-open .side-nav { transform: translateX(0); }
   padding-block: .3rem;
   width: fit-content;
 }
-.side-nav__links a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  inset-inline-start: 0;
-  width: 0; height: 1px;
-  background: var(--rose);
-  transition: width .35s var(--ease);
-}
 .side-nav__links a:hover { color: var(--rose); }
-.side-nav__links a:hover::after { width: 100%; }
 
 .side-nav__cta {
   margin-top: clamp(1.5rem, 3vw, 2rem);
