@@ -51,6 +51,37 @@
     }
     .apartments-page__back:hover { color: var(--accent-deep); }
     .jv-realestate-mount { min-height: 240px; }
+
+    /* Fix widget inactive-button text visibility */
+    .jv-realestate-root { --light-color: #ffffff; }
+
+    /* Desktop page header */
+    .page-bar {
+      position: sticky;
+      top: 0;
+      z-index: 150;
+      background: #fdfcfb;
+      border-bottom: 1px solid var(--line);
+      padding-block: .8rem;
+    }
+    .page-bar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    /* Override absolute positioning used inside the hero card */
+    .page-bar .hero__logo,
+    .page-bar .hero__burger {
+      position: static !important;
+      top: auto !important; left: auto !important; right: auto !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    @media (max-width: 900px) {
+      .page-bar { display: none; }
+      /* Push content below the fixed mobile header */
+      main { padding-top: calc(72px + env(safe-area-inset-top, 0px)); }
+    }
   </style>
 </head>
 <body>
@@ -68,6 +99,22 @@
           <line x1="4" y1="17" x2="20" y2="17"/>
         </svg>
       </button>
+    </header>
+
+    <!-- Desktop page header (hidden on mobile, mobile uses .mobile-header) -->
+    <header class="page-bar">
+      <div class="wrap page-bar__inner">
+        <a href="/" class="hero__logo" aria-label="אלקטרה מגורים">
+          <img src="/assets/images/logo@2x.png" srcset="/assets/images/logo@2x.png 2x, /assets/images/logo@4x.png 4x" alt="אלקטרה מגורים">
+        </a>
+        <button class="hero__burger" data-nav-toggle aria-label="פתח תפריט" aria-expanded="false" aria-controls="sideNav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="4" y1="7"  x2="20" y2="7"/>
+            <line x1="4" y1="12" x2="20" y2="12"/>
+            <line x1="4" y1="17" x2="20" y2="17"/>
+          </svg>
+        </button>
+      </div>
     </header>
 
     <!-- Side nav (slide-out) -->
