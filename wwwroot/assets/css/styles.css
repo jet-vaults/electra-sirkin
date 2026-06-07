@@ -661,6 +661,7 @@ body.nav-open .side-nav { transform: translateX(0); }
   font-size: clamp(1.15rem, 1.8vw, 1.45rem);
   font-weight: 500;
   color: #fff;
+  text-decoration: none;
   padding-block: .3rem;
   width: fit-content;
 }
