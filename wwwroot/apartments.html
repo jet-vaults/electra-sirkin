@@ -52,8 +52,11 @@
     .apartments-page__back:hover { color: var(--accent-deep); }
     .jv-realestate-mount { min-height: 240px; }
 
-    /* Fix widget inactive-button text visibility */
-    .jv-realestate-root { --light-color: #ffffff; }
+    /* Force white text on all widget buttons regardless of API color values */
+    .jv-realestate-root .btn,
+    .jv-realestate-root .btn-primary,
+    .jv-realestate-root .btn-outline-primary,
+    .jv-realestate-root .btn-outline-primary.active { color: #ffffff !important; }
 
     /* Desktop page header */
     .page-bar {
