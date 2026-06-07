@@ -52,11 +52,14 @@
     .apartments-page__back:hover { color: var(--accent-deep); }
     .jv-realestate-mount { min-height: 240px; }
 
-    /* Force white text on all widget buttons regardless of API color values */
-    .jv-realestate-root .btn,
-    .jv-realestate-root .btn-primary,
-    .jv-realestate-root .btn-outline-primary,
-    .jv-realestate-root .btn-outline-primary.active { color: #ffffff !important; }
+    /* Widget display buttons */
+    .jv-realestate-root .display-btn {
+      width: 130px;
+      padding: 10px;
+      background-color: var(--light-color) !important;
+      color: #fff !important;
+      border-color: white;
+    }
 
     /* Desktop page header */
     .page-bar {
