@@ -52,19 +52,20 @@
     .apartments-page__back:hover { color: var(--accent-deep); }
     .jv-realestate-mount { min-height: 240px; }
 
-    /* Widget display buttons */
-    .jv-realestate-root .display-btn {
+    /* Widget display buttons — use .btn in selector for higher specificity
+       so this beats the widget's own injected !important rules */
+    .jv-realestate-root .display-btn.btn {
       width: 130px;
       padding: 10px;
       background-color: var(--light-color) !important;
-      color: #fdfcfb !important;
+      color: #ffffff !important;
       border-color: var(--main-color) !important;
     }
-    .jv-realestate-root .display-btn.active {
+    .jv-realestate-root .display-btn.btn.active {
       width: 130px;
       padding: 10px;
       background-color: var(--main-color) !important;
-      color: var(--light-color) !important;
+      color: #ffffff !important;
     }
 
     /* Desktop page header */
