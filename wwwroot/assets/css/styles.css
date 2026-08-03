@@ -465,7 +465,7 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 @media (min-width: 901px) {
   .hero-wrap { padding-top: 102px; }
   /* Match the rendering's own proportions so the full picture shows uncropped */
-  .hero { aspect-ratio: 1920 / 1480; }
+  .hero { aspect-ratio: 1920 / 1520; }
   .hero__image img { object-position: center; }
 }
 
