@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=20260604b">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20260803a">
 </head>
 <body>
 
@@ -46,8 +46,8 @@
   <main id="top">
     <!-- ===================== Mobile sticky header (mobile only) ===================== -->
     <header class="mobile-header" id="mobileHeader">
-      <a href="#top" class="mobile-header__logo" aria-label="אלקטרה מגורים">
-        <img src="/assets/images/logo@2x.png" srcset="/assets/images/logo@2x.png 2x, /assets/images/logo@4x.png 4x" alt="אלקטרה מגורים">
+      <a href="#top" class="mobile-header__logo" aria-label="אלקטרה בצמרת מערב">
+        <img src="/assets/images/logo-sirkin.png" alt="אלקטרה בצמרת מערב">
       </a>
       <button class="mobile-header__burger" data-nav-toggle aria-label="פתח תפריט" aria-expanded="false" aria-controls="sideNav">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -58,22 +58,39 @@
       </button>
     </header>
 
-    <!-- ===================== Hero (Vistora-style) ===================== -->
-    <div class="hero-wrap">
-      <div class="wrap">
-      <section class="hero" id="hero">
-        <!-- Top-right logo -->
-        <a href="#top" class="hero__logo" aria-label="אלקטרה מגורים">
-          <img src="/assets/images/logo@2x.png" srcset="/assets/images/logo@2x.png 2x, /assets/images/logo@4x.png 4x" alt="אלקטרה מגורים">
+    <!-- ===================== Desktop fixed header ===================== -->
+    <header class="site-header" id="siteHeader">
+      <div class="wrap site-header__inner">
+        <a href="#top" class="site-header__logo" aria-label="אלקטרה בצמרת מערב">
+          <img src="/assets/images/logo-sirkin.png" alt="אלקטרה בצמרת מערב">
         </a>
-        <!-- Top-left burger -->
-        <button class="hero__burger" id="navBurger" data-nav-toggle aria-label="פתח תפריט" aria-expanded="false" aria-controls="sideNav">
+        <nav class="site-nav" aria-label="ראשי">
+          <a href="#tzameret">פרויקט</a>
+          <a href="#company">מיקום</a>
+          <a href="#education">מוסדות ציבור וחינוך</a>
+          <a href="#parks">פארקים</a>
+          <a href="#transport">תחבורה</a>
+          <a href="#project">פתח תקווה</a>
+          <a href="#company-about">על החברה</a>
+          <a href="#downloads">קבצים להורדה</a>
+        </nav>
+        <div class="site-header__actions">
+          <a href="/apartments" class="site-header__cta site-header__cta--ghost">מלאי דירות</a>
+          <a href="#contact" class="site-header__cta">צור קשר</a>
+        </div>
+        <button class="site-header__burger" data-nav-toggle aria-label="פתח תפריט" aria-expanded="false" aria-controls="sideNav">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
             <line x1="4" y1="7"  x2="20" y2="7"/>
             <line x1="4" y1="12" x2="20" y2="12"/>
             <line x1="4" y1="17" x2="20" y2="17"/>
           </svg>
         </button>
+      </div>
+    </header>
+
+    <!-- ===================== Hero (full-bleed) ===================== -->
+    <div class="hero-wrap">
+      <section class="hero" id="hero">
         <!-- Centered title -->
         <div class="hero__center">
           <h1 class="hero__t">אלקטרה <em>בצמרת מערב</em></h1>
@@ -87,7 +104,6 @@
 
         <span class="hero__edge">צמרת מערב · 2026</span>
       </section>
-      </div>
     </div>
 
     <!-- ===================== Side nav (slide-out from left) ===================== -->
@@ -97,12 +113,12 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
       </button>
       <div class="side-nav__brand">
-        <img src="/assets/images/logo.png" alt="אלקטרה מגורים">
+        <img src="/assets/images/logo-sirkin.png" alt="אלקטרה בצמרת מערב">
       </div>
       <hr class="side-nav__sep">
       <nav class="side-nav__links">
-        <a href="#tzameret">על הפרויקט</a>
-        <a href="#company">על המיקום</a>
+        <a href="#tzameret">פרויקט</a>
+        <a href="#company">מיקום</a>
         <a href="#education">מוסדות ציבור וחינוך</a>
         <a href="#parks">פארקים ושטחים ירוקים</a>
         <a href="#transport">תחבורה ונגישות</a>
@@ -122,10 +138,9 @@
       <div class="wrap">
         <div class="block-head">
           <div class="block-head__main">
-            <span class="kicker" data-reveal>01 — על הפרויקט</span>
+            <span class="kicker" data-reveal>פרויקט</span>
             <h2 class="display h-lg" data-reveal data-delay="1">אלקטרה בצמרת מערב</h2>
           </div>
-          <span class="index-num" data-reveal>01</span>
         </div>
 
         <div class="editorial">
@@ -171,62 +186,52 @@
       </div>
     </section>
 
-    <!-- ===================== 02 · על המיקום + pinned env reveal ===================== -->
-    <section class="env-pin section--cream" id="company" data-env-pin>
-      <div class="env-pin__viewport">
-        <div class="wrap">
-          <div class="block-head">
-            <div class="block-head__main">
-              <span class="kicker" data-reveal>02 — על המיקום</span>
-              <h2 class="display h-lg" data-reveal data-delay="1">מיקום הפרויקט</h2>
-            </div>
-            <span class="index-num" data-reveal>02</span>
+    <!-- ===================== 02 · מיקום ===================== -->
+    <section class="section section--cream" id="company">
+      <div class="wrap">
+        <div class="block-head">
+          <div class="block-head__main">
+            <span class="kicker" data-reveal>מיקום</span>
+            <h2 class="display h-lg" data-reveal data-delay="1">מיקום הפרויקט</h2>
           </div>
+        </div>
 
-          <div class="editorial">
-            <div class="prose" data-reveal>
-              <p>
-                השכונה ממוקמת בחלקה המזרחי של פתח תקווה, בין כפר סירקין לגבעת השלושה, וגובלת בנחל שילה ובמרחבים ירוקים פתוחים.
-              </p>
-              <p>
-                סביבתה כוללת שכונות מבוססות כגון בילינסון, הדר גנים–עמישב, קריית אלון, קריית דוד אלעזר ויוספטל – מה שמייצר חיבור ישיר בין שכונה חדשה לבין מרקם עירוני קיים ומבוסס.
-              </p>
-              <p>
-                החלק המערבי של שכונת צמרת נהנה מקרבה לפארק העירוני המרכזי ולשטחים ירוקים רחבי היקף, ומהווה מוקד מגורים מבוקש בזכות השילוב בין מרחב פתוח, תכנון עירוני מתקדם ונגישות גבוהה.
-              </p>
-              <h3 class="prose-sub">שכונת צמרת</h3>
-              <p>
-                שכונת צמרת באזור סירקין היא אחד מפרויקטי הפיתוח הגדולים במרכז הארץ, רובע עירוני חדש המתוכנן מהיסוד, הכולל כ-12,000 יחידות דיור וכ-50,000 תושבים, לצד שטחי מסחר, תעסוקה, מוסדות ציבור ופארקים רחבי ידיים.
-              </p>
+        <div class="editorial">
+          <div class="prose" data-reveal>
+            <p>
+              השכונה ממוקמת בחלקה המזרחי של פתח תקווה, בין כפר סירקין לגבעת השלושה, וגובלת בנחל שילה ובמרחבים ירוקים פתוחים.
+            </p>
+            <p>
+              סביבתה כוללת שכונות מבוססות כגון בילינסון, הדר גנים–עמישב, קריית אלון, קריית דוד אלעזר ויוספטל – מה שמייצר חיבור ישיר בין שכונה חדשה לבין מרקם עירוני קיים ומבוסס.
+            </p>
+            <p>
+              החלק המערבי של שכונת צמרת נהנה מקרבה לפארק העירוני המרכזי ולשטחים ירוקים רחבי היקף, ומהווה מוקד מגורים מבוקש בזכות השילוב בין מרחב פתוח, תכנון עירוני מתקדם ונגישות גבוהה.
+            </p>
+            <h3 class="prose-sub">שכונת צמרת</h3>
+            <p>
+              שכונת צמרת באזור סירקין היא אחד מפרויקטי הפיתוח הגדולים במרכז הארץ, רובע עירוני חדש המתוכנן מהיסוד, הכולל כ-12,000 יחידות דיור וכ-50,000 תושבים, לצד שטחי מסחר, תעסוקה, מוסדות ציבור ופארקים רחבי ידיים.
+            </p>
+          </div>
+          <div class="env-rows" data-reveal data-delay="1">
+            <div class="env-row">
+              <span class="env-row__fig">50,000</span>
+              <div>
+                <div class="env-row__t">תושבים</div>
+                <div class="env-row__d">רובע עירוני חדש המתוכנן מהיסוד, לצד שטחי מסחר, תעסוקה ומוסדות ציבור.</div>
+              </div>
             </div>
-            <div class="env-rows env-rows--steps" data-reveal data-delay="1">
-              <div class="env-row">
-                <span class="env-row__fig">700</span>
-                <div>
-                  <div class="env-row__t">דונם שטחים ירוקים</div>
-                  <div class="env-row__d">הפארק העירוני (כ־330 דונם), פארק הנחל וחורשת האקליפטוסים.</div>
-                </div>
+            <div class="env-row">
+              <span class="env-row__fig">M2</span>
+              <div>
+                <div class="env-row__t">קו מטרו מתוכנן</div>
+                <div class="env-row__d">תחנות סירקין צפון ודרום, לצד הרכבת הקלה וחיבור לכבישים 471 ו־40.</div>
               </div>
-              <div class="env-row">
-                <span class="env-row__fig">M2</span>
-                <div>
-                  <div class="env-row__t">קו מטרו מתוכנן</div>
-                  <div class="env-row__d">תחנות סירקין צפון ודרום, לצד הרכבת הקלה וחיבור לכבישים 471 ו־40.</div>
-                </div>
-              </div>
-              <div class="env-row">
-                <span class="env-row__fig">12K</span>
-                <div>
-                  <div class="env-row__t">יחידות דיור בשכונה</div>
-                  <div class="env-row__d">רובע עירוני חדש המתוכנן מהיסוד, לכ־50,000 תושבים.</div>
-                </div>
-              </div>
-              <div class="env-row">
-                <span class="env-row__fig">חינוך</span>
-                <div>
-                  <div class="env-row__t">קריית חינוך משולבת</div>
-                  <div class="env-row__d">גני ילדים, בית ספר יסודי, מרכז קהילתי, ספרייה ומתקני ספורט.</div>
-                </div>
+            </div>
+            <div class="env-row">
+              <span class="env-row__fig">12K</span>
+              <div>
+                <div class="env-row__t">יחידות דיור בשכונה</div>
+                <div class="env-row__d">לצד כ־700 דונם של שטחים ירוקים: הפארק העירוני, פארק הנחל וחורשת האקליפטוסים.</div>
               </div>
             </div>
           </div>
@@ -251,11 +256,10 @@
       <div class="wrap">
         <div class="editorial">
           <div class="editorial__media editorial__media--family" data-reveal data-delay="1">
-            <span class="index-num index-num--over">03</span>
             <img src="/assets/images/family.jpg" alt="משפחה מטיילת בשכונת המגורים" loading="lazy">
           </div>
           <div class="prose education-prose">
-            <span class="kicker" data-reveal>03 — מוסדות ציבור וחינוך</span>
+            <span class="kicker" data-reveal>מוסדות ציבור וחינוך</span>
             <h2 class="display h-lg education-prose__title" data-reveal data-delay="1">שכונה מתפקדת</h2>
             <p data-reveal data-delay="2">
               שכונת צמרת מתוכננת כ"שכונה מתפקדת" – כזו שבה שירותים קהילתיים מהווים חלק בלתי נפרד מהתכנון הראשוני.
@@ -276,10 +280,9 @@
       <div class="wrap">
         <div class="block-head">
           <div class="block-head__main">
-            <span class="kicker" data-reveal>04 — סביבה ירוקה</span>
+            <span class="kicker" data-reveal>סביבה ירוקה</span>
             <h2 class="display h-lg" data-reveal data-delay="1">פארקים ושטחים ירוקים</h2>
           </div>
-          <span class="index-num" data-reveal>04</span>
         </div>
 
         <div class="parks-feature" data-reveal>
@@ -323,10 +326,9 @@
       <div class="wrap">
         <div class="block-head">
           <div class="block-head__main">
-            <span class="kicker" data-reveal>05 — נגישות</span>
+            <span class="kicker" data-reveal>נגישות</span>
             <h2 class="display h-lg" data-reveal data-delay="1">תחבורה ונגישות</h2>
           </div>
-          <span class="index-num" data-reveal>05</span>
         </div>
 
         <div class="editorial">
@@ -354,10 +356,9 @@
       <div class="wrap">
         <div class="block-head">
           <div class="block-head__main">
-            <span class="kicker" data-reveal>06 — פתח תקווה</span>
+            <span class="kicker" data-reveal>פתח תקווה</span>
             <h2 class="display h-lg" data-reveal data-delay="1">פתח תקווה ממציאה את עצמה מחדש</h2>
           </div>
-          <span class="index-num" data-reveal>06</span>
         </div>
 
         <div class="editorial">
@@ -392,10 +393,9 @@
       <div class="wrap">
         <div class="block-head">
           <div class="block-head__main">
-            <span class="kicker" data-reveal>07 — על החברה</span>
+            <span class="kicker" data-reveal>על החברה</span>
             <h2 class="display h-lg" data-reveal data-delay="1">אלקטרה מגורים</h2>
           </div>
-          <span class="index-num" data-reveal>07</span>
         </div>
 
         <div class="editorial">
@@ -440,10 +440,9 @@
       <div class="wrap">
         <div class="block-head">
           <div class="block-head__main">
-            <span class="kicker" data-reveal>08 — קבצים להורדה</span>
+            <span class="kicker" data-reveal>קבצים להורדה</span>
             <h2 class="display h-lg" data-reveal data-delay="1">מסמכי הפרויקט</h2>
           </div>
-          <span class="index-num" data-reveal>08</span>
         </div>
 
         <div class="dl" data-reveal>
@@ -470,7 +469,7 @@
     </section>
 
     <!-- ===================== CTA ===================== -->
-    <section class="cta">
+    <section class="cta" id="contact">
       <div class="cta__ghost" aria-hidden="true">ELECTRA</div>
       <div class="wrap cta__inner">
         <span class="kicker" data-reveal style="justify-content:center">מחיר מטרה · הגרלה 2256</span>
@@ -600,39 +599,16 @@
         }, 3200);
       }
 
-      /* ---- Pinned env reveal ---- */
+      /* ---- Desktop header solid state ---- */
       (function(){
-        var pin = document.querySelector('[data-env-pin]');
-        if (!pin || still || reduced) {
-          if (pin) pin.querySelectorAll('.env-rows--steps .env-row').forEach(function(r){ r.classList.add('is-shown'); });
-          return;
+        var sh = document.getElementById('siteHeader');
+        if (!sh) return;
+        function onShScroll(){
+          if ((window.scrollY || 0) > 40) sh.classList.add('is-solid');
+          else sh.classList.remove('is-solid');
         }
-        var rows = pin.querySelectorAll('.env-rows--steps .env-row');
-        var total = rows.length;
-        function tick(){
-          var rect = pin.getBoundingClientRect();
-          var vh = window.innerHeight;
-          if (rect.bottom <= 0) {
-            rows.forEach(function(r){ r.classList.add('is-shown'); });
-            return;
-          }
-          if (rect.top >= vh) {
-            rows.forEach(function(r){ r.classList.remove('is-shown'); });
-            return;
-          }
-          var maxScroll = pin.offsetHeight - vh;
-          var progress = Math.max(0, Math.min(1, -rect.top / maxScroll));
-          var stepThreshold = 1 / total;  // all rows revealed exactly at progress 1.0 (end of sticky)
-          var shown = Math.min(total, Math.floor(progress / stepThreshold));
-          rows.forEach(function(r, i){ r.classList.toggle('is-shown', i < shown); });
-        }
-        var ticking = false;
-        window.addEventListener('scroll', function(){
-          if (ticking) return;
-          ticking = true;
-          requestAnimationFrame(function(){ tick(); ticking = false; });
-        }, { passive: true });
-        tick();
+        onShScroll();
+        window.addEventListener('scroll', onShScroll, { passive: true });
       })();
 
       /* ---- Carousel ---- */
