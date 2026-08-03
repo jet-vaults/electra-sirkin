@@ -465,7 +465,13 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 @media (min-width: 901px) {
   .hero-wrap { padding-top: 102px; }
   .hero { aspect-ratio: 2 / 1; }
-  .hero__image img { object-position: center 62%; }
+  .hero__image img { object-position: center 24%; }
+  /* Title sits over the open sky on the left of this rendering */
+  .hero__center {
+    width: min(58%, 980px);
+    margin-inline-start: auto;
+    margin-inline-end: clamp(2rem, 6vw, 8rem);
+  }
 }
 
 /* Corner: logo (top-right) */
