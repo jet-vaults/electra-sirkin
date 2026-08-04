@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#ffffff">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="preload" as="image" href="/assets/images/tower-street.jpg" fetchpriority="high">
 
   <title>אלקטרה בצמרת מערב · פרויקט מגורים בפתח תקווה</title>
   <meta name="description" content="אלקטרה בצמרת מערב — פרויקט מגורים חדש במסגרת מחיר מטרה בשכונת צמרת, פתח תקווה. 222 יחידות דיור, ארבעה בניינים, דירות 3–6 חדרים ופנטהאוזים.">
@@ -28,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=20260804q">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20260804r">
 </head>
 <body>
 
@@ -88,15 +89,20 @@
       </div>
     </header>
 
-    <!-- ===================== Hero (full-bleed) ===================== -->
+    <!-- ===================== Hero (sky panorama) ===================== -->
     <div class="hero-wrap">
       <section class="hero" id="hero">
+        <img class="hero__pic" src="/assets/images/tower-street.jpg" alt="הדמיית מגדל אלקטרה בצמרת מערב" id="heroImg" fetchpriority="high" decoding="async">
         <!-- Centered title -->
         <div class="hero__center">
           <h1 class="hero__t">אלקטרה <em>בצמרת מערב</em></h1>
           <p class="hero__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
         </div>
-
+        <a class="hero__scroll" href="#tzameret" aria-label="גלילה לתוכן">
+          <span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </a>
       </section>
     </div>
 
