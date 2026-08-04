@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <title>אלקטרה בצמרת מערב · 5 הצעות עיצוב לסקשן הפתיחה</title>
+  <title>אלקטרה בצמרת מערב · פנורמה — 5 גרסאות</title>
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,13 +15,8 @@
     :root {
       --ink: #17151b;
       --paper: #fdfcfb;
-      --cream: #f1edef;
-      --espresso: #19120f;
-      --espresso-2: #241813;
       --green: #1a4728;
-      --green-deep: #123320;
       --gold: #b9885a;
-      --gold-soft: #d9bf9d;
       --muted: #6f6469;
       --line: rgba(65,41,37,.16);
       --ease: cubic-bezier(.22,.61,.36,1);
@@ -34,12 +29,11 @@
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
-    img { max-width: 100%; display: block; }
+    img { display: block; }
     a { color: inherit; text-decoration: none; }
 
-    /* ---- Page chrome: intro + option labels ---- */
     .intro-note {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       padding: clamp(2.5rem, 6vw, 4rem) 1.5rem 1rem;
       text-align: center;
@@ -73,7 +67,7 @@
       overflow: hidden;
     }
 
-    /* Shared fake header strip so every option is previewed in context */
+    /* Mock header for context */
     .mockbar {
       display: flex;
       flex-direction: row-reverse;
@@ -82,6 +76,8 @@
       padding: 12px clamp(1.2rem, 7.8vw, 150px);
       background: #fff;
       border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 3;
     }
     .mockbar img { height: 56px; width: auto; }
     .mockbar__links { display: flex; gap: 1.6rem; font-size: .9rem; font-weight: 500; color: var(--ink); }
@@ -92,226 +88,88 @@
     }
     @media (max-width: 900px) { .mockbar__links { display: none; } }
 
-    .wrapx { padding-inline: clamp(1.2rem, 7.8vw, 150px); }
-
-    /* ============================================================= */
-    /* Option 1 — פנורמה: full-bleed image, title over the sky        */
-    /* ============================================================= */
-    .hd1 { position: relative; }
-    .hd1__img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; object-position: center 20%; }
-    .hd1__center {
-      position: absolute; inset-inline: 0; top: clamp(1.6rem, 4.5vw, 4.5rem);
-      text-align: center;
-      padding-inline: 1rem;
-    }
-    .hd1__kicker {
-      display: inline-block;
-      font-size: .82rem; font-weight: 700; letter-spacing: .28em;
-      color: var(--green);
-      margin-bottom: .7rem;
-    }
-    .hd1__t { font-size: clamp(2rem, 4.8vw, 4.6rem); font-weight: 800; letter-spacing: -.015em; line-height: 1.05; }
-    .hd1__sub { margin-top: .8rem; color: #3d3730; font-weight: 600; font-size: clamp(.9rem, 1.2vw, 1.05rem); }
-    .hd1__scroll {
-      position: absolute; bottom: 1.4rem; inset-inline: 0;
-      display: flex; justify-content: center;
-    }
-    .hd1__scroll span {
-      width: 42px; height: 42px; border-radius: 50%;
-      background: rgba(255,255,255,.85); backdrop-filter: blur(6px);
-      display: grid; place-items: center;
-      color: var(--green);
-      box-shadow: 0 6px 18px rgba(0,0,0,.14);
-      animation: hd1bob 2.2s ease-in-out infinite;
-    }
-    @keyframes hd1bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
-
-    /* ============================================================= */
-    /* Option 2 — חצוי: split text/image with stats                   */
-    /* ============================================================= */
-    .hd2 { padding-block: clamp(2.2rem, 5vw, 4.5rem); background: var(--paper); }
-    .hd2__grid {
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: clamp(2rem, 4.5vw, 4.5rem);
-      align-items: center;
-    }
-    .hd2__chip {
-      display: inline-block;
-      background: rgba(26,71,40,.08);
-      color: var(--green);
-      font-size: .82rem; font-weight: 700;
-      padding: .35rem 1rem;
-      border-radius: 100px;
-      margin-bottom: 1.1rem;
-    }
-    .hd2__t { font-size: clamp(2.1rem, 4.2vw, 4rem); font-weight: 800; line-height: 1.08; letter-spacing: -.015em; }
-    .hd2__t em { font-style: normal; color: var(--gold); }
-    .hd2__sub { margin-top: 1rem; color: #4a4248; max-width: 46ch; }
-    .hd2__ctas { display: flex; gap: .7rem; margin-top: 1.6rem; flex-wrap: wrap; }
-    .hd2__cta {
-      display: inline-flex; align-items: center; gap: .5rem;
-      padding: .85rem 1.7rem; border-radius: 100px;
-      font-weight: 600; font-size: .95rem;
-      background: var(--green); color: #fff;
-    }
-    .hd2__cta--ghost { background: transparent; color: var(--ink); border: 1px solid rgba(23,21,27,.22); }
-    .hd2__stats {
-      display: flex; gap: clamp(1.2rem, 2.6vw, 2.6rem);
-      margin-top: clamp(1.8rem, 3.4vw, 2.8rem);
-      padding-top: 1.3rem;
-      border-top: 1px solid var(--line);
-    }
-    .hd2__stat b { display: block; font-size: clamp(1.5rem, 2.4vw, 2.1rem); font-weight: 800; color: var(--green); line-height: 1.1; }
-    .hd2__stat span { font-size: .82rem; color: var(--muted); }
-    .hd2__media { position: relative; }
-    .hd2__media img {
-      width: 100%; aspect-ratio: 4 / 4.6; object-fit: cover;
-      border-radius: 14px;
-    }
-    .hd2__media::after {
-      content: "";
-      position: absolute; inset: auto -14px -14px auto;
-      width: 46%; height: 46%;
-      border: 2px solid var(--gold);
-      border-radius: 14px;
-      z-index: -1;
-    }
-    @media (max-width: 900px) {
-      .hd2__grid { grid-template-columns: 1fr; }
-      .hd2__media { order: -1; }
-      .hd2__media img { aspect-ratio: 4 / 3; }
-    }
-
-    /* ============================================================= */
-    /* Option 3 — כרטיס: rounded card, title over image bottom        */
-    /* ============================================================= */
-    .hd3 { padding-block: clamp(1.4rem, 3vw, 2.4rem); background: var(--paper); }
-    .hd3__card {
+    /* ============================================================
+       Panorama band — 80vh, full width, whole picture visible.
+       The picture is shown complete (height-fitted, no crop);
+       the sides are filled with a blurred echo of the same picture
+       and the sharp picture fades into it on both edges.
+       ============================================================ */
+    .pan {
       position: relative;
-      border-radius: clamp(18px, 2.2vw, 32px);
+      height: 80vh;
+      min-height: 480px;
       overflow: hidden;
-      min-height: clamp(440px, 58vw, 680px);
       isolation: isolate;
     }
-    .hd3__card img {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; object-position: center 30%;
+    .pan__bg {
+      position: absolute;
+      inset: -48px;
+      background-position: center;
+      background-size: cover;
+      filter: blur(38px) saturate(1.05) brightness(1.05);
+      transform: scale(1.12);
       z-index: -2;
     }
-    .hd3__card::before {
-      content: "";
-      position: absolute; inset: 0; z-index: -1;
-      background: linear-gradient(200deg, rgba(25,18,15,0) 34%, rgba(25,18,15,.62) 82%);
+    .pan__img {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      width: auto;
+      max-width: none;
+      z-index: -1;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
     }
-    .hd3__badge {
-      position: absolute; top: clamp(1rem, 2vw, 1.8rem); inset-inline-start: clamp(1rem, 2vw, 1.8rem);
-      background: rgba(255,255,255,.92);
+    .pan__center {
+      position: absolute;
+      inset-inline: 0;
+      top: clamp(1.6rem, 5vh, 3.4rem);
+      text-align: center;
+      padding-inline: 1rem;
+      z-index: 2;
+    }
+    .pan__t {
+      font-size: clamp(2rem, 4.6vw, 4.4rem);
+      font-weight: 800;
+      letter-spacing: -.015em;
+      line-height: 1.05;
+      color: #111;
+      white-space: nowrap;
+    }
+    .pan__sub {
+      margin-top: .7rem;
+      color: #37322c;
+      font-weight: 600;
+      font-size: clamp(.9rem, 1.2vw, 1.05rem);
+    }
+    .pan__scroll {
+      position: absolute;
+      bottom: 1.3rem;
+      inset-inline: 0;
+      display: flex;
+      justify-content: center;
+      z-index: 2;
+    }
+    .pan__scroll span {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(6px);
+      display: grid; place-items: center;
       color: var(--green);
-      font-size: .82rem; font-weight: 700;
-      padding: .45rem 1.05rem;
-      border-radius: 100px;
-      box-shadow: 0 6px 18px rgba(0,0,0,.14);
+      box-shadow: 0 6px 18px rgba(0,0,0,.16);
+      animation: panbob 2.2s ease-in-out infinite;
     }
-    .hd3__body {
-      position: absolute; bottom: clamp(1.4rem, 3vw, 2.6rem); inset-inline-start: clamp(1.4rem, 3vw, 2.6rem);
-      inset-inline-end: clamp(1.4rem, 3vw, 2.6rem);
-      color: #fff;
-      display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .hd3__t { font-size: clamp(1.9rem, 3.8vw, 3.6rem); font-weight: 800; line-height: 1.08; letter-spacing: -.015em; }
-    .hd3__sub { margin-top: .5rem; color: rgba(255,255,255,.88); font-weight: 500; max-width: 52ch; }
-    .hd3__cta {
-      flex: none;
-      display: inline-flex; align-items: center; gap: .5rem;
-      background: #fff; color: var(--green);
-      padding: .95rem 1.9rem; border-radius: 100px;
-      font-weight: 700; font-size: .98rem;
-      box-shadow: 0 10px 26px rgba(0,0,0,.22);
-    }
+    @keyframes panbob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
 
-    /* ============================================================= */
-    /* Option 4 — מגזין: refined text band + wide image below         */
-    /* ============================================================= */
-    .hd4 { background: var(--paper); padding-block: clamp(2.2rem, 5vw, 4rem) clamp(1.8rem, 4vw, 3rem); text-align: center; }
-    .hd4__rule {
-      width: 64px; height: 2px; background: var(--gold);
-      margin: 0 auto 1.2rem;
-    }
-    .hd4__kicker { font-size: .8rem; font-weight: 700; letter-spacing: .3em; color: var(--green); }
-    .hd4__t { margin-top: .7rem; font-size: clamp(2.3rem, 5.4vw, 5.2rem); font-weight: 900; letter-spacing: -.02em; line-height: 1.03; }
-    .hd4__sub { margin: 1rem auto 0; max-width: 54ch; color: #4a4248; font-weight: 500; }
-    .hd4__media { margin-top: clamp(1.8rem, 4vw, 3rem); }
-    .hd4__media img {
-      width: 100%;
-      aspect-ratio: 5 / 2;
-      object-fit: cover; object-position: center 30%;
-      border-radius: 16px;
-    }
-
-    /* ============================================================= */
-    /* Option 5 — קולאז': overlapping images + stat chips             */
-    /* ============================================================= */
-    .hd5 { background: linear-gradient(180deg, #fff 0%, var(--cream) 100%); padding-block: clamp(2.4rem, 5.5vw, 5rem); overflow: hidden; }
-    .hd5__grid {
-      display: grid;
-      grid-template-columns: 1fr .95fr;
-      gap: clamp(2rem, 5vw, 5rem);
-      align-items: center;
-    }
-    .hd5__kicker { color: var(--gold); font-weight: 800; letter-spacing: .24em; font-size: .82rem; }
-    .hd5__t { margin-top: .8rem; font-size: clamp(2.1rem, 4.4vw, 4.2rem); font-weight: 900; line-height: 1.06; letter-spacing: -.02em; }
-    .hd5__t mark {
-      background: none; color: var(--green); position: relative; white-space: nowrap;
-    }
-    .hd5__t mark::after {
+    /* Variant 4 & 5: darker imagery at top — give the title a bright halo */
+    .pan--halo .pan__center::before {
       content: "";
-      position: absolute; inset-inline: -2px; bottom: .06em; height: .28em;
-      background: rgba(185,136,90,.28);
+      position: absolute;
+      inset: -3rem -20% -1.5rem;
+      background: radial-gradient(ellipse 60% 100% at 50% 40%, rgba(253,252,251,.72), transparent 70%);
       z-index: -1;
-      border-radius: 3px;
-    }
-    .hd5__sub { margin-top: 1.1rem; color: #4a4248; max-width: 46ch; }
-    .hd5__chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
-    .hd5__chip {
-      background: #fff; border: 1px solid var(--line);
-      padding: .55rem 1.05rem; border-radius: 12px;
-      font-size: .88rem; font-weight: 600;
-      box-shadow: 0 6px 16px rgba(65,41,37,.06);
-    }
-    .hd5__chip b { color: var(--green); font-weight: 800; margin-inline-end: .3rem; }
-    .hd5__cta {
-      display: inline-flex; align-items: center; gap: .5rem;
-      margin-top: 1.7rem;
-      background: var(--green); color: #fff;
-      padding: .9rem 1.9rem; border-radius: 100px;
-      font-weight: 700; font-size: .96rem;
-    }
-    .hd5__pics { position: relative; min-height: clamp(340px, 34vw, 560px); }
-    .hd5__pic1 {
-      position: absolute; inset-inline-start: 0; top: 0;
-      width: 72%; aspect-ratio: 3 / 3.6;
-      object-fit: cover; border-radius: 16px;
-      box-shadow: 0 22px 50px rgba(25,18,15,.18);
-    }
-    .hd5__pic2 {
-      position: absolute; inset-inline-end: 0; bottom: 0;
-      width: 52%; aspect-ratio: 4 / 3;
-      object-fit: cover; border-radius: 16px;
-      border: 6px solid #fff;
-      box-shadow: 0 18px 40px rgba(25,18,15,.2);
-    }
-    .hd5__deco {
-      position: absolute; inset-inline-start: -26px; bottom: 8%;
-      width: 120px; height: 120px;
-      border: 2px solid var(--gold);
-      border-radius: 16px;
-      z-index: -1;
-    }
-    @media (max-width: 900px) {
-      .hd5__grid { grid-template-columns: 1fr; }
-      .hd5__pics { order: -1; min-height: 300px; }
     }
 
     .endnote { text-align: center; padding: 3rem 1rem 4rem; color: var(--muted); font-size: .95rem; }
@@ -321,16 +179,16 @@
 <body>
 
   <div class="intro-note">
-    <h1>5 הצעות עיצוב לסקשן הפתיחה</h1>
-    <p>גללו למטה, כל הצעה מוצגת עם ההדר האמיתי מעליה. בחרו מספר (1–5) ואיישם את העיצוב באתר.</p>
+    <h1>פנורמה · 5 גרסאות</h1>
+    <p>רוחב מלא, גובה 80vh, התמונה נראית בשלמותה ללא חיתוך — הצדדים מתמלאים בהד מטושטש של התמונה עם פייד עדין. בחרו מספר (1–5).</p>
   </div>
 
-  <!-- ===================== Option 1 ===================== -->
+  <!-- ===================== 1 · hero.jpg ===================== -->
   <div class="opt-label">
     <span class="opt-label__num">1</span>
     <div>
-      <div class="opt-label__t">פנורמה</div>
-      <div class="opt-label__d">תמונה ברוחב מלא, כותרת מעל השמיים, חץ גלילה</div>
+      <div class="opt-label__t">ההדמיה הראשית</div>
+      <div class="opt-label__d">המגדל משמאל והבניינים המרקמיים — התמונה המקורית של הפרויקט</div>
     </div>
   </div>
   <div class="frame">
@@ -339,25 +197,25 @@
       <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
       <span class="mockbar__cta">צור קשר</span>
     </div>
-    <section class="hd1">
-      <img class="hd1__img" src="/assets/images/hero.jpg" alt="">
-      <div class="hd1__center">
-        <span class="hd1__kicker">מחיר מטרה · פתח תקווה</span>
-        <h2 class="hd1__t">אלקטרה בצמרת מערב</h2>
-        <p class="hd1__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
+    <section class="pan" id="v1">
+      <div class="pan__bg" style="background-image:url('/assets/images/hero.jpg')"></div>
+      <img class="pan__img" src="/assets/images/hero.jpg" alt="">
+      <div class="pan__center">
+        <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
+        <p class="pan__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
       </div>
-      <div class="hd1__scroll"><span>
+      <div class="pan__scroll"><span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </span></div>
     </section>
   </div>
 
-  <!-- ===================== Option 2 ===================== -->
+  <!-- ===================== 2 · complex.jpg ===================== -->
   <div class="opt-label">
     <span class="opt-label__num">2</span>
     <div>
-      <div class="opt-label__t">חצוי</div>
-      <div class="opt-label__d">טקסט מימין עם כפתורים ונתונים, תמונה גבוהה משמאל</div>
+      <div class="opt-label__t">המתחם הירוק</div>
+      <div class="opt-label__d">ההדמיה עם הדקלים והגינון — זווית רחבה על כל המתחם</div>
     </div>
   </div>
   <div class="frame">
@@ -366,36 +224,25 @@
       <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
       <span class="mockbar__cta">צור קשר</span>
     </div>
-    <section class="hd2 wrapx">
-      <div class="hd2__grid">
-        <div>
-          <span class="hd2__chip">מחיר מטרה · הגרלה 2256</span>
-          <h2 class="hd2__t">לגור בלב הירוק של <em>צמרת מערב</em></h2>
-          <p class="hd2__sub">222 יחידות דיור בארבעה בניינים, בשכונה החדשה והמתוכננת ביותר בפתח תקווה — לצד פארקים, חינוך ותחבורה מהמתקדמים בארץ.</p>
-          <div class="hd2__ctas">
-            <span class="hd2__cta">מלאי דירות</span>
-            <span class="hd2__cta hd2__cta--ghost">קבצים להורדה</span>
-          </div>
-          <div class="hd2__stats">
-            <div class="hd2__stat"><b>222</b><span>יחידות דיור</span></div>
-            <div class="hd2__stat"><b>4</b><span>בניינים</span></div>
-            <div class="hd2__stat"><b>21</b><span>קומות במגדל</span></div>
-            <div class="hd2__stat"><b>3-6</b><span>חדרים</span></div>
-          </div>
-        </div>
-        <div class="hd2__media">
-          <img src="/assets/images/courtyard.jpg" alt="">
-        </div>
+    <section class="pan" id="v2">
+      <div class="pan__bg" style="background-image:url('/assets/images/complex.jpg')"></div>
+      <img class="pan__img" src="/assets/images/complex.jpg" alt="">
+      <div class="pan__center">
+        <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
+        <p class="pan__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
       </div>
+      <div class="pan__scroll"><span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </span></div>
     </section>
   </div>
 
-  <!-- ===================== Option 3 ===================== -->
+  <!-- ===================== 3 · tower-street.jpg ===================== -->
   <div class="opt-label">
     <span class="opt-label__num">3</span>
     <div>
-      <div class="opt-label__t">כרטיס</div>
-      <div class="opt-label__d">תמונה בכרטיס מעוגל, כותרת לבנה למטה וכפתור בולט</div>
+      <div class="opt-label__t">המגדל והרחוב</div>
+      <div class="opt-label__d">המגדל בן 21 הקומות עם קומת המסחר וחיי הרחוב</div>
     </div>
   </div>
   <div class="frame">
@@ -404,27 +251,25 @@
       <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
       <span class="mockbar__cta">צור קשר</span>
     </div>
-    <section class="hd3 wrapx">
-      <div class="hd3__card">
-        <img src="/assets/images/complex.jpg" alt="">
-        <span class="hd3__badge">מחיר מטרה · הגרלה 2256</span>
-        <div class="hd3__body">
-          <div>
-            <h2 class="hd3__t">אלקטרה בצמרת מערב</h2>
-            <p class="hd3__sub">פרויקט מגורים חדש בשכונת צמרת, פתח תקווה — 222 יחידות דיור, ארבעה בניינים ומגדל בן 21 קומות.</p>
-          </div>
-          <span class="hd3__cta">מלאי דירות</span>
-        </div>
+    <section class="pan" id="v3">
+      <div class="pan__bg" style="background-image:url('/assets/images/tower-street.jpg')"></div>
+      <img class="pan__img" src="/assets/images/tower-street.jpg" alt="">
+      <div class="pan__center">
+        <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
+        <p class="pan__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
       </div>
+      <div class="pan__scroll"><span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </span></div>
     </section>
   </div>
 
-  <!-- ===================== Option 4 ===================== -->
+  <!-- ===================== 4 · courtyard.jpg ===================== -->
   <div class="opt-label">
     <span class="opt-label__num">4</span>
     <div>
-      <div class="opt-label__t">מגזין</div>
-      <div class="opt-label__d">כותרת גדולה במרכז עם קו זהב, ותמונה רחבה מתחת</div>
+      <div class="opt-label__t">החצר הפנימית</div>
+      <div class="opt-label__d">החצר המשותפת עם הפרגולות והגינון — אווירת קהילה</div>
     </div>
   </div>
   <div class="frame">
@@ -433,23 +278,25 @@
       <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
       <span class="mockbar__cta">צור קשר</span>
     </div>
-    <section class="hd4 wrapx">
-      <div class="hd4__rule"></div>
-      <div class="hd4__kicker">פתח תקווה · שכונת צמרת</div>
-      <h2 class="hd4__t">אלקטרה בצמרת מערב</h2>
-      <p class="hd4__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל — במסגרת תוכנית מחיר מטרה.</p>
-      <div class="hd4__media">
-        <img src="/assets/images/hero.jpg" alt="">
+    <section class="pan pan--halo" id="v4">
+      <div class="pan__bg" style="background-image:url('/assets/images/courtyard.jpg')"></div>
+      <img class="pan__img" src="/assets/images/courtyard.jpg" alt="">
+      <div class="pan__center">
+        <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
+        <p class="pan__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
       </div>
+      <div class="pan__scroll"><span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </span></div>
     </section>
   </div>
 
-  <!-- ===================== Option 5 ===================== -->
+  <!-- ===================== 5 · parks.jpg ===================== -->
   <div class="opt-label">
     <span class="opt-label__num">5</span>
     <div>
-      <div class="opt-label__t">קולאז'</div>
-      <div class="opt-label__d">שתי תמונות חופפות עם מסגרת זהב, כותרת עם הדגשה ונתונים</div>
+      <div class="opt-label__t">הפארק</div>
+      <div class="opt-label__d">הירוק של השכונה — פארק, מים וצמחייה</div>
     </div>
   </div>
   <div class="frame">
@@ -458,31 +305,21 @@
       <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
       <span class="mockbar__cta">צור קשר</span>
     </div>
-    <section class="hd5 wrapx">
-      <div class="hd5__grid">
-        <div>
-          <div class="hd5__kicker">ELECTRA · מחיר מטרה</div>
-          <h2 class="hd5__t">בית חדש בשכונה <mark>הירוקה</mark> של פתח תקווה</h2>
-          <p class="hd5__sub">אלקטרה מגורים מקימה בצמרת מערב פרויקט הכולל 222 יחידות דיור, לצד 700 דונם של פארקים, קריית חינוך ותחבורה מתקדמת.</p>
-          <div class="hd5__chips">
-            <span class="hd5__chip"><b>222</b>יחידות דיור</span>
-            <span class="hd5__chip"><b>178</b>במחיר מטרה</span>
-            <span class="hd5__chip"><b>21</b>קומות במגדל</span>
-            <span class="hd5__chip"><b>700</b>דונם ירוק</span>
-          </div>
-          <span class="hd5__cta">לצפייה במלאי הדירות</span>
-        </div>
-        <div class="hd5__pics">
-          <img class="hd5__pic1" src="/assets/images/tower-street.jpg" alt="">
-          <img class="hd5__pic2" src="/assets/images/courtyard.jpg" alt="">
-          <span class="hd5__deco"></span>
-        </div>
+    <section class="pan pan--halo" id="v5">
+      <div class="pan__bg" style="background-image:url('/assets/images/parks.jpg')"></div>
+      <img class="pan__img" src="/assets/images/parks.jpg" alt="">
+      <div class="pan__center">
+        <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
+        <p class="pan__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
       </div>
+      <div class="pan__scroll"><span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </span></div>
     </section>
   </div>
 
   <div class="endnote">
-    בחרתם? כתבו לי את <b>המספר</b> ואיישם את העיצוב הנבחר בעמוד הבית.
+    בחרתם? כתבו לי את <b>המספר</b> ואיישם את הגרסה הנבחרת בעמוד הבית.
   </div>
 
 </body>
