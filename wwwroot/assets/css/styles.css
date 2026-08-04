@@ -493,12 +493,14 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
   z-index: 1;
   pointer-events: none;
 }
-/* The full picture, height-fitted, melting into the sky on both sides */
+/* The full picture, height-fitted, melting into the sky on both sides.
+   Anchored to the bottom, leaving a reserved sky strip for the title
+   so the text never collides with the tower. */
 .hero__pic {
   position: absolute;
-  top: 0; left: 50%;
+  bottom: 0; left: 50%;
   transform: translateX(-50%);
-  height: 100%;
+  height: calc(100% - clamp(120px, 17vh, 200px));
   width: auto;
   max-width: none;
   z-index: 0;
