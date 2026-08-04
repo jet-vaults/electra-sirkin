@@ -91,8 +91,9 @@
     /* ============================================================
        Panorama band — 80vh, full width, whole picture visible.
        The picture is shown complete (height-fitted, no crop);
-       the sides are filled with a blurred echo of the same picture
-       and the sharp picture fades into it on both edges.
+       the sides continue the picture's own edge colors as a smooth
+       vertical gradient (sky at the top, greenery at the bottom),
+       and the picture melts into it with a wide soft fade.
        ============================================================ */
     .pan {
       position: relative;
@@ -100,15 +101,6 @@
       min-height: 480px;
       overflow: hidden;
       isolation: isolate;
-    }
-    .pan__bg {
-      position: absolute;
-      inset: -48px;
-      background-position: center;
-      background-size: cover;
-      filter: blur(38px) saturate(1.05) brightness(1.05);
-      transform: scale(1.12);
-      z-index: -2;
     }
     .pan__img {
       position: absolute;
@@ -118,8 +110,8 @@
       width: auto;
       max-width: none;
       z-index: -1;
-      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
-              mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
     }
     .pan__center {
       position: absolute;
@@ -197,8 +189,7 @@
       <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
       <span class="mockbar__cta">צור קשר</span>
     </div>
-    <section class="pan" id="v1">
-      <div class="pan__bg" style="background-image:url('/assets/images/hero.jpg')"></div>
+    <section class="pan" id="v1" style="background:linear-gradient(180deg,#8BB1D6 0%,#B3D0E7 25%,#D6E8F6 50%,#748168 75%,#516A2C 100%)">
       <img class="pan__img" src="/assets/images/hero.jpg" alt="">
       <div class="pan__center">
         <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
@@ -224,8 +215,7 @@
       <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
       <span class="mockbar__cta">צור קשר</span>
     </div>
-    <section class="pan" id="v2">
-      <div class="pan__bg" style="background-image:url('/assets/images/complex.jpg')"></div>
+    <section class="pan" id="v2" style="background:linear-gradient(180deg,#7198C6 0%,#98BEDD 25%,#DEE8EF 50%,#9DA194 75%,#50652C 100%)">
       <img class="pan__img" src="/assets/images/complex.jpg" alt="">
       <div class="pan__center">
         <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
@@ -251,8 +241,7 @@
       <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
       <span class="mockbar__cta">צור קשר</span>
     </div>
-    <section class="pan" id="v3">
-      <div class="pan__bg" style="background-image:url('/assets/images/tower-street.jpg')"></div>
+    <section class="pan" id="v3" style="background:linear-gradient(180deg,#80B4DE 0%,#ABD4ED 25%,#D4E9F8 50%,#E4F2FA 75%,#4D6165 100%)">
       <img class="pan__img" src="/assets/images/tower-street.jpg" alt="">
       <div class="pan__center">
         <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
@@ -278,8 +267,7 @@
       <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
       <span class="mockbar__cta">צור קשר</span>
     </div>
-    <section class="pan pan--halo" id="v4">
-      <div class="pan__bg" style="background-image:url('/assets/images/courtyard.jpg')"></div>
+    <section class="pan pan--halo" id="v4" style="background:linear-gradient(180deg,#7F9FC8 0%,#5C7795 25%,#909DA7 50%,#566341 75%,#425226 100%)">
       <img class="pan__img" src="/assets/images/courtyard.jpg" alt="">
       <div class="pan__center">
         <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
@@ -305,8 +293,7 @@
       <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
       <span class="mockbar__cta">צור קשר</span>
     </div>
-    <section class="pan pan--halo" id="v5">
-      <div class="pan__bg" style="background-image:url('/assets/images/parks.jpg')"></div>
+    <section class="pan pan--halo" id="v5" style="background:linear-gradient(180deg,#969466 0%,#444920 25%,#3A4622 50%,#475E34 75%,#363729 100%)">
       <img class="pan__img" src="/assets/images/parks.jpg" alt="">
       <div class="pan__center">
         <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
