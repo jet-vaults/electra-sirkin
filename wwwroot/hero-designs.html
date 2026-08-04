@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <title>אלקטרה בצמרת מערב · פנורמה — 5 גרסאות</title>
+  <title>אלקטרה בצמרת מערב · פנורמה — 5 סגנונות פייד</title>
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,7 +67,6 @@
       overflow: hidden;
     }
 
-    /* Mock header for context */
     .mockbar {
       display: flex;
       flex-direction: row-reverse;
@@ -88,13 +87,7 @@
     }
     @media (max-width: 900px) { .mockbar__links { display: none; } }
 
-    /* ============================================================
-       Panorama band — 80vh, full width, whole picture visible.
-       The picture is shown complete (height-fitted, no crop);
-       the sides continue the picture's own edge colors as a smooth
-       vertical gradient (sky at the top, greenery at the bottom),
-       and the picture melts into it with a wide soft fade.
-       ============================================================ */
+    /* ---- Shared panorama skeleton: 80vh, full picture, no crop ---- */
     .pan {
       position: relative;
       height: 80vh;
@@ -110,8 +103,6 @@
       width: auto;
       max-width: none;
       z-index: -1;
-      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
-              mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
     }
     .pan__center {
       position: absolute;
@@ -155,13 +146,76 @@
     }
     @keyframes panbob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
 
-    /* Variant 4 & 5: darker imagery at top — give the title a bright halo */
-    .pan--halo .pan__center::before {
+    /* ============================================================
+       1 · משי — precise 10-stop continuation of the picture edges,
+       extra-wide melt. The truest "the picture keeps going" look.
+       ============================================================ */
+    .pan--silk {
+      background: linear-gradient(180deg,
+        #83B6DE 0%, #A5CFEA 20%, #C9E5F5 45%,
+        #D9ECF7 60%, #E6F3FB 74%, #8C9E64 84%, #6C6F58 92%, #5D6B6B 100%);
+    }
+    .pan--silk .pan__img {
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 24%, #000 76%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0%, #000 24%, #000 76%, transparent 100%);
+    }
+
+    /* ============================================================
+       2 · אוויר — the sides dissolve into the site's paper white.
+       Bright, minimal, gallery-like.
+       ============================================================ */
+    .pan--air {
+      background: linear-gradient(180deg, #f2f8fc 0%, #fdfcfb 55%, #fdfcfb 100%);
+    }
+    .pan--air .pan__img {
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 26%, #000 74%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0%, #000 26%, #000 74%, transparent 100%);
+    }
+
+    /* ============================================================
+       3 · שמיים — only the sky continues sideways; the very bottom
+       of the whole band melts into white so the ground never smears.
+       ============================================================ */
+    .pan--sky {
+      background: linear-gradient(180deg, #83B6DE 0%, #AED6EF 34%, #D9ECF7 62%, #F2F9FE 100%);
+    }
+    .pan--sky .pan__img {
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
+    }
+    .pan--sky::after {
       content: "";
       position: absolute;
-      inset: -3rem -20% -1.5rem;
-      background: radial-gradient(ellipse 60% 100% at 50% 40%, rgba(253,252,251,.72), transparent 70%);
-      z-index: -1;
+      inset-inline: 0;
+      bottom: 0;
+      height: 22%;
+      background: linear-gradient(180deg, rgba(253,252,251,0) 0%, rgba(253,252,251,.9) 88%, #fdfcfb 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ============================================================
+       4 · הילה — soft feathered vignette all around the picture,
+       floating on a pale sky-to-white wash.
+       ============================================================ */
+    .pan--halo {
+      background: linear-gradient(180deg, #e8f2fa 0%, #f7fafc 60%, #fdfcfb 100%);
+    }
+    .pan--halo .pan__img {
+      -webkit-mask-image: radial-gradient(ellipse 92% 115% at 50% 42%, #000 55%, transparent 88%);
+              mask-image: radial-gradient(ellipse 92% 115% at 50% 42%, #000 55%, transparent 88%);
+    }
+
+    /* ============================================================
+       5 · ירוק רך — the sides pick up a whisper of the brand green,
+       like the neighborhood's greenery continuing.
+       ============================================================ */
+    .pan--sage {
+      background: linear-gradient(180deg, #d9e7f2 0%, #e6efe9 42%, #dde9df 74%, #d2e0d4 100%);
+    }
+    .pan--sage .pan__img {
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
     }
 
     .endnote { text-align: center; padding: 3rem 1rem 4rem; color: var(--muted); font-size: .95rem; }
@@ -171,16 +225,16 @@
 <body>
 
   <div class="intro-note">
-    <h1>פנורמה · 5 גרסאות</h1>
-    <p>רוחב מלא, גובה 80vh, התמונה נראית בשלמותה ללא חיתוך — הצדדים מתמלאים בהד מטושטש של התמונה עם פייד עדין. בחרו מספר (1–5).</p>
+    <h1>פנורמה · 5 סגנונות פייד</h1>
+    <p>אותה תמונה (המגדל והרחוב), רוחב מלא, 80vh, ללא חיתוך — כל גרסה עם סגנון פייד שונה, רך ועדין. בחרו מספר (1–5).</p>
   </div>
 
-  <!-- ===================== 1 · hero.jpg ===================== -->
+  <!-- ===================== 1 · משי ===================== -->
   <div class="opt-label">
     <span class="opt-label__num">1</span>
     <div>
-      <div class="opt-label__t">ההדמיה הראשית</div>
-      <div class="opt-label__d">המגדל משמאל והבניינים המרקמיים — התמונה המקורית של הפרויקט</div>
+      <div class="opt-label__t">משי</div>
+      <div class="opt-label__d">המשך מדויק של צבעי התמונה לצדדים, עם המסה רחבה במיוחד</div>
     </div>
   </div>
   <div class="frame">
@@ -189,59 +243,7 @@
       <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
       <span class="mockbar__cta">צור קשר</span>
     </div>
-    <section class="pan" id="v1" style="background:linear-gradient(180deg,#8BB1D6 0%,#B3D0E7 25%,#D6E8F6 50%,#748168 75%,#516A2C 100%)">
-      <img class="pan__img" src="/assets/images/hero.jpg" alt="">
-      <div class="pan__center">
-        <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
-        <p class="pan__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
-      </div>
-      <div class="pan__scroll"><span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </span></div>
-    </section>
-  </div>
-
-  <!-- ===================== 2 · complex.jpg ===================== -->
-  <div class="opt-label">
-    <span class="opt-label__num">2</span>
-    <div>
-      <div class="opt-label__t">המתחם הירוק</div>
-      <div class="opt-label__d">ההדמיה עם הדקלים והגינון — זווית רחבה על כל המתחם</div>
-    </div>
-  </div>
-  <div class="frame">
-    <div class="mockbar">
-      <img src="/assets/images/logo-sirkin.png" alt="">
-      <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
-      <span class="mockbar__cta">צור קשר</span>
-    </div>
-    <section class="pan" id="v2" style="background:linear-gradient(180deg,#7198C6 0%,#98BEDD 25%,#DEE8EF 50%,#9DA194 75%,#50652C 100%)">
-      <img class="pan__img" src="/assets/images/complex.jpg" alt="">
-      <div class="pan__center">
-        <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
-        <p class="pan__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
-      </div>
-      <div class="pan__scroll"><span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </span></div>
-    </section>
-  </div>
-
-  <!-- ===================== 3 · tower-street.jpg ===================== -->
-  <div class="opt-label">
-    <span class="opt-label__num">3</span>
-    <div>
-      <div class="opt-label__t">המגדל והרחוב</div>
-      <div class="opt-label__d">המגדל בן 21 הקומות עם קומת המסחר וחיי הרחוב</div>
-    </div>
-  </div>
-  <div class="frame">
-    <div class="mockbar">
-      <img src="/assets/images/logo-sirkin.png" alt="">
-      <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
-      <span class="mockbar__cta">צור קשר</span>
-    </div>
-    <section class="pan" id="v3" style="background:linear-gradient(180deg,#80B4DE 0%,#ABD4ED 25%,#D4E9F8 50%,#E4F2FA 75%,#4D6165 100%)">
+    <section class="pan pan--silk" id="v1">
       <img class="pan__img" src="/assets/images/tower-street.jpg" alt="">
       <div class="pan__center">
         <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
@@ -253,12 +255,12 @@
     </section>
   </div>
 
-  <!-- ===================== 4 · courtyard.jpg ===================== -->
+  <!-- ===================== 2 · אוויר ===================== -->
   <div class="opt-label">
-    <span class="opt-label__num">4</span>
+    <span class="opt-label__num">2</span>
     <div>
-      <div class="opt-label__t">החצר הפנימית</div>
-      <div class="opt-label__d">החצר המשותפת עם הפרגולות והגינון — אווירת קהילה</div>
+      <div class="opt-label__t">אוויר</div>
+      <div class="opt-label__d">הצדדים נמסים ללבן של האתר — נקי, בהיר, גלריה</div>
     </div>
   </div>
   <div class="frame">
@@ -267,8 +269,8 @@
       <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
       <span class="mockbar__cta">צור קשר</span>
     </div>
-    <section class="pan pan--halo" id="v4" style="background:linear-gradient(180deg,#7F9FC8 0%,#5C7795 25%,#909DA7 50%,#566341 75%,#425226 100%)">
-      <img class="pan__img" src="/assets/images/courtyard.jpg" alt="">
+    <section class="pan pan--air" id="v2">
+      <img class="pan__img" src="/assets/images/tower-street.jpg" alt="">
       <div class="pan__center">
         <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
         <p class="pan__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
@@ -279,12 +281,12 @@
     </section>
   </div>
 
-  <!-- ===================== 5 · parks.jpg ===================== -->
+  <!-- ===================== 3 · שמיים ===================== -->
   <div class="opt-label">
-    <span class="opt-label__num">5</span>
+    <span class="opt-label__num">3</span>
     <div>
-      <div class="opt-label__t">הפארק</div>
-      <div class="opt-label__d">הירוק של השכונה — פארק, מים וצמחייה</div>
+      <div class="opt-label__t">שמיים</div>
+      <div class="opt-label__d">רק השמיים ממשיכים לצדדים, והתחתית נמסה בעדינות ללבן</div>
     </div>
   </div>
   <div class="frame">
@@ -293,8 +295,60 @@
       <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
       <span class="mockbar__cta">צור קשר</span>
     </div>
-    <section class="pan pan--halo" id="v5" style="background:linear-gradient(180deg,#969466 0%,#444920 25%,#3A4622 50%,#475E34 75%,#363729 100%)">
-      <img class="pan__img" src="/assets/images/parks.jpg" alt="">
+    <section class="pan pan--sky" id="v3">
+      <img class="pan__img" src="/assets/images/tower-street.jpg" alt="">
+      <div class="pan__center">
+        <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
+        <p class="pan__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
+      </div>
+      <div class="pan__scroll"><span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </span></div>
+    </section>
+  </div>
+
+  <!-- ===================== 4 · הילה ===================== -->
+  <div class="opt-label">
+    <span class="opt-label__num">4</span>
+    <div>
+      <div class="opt-label__t">הילה</div>
+      <div class="opt-label__d">התמונה עטופה בהילה רכה מכל הכיוונים, צפה על רקע בהיר</div>
+    </div>
+  </div>
+  <div class="frame">
+    <div class="mockbar">
+      <img src="/assets/images/logo-sirkin.png" alt="">
+      <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
+      <span class="mockbar__cta">צור קשר</span>
+    </div>
+    <section class="pan pan--halo" id="v4">
+      <img class="pan__img" src="/assets/images/tower-street.jpg" alt="">
+      <div class="pan__center">
+        <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
+        <p class="pan__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
+      </div>
+      <div class="pan__scroll"><span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </span></div>
+    </section>
+  </div>
+
+  <!-- ===================== 5 · ירוק רך ===================== -->
+  <div class="opt-label">
+    <span class="opt-label__num">5</span>
+    <div>
+      <div class="opt-label__t">ירוק רך</div>
+      <div class="opt-label__d">הצדדים בגוון ירקרק-עדין ברוח הלוגו והשכונה הירוקה</div>
+    </div>
+  </div>
+  <div class="frame">
+    <div class="mockbar">
+      <img src="/assets/images/logo-sirkin.png" alt="">
+      <nav class="mockbar__links"><span>פרויקט</span><span>מיקום</span><span>פארקים</span><span>תחבורה</span><span>היזם</span></nav>
+      <span class="mockbar__cta">צור קשר</span>
+    </div>
+    <section class="pan pan--sage" id="v5">
+      <img class="pan__img" src="/assets/images/tower-street.jpg" alt="">
       <div class="pan__center">
         <h2 class="pan__t">אלקטרה בצמרת מערב</h2>
         <p class="pan__sub">סטנדרט גבוה של מצוינות וחדשנות בשוק המגורים בישראל.</p>
