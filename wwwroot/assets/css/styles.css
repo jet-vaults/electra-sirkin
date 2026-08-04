@@ -1264,6 +1264,9 @@ html.js .hero.in .hero__tip { opacity: 1; transition: opacity .8s ease 1.1s; }
   grid-template-columns: minmax(0, 1.05fr) minmax(340px, .78fr);
   gap: clamp(26px, 4vw, 58px);
   align-items: stretch;
+  /* Keep the card layout compact and centered on very wide screens */
+  max-width: calc(1240px + var(--gutter) * 2);
+  margin-inline: auto;
 }
 .contact-section__copy { display: flex; flex-direction: column; }
 .contact-section__copy .display { margin-bottom: 1.1rem; }
@@ -1401,44 +1404,50 @@ html.js .hero.in .hero__tip { opacity: 1; transition: opacity .8s ease 1.1s; }
   .sticky-cta { transition: opacity .3s var(--ease), visibility .3s var(--ease); }
 }
 
-/* Extra bottom padding keeps the legal text clear of the sticky CTA bar */
-.footer { background: var(--espresso-2); color: rgba(255,255,255,.7); padding-block: clamp(3rem,6vw,4.5rem) calc(2rem + 64px); }
-.footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: clamp(1.8rem,4vw,3.5rem); padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.12); }
-.footer__name { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; color: #fff; }
-.footer__tag { color: var(--rose); font-size: .85rem; letter-spacing: .1em; margin-top: .3rem; }
-.footer__brand p { font-size: .92rem; line-height: 1.7; margin-top: 1.1rem; max-width: 40ch; color: rgba(255,255,255,.55); }
-.footer h4 { color: #fff; font-size: .82rem; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 1.2rem; font-weight: 600; }
-.footer ul { display: grid; gap: .7rem; }
-.footer li, .footer a { font-size: .95rem; color: rgba(255,255,255,.7); }
-.footer .contact li { display: flex; align-items: center; gap: .65rem; }
-.footer .contact svg { width: 16px; height: 16px; color: var(--rose); flex: none; }
-.footer__bottom {
-  display: flex; flex-wrap: wrap;
-  justify-content: center; align-items: center;
-  gap: clamp(1rem, 2vw, 1.6rem);
-  padding-top: 1.6rem;
-}
-.footer__bottom small,
-.footer__bottom small a {
-  font-size: .8rem;
-  font-weight: 400;
-  line-height: 1.4;
-  color: rgba(255,255,255,.45);
-}
-.footer__bottom small a {
-  text-decoration: underline;
-  text-underline-offset: .22em;
-  transition: color .2s ease;
-}
-.footer__bottom small a:hover { color: rgba(255,255,255,.95); }
-.footer__legal {
-  margin: 0 0 1.4rem;
-  max-width: none;
-  font-size: .76rem;
-  line-height: 1.7;
-  color: rgba(255,255,255,.35);
+/* Footer — centered column like the reference; bottom padding clears the
+   sticky CTA bar */
+.site-footer {
+  background: var(--espresso-2);
+  color: rgba(255,255,255,.7);
+  padding: 52px 0 calc(38px + 64px);
   text-align: center;
 }
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.site-footer img {
+  height: 62px;
+  filter: brightness(0) invert(1);
+  opacity: .95;
+}
+.site-footer__divider { width: 44px; height: 1px; background: rgba(255,255,255,.18); }
+.site-footer p { font-size: .84rem; color: rgba(255,255,255,.55); margin: 0; }
+.site-footer__legal {
+  max-width: 980px;
+  font-size: .72rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,.58);
+}
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  font-size: .82rem;
+  color: rgba(255,255,255,.68);
+}
+.site-footer__links a { text-decoration: underline; text-underline-offset: 3px; }
+.site-footer__links a:hover { color: #fff; }
+.site-footer__powered {
+  margin-top: -6px;
+  font-size: .78rem;
+  color: rgba(255,255,255,.42);
+  transition: color .25s var(--ease);
+}
+.site-footer__powered:hover { color: rgba(255,255,255,.72); }
 
 /* ========================================================================= */
 /* Reveal system                                                             */
