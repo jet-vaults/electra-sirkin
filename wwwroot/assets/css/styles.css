@@ -14,6 +14,9 @@
   --accent-mid: #5b3934;
   --accent-deep:#412925;
   --rose:       #cba8a0;   /* warm light accent (on dark) */
+  --brand-green: #1a4728;  /* Sirkin logo green */
+  --brand-green-deep: #123320;
+  --brand-gold: #b9885a;   /* Sirkin logo gold */
   --muted:      #6f6469;
   --line:       rgba(65,41,37,.16);
   --line-dark:  rgba(255,255,255,.16);
@@ -307,7 +310,7 @@ body::after {
 
 /* --- Buttons / links ----------------------------------------------------- */
 .btn {
-  --bg: var(--accent); --fg: #fff;
+  --bg: var(--brand-green); --fg: #fff;
   position: relative; display: inline-flex; align-items: center; gap: .7rem;
   font-family: var(--sans); font-weight: 600; font-size: .95rem;
   padding: 1rem 2rem; border-radius: 100px; cursor: pointer; border: 0;
@@ -319,7 +322,7 @@ body::after {
   transition: transform .5s var(--ease-out);
 }
 .btn::after {
-  content: ""; position: absolute; inset: 0; z-index: -2; background: var(--accent-deep);
+  content: ""; position: absolute; inset: 0; z-index: -2; background: var(--brand-green-deep);
 }
 .btn:hover::before { transform: translateY(-105%); }
 .btn--line {
@@ -432,10 +435,10 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
   display: inline-flex; align-items: center; white-space: nowrap;
   padding: .62rem 1.35rem; border-radius: 100px;
   font-family: var(--sans); font-size: .92rem; font-weight: 600;
-  background: var(--accent); color: #fff;
+  background: var(--brand-green); color: #fff;
   transition: background .3s var(--ease), transform .25s var(--ease), border-color .3s var(--ease);
 }
-.site-header__cta:hover { background: var(--accent-deep); transform: translateY(-1px); }
+.site-header__cta:hover { background: var(--brand-green-deep); transform: translateY(-1px); }
 .site-header__cta--ghost {
   background: rgba(255,255,255,.82); color: var(--ink);
   border: 1px solid rgba(23,21,27,.16);
@@ -627,12 +630,12 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
   display: inline-flex; align-items: center;
   padding: .85rem 1.6rem;
   border-radius: 100px;
-  background: var(--accent); color: #fff;
+  background: var(--brand-green); color: #fff;
   font-family: var(--sans); font-size: .98rem; font-weight: 500;
   transition: background .3s var(--ease), transform .25s var(--ease);
   white-space: nowrap;
 }
-.hero__navcta:hover { background: var(--accent-deep); transform: translateY(-1px); }
+.hero__navcta:hover { background: var(--brand-green-deep); transform: translateY(-1px); }
 
 /* Slide-out side nav */
 .side-nav {
@@ -1348,23 +1351,30 @@ html.js .hero.in .hero__tip { opacity: 1; transition: opacity .8s ease 1.1s; }
   color: rgba(23,21,27,.6);
 }
 
+.contact-form__logo {
+  width: clamp(120px, 11vw, 165px);
+  height: auto;
+  display: block;
+  margin-inline: auto;
+  margin-bottom: 4px;
+}
 .contact-submit {
   min-height: 56px;
   border: 0;
   cursor: pointer;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--brand-green);
   color: #fff;
   font-family: var(--sans);
   font-size: 1rem;
   font-weight: 600;
-  box-shadow: 0 12px 28px rgba(65,41,37,.18);
+  box-shadow: 0 12px 28px rgba(26,71,40,.20);
   transition: background .2s var(--ease), transform .2s var(--ease), box-shadow .2s var(--ease);
 }
 .contact-submit:hover {
-  background: var(--accent-deep);
+  background: var(--brand-green-deep);
   transform: translateY(-1px);
-  box-shadow: 0 16px 34px rgba(65,41,37,.24);
+  box-shadow: 0 16px 34px rgba(26,71,40,.26);
 }
 
 @media (max-width: 980px) {
@@ -1385,13 +1395,13 @@ html.js .hero.in .hero__tip { opacity: 1; transition: opacity .8s ease 1.1s; }
   gap: 10px;
   padding: 16px 24px;
   padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-  background: var(--accent);
+  background: var(--brand-green);
   color: #ffffff;
   font-weight: 600;
   font-size: 1.08rem;
   transition: opacity .3s var(--ease), visibility .3s var(--ease), transform .3s var(--ease), background .25s var(--ease);
 }
-.sticky-cta:hover { background: var(--accent-deep); }
+.sticky-cta:hover { background: var(--brand-green-deep); }
 .sticky-cta svg { width: 20px; height: 20px; flex: none; }
 .sticky-cta.is-hidden {
   opacity: 0;
