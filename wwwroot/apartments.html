@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=20260803g">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20260804n">
 
   <style>
     /* Local tweaks just for the apartments page */
@@ -68,38 +68,14 @@
       color: #ffffff !important;
     }
 
-    /* Desktop page header */
-    .page-bar {
-      position: sticky;
-      top: 0;
-      z-index: 150;
-      background: #fdfcfb;
-      border-bottom: 1px solid var(--line);
-      padding-block: .8rem;
-    }
-    .page-bar__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    /* Override absolute positioning used inside the hero card */
-    .page-bar .hero__logo,
-    .page-bar .hero__burger {
-      position: static !important;
-      top: auto !important; left: auto !important; right: auto !important;
-      opacity: 1 !important;
-      transform: none !important;
-    }
-    /* Remove pill background from logo in page header */
-    .page-bar .hero__logo {
-      background: none;
-      padding: 0;
-      border-radius: 0;
-      box-shadow: none;
-      border: none;
+    /* Widget CSS underlines anchors globally — keep the header nav clean */
+    .site-nav a, .site-header__cta { text-decoration: none !important; }
+
+    /* Clear the fixed desktop header */
+    @media (min-width: 901px) {
+      main { padding-top: 100px; }
     }
     @media (max-width: 900px) {
-      .page-bar { display: none; }
       /* Push content below the fixed mobile header */
       main { padding-top: calc(72px + env(safe-area-inset-top, 0px)); }
     }
@@ -122,13 +98,27 @@
       </button>
     </header>
 
-    <!-- Desktop page header (hidden on mobile, mobile uses .mobile-header) -->
-    <header class="page-bar">
-      <div class="wrap page-bar__inner">
-        <a href="/" class="hero__logo" aria-label="אלקטרה בצמרת מערב">
+    <!-- Desktop fixed header (hidden on mobile, mobile uses .mobile-header) -->
+    <header class="site-header is-solid">
+      <div class="wrap site-header__inner">
+        <a href="/" class="site-header__logo" aria-label="אלקטרה בצמרת מערב">
           <img src="/assets/images/logo-sirkin.png" alt="אלקטרה בצמרת מערב">
         </a>
-        <button class="hero__burger" data-nav-toggle aria-label="פתח תפריט" aria-expanded="false" aria-controls="sideNav">
+        <nav class="site-nav" aria-label="ראשי">
+          <a href="/#tzameret">פרויקט</a>
+          <a href="/#company">מיקום</a>
+          <a href="/#education">מוסדות ציבור וחינוך</a>
+          <a href="/#parks">פארקים</a>
+          <a href="/#transport">תחבורה</a>
+          <a href="/#project">פתח תקווה</a>
+          <a href="/#company-about">היזם</a>
+          <a href="/#downloads">קבצים להורדה</a>
+        </nav>
+        <div class="site-header__actions">
+          <a href="/apartments" class="site-header__cta site-header__cta--ghost">מלאי דירות</a>
+          <a href="/#contact" class="site-header__cta">צור קשר</a>
+        </div>
+        <button class="site-header__burger" data-nav-toggle aria-label="פתח תפריט" aria-expanded="false" aria-controls="sideNav">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
             <line x1="4" y1="7"  x2="20" y2="7"/>
             <line x1="4" y1="12" x2="20" y2="12"/>
