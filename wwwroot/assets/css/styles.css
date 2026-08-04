@@ -69,15 +69,19 @@ body::after {
 #tzameret { background: #fdfcfb; }
 .prose-actions { margin-top: 1.4rem; }
 
-/* Balance the project text vertically against the picture next to it */
+/* Title and text share the column, starting level with the picture top */
+#tzameret .prose .kicker { margin-bottom: .8rem; }
+#tzameret .prose .display { margin-bottom: clamp(.9rem, 1.6vw, 1.6rem); }
 @media (min-width: 981px) {
   #tzameret .editorial .prose {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: clamp(.7rem, 1vw, 1.1rem);
   }
   #tzameret .editorial .prose p { margin-bottom: 0; }
+  #tzameret .editorial .prose .kicker,
+  #tzameret .editorial .prose .display { margin-bottom: 0; }
   #tzameret .editorial .prose-actions { margin-top: .5rem; }
 }
 
