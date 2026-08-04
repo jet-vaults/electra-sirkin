@@ -403,6 +403,8 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 }
 .site-header__inner {
   display: flex; align-items: center; justify-content: space-between;
+  /* RTL: reversed row puts the logo on the left, actions/burger on the right */
+  flex-direction: row-reverse;
   gap: clamp(1.2rem, 2.5vw, 2.5rem);
   padding-block: 16px;
   transition: padding .4s var(--ease);
@@ -571,6 +573,9 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
     background: rgba(23,21,27,.06);
     color: var(--ink);
   }
+  /* Bigger, bolder X when the menu is open */
+  body.nav-open .mobile-header__burger svg { width: 26px; height: 26px; }
+  body.nav-open .mobile-header__burger svg line { stroke-width: 2.6; }
   body.nav-open .mobile-header__burger svg line:nth-child(1) {
     transform: translateY(5px) rotate(45deg);
   }
