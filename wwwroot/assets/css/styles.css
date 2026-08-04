@@ -69,16 +69,16 @@ body::after {
 #tzameret { background: #fdfcfb; }
 .prose-actions { margin-top: 1.4rem; }
 
-/* Spread the project text over the full height of the picture next to it */
+/* Balance the project text vertically against the picture next to it */
 @media (min-width: 981px) {
   #tzameret .editorial .prose {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: .6rem;
+    justify-content: center;
+    gap: clamp(.7rem, 1vw, 1.1rem);
   }
   #tzameret .editorial .prose p { margin-bottom: 0; }
-  #tzameret .editorial .prose-actions { margin-top: 0; }
+  #tzameret .editorial .prose-actions { margin-top: .5rem; }
 }
 
 /* tzameret-specific overrides */
