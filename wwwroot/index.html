@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=20260804f">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20260804g">
 </head>
 <body>
 
@@ -71,7 +71,7 @@
           <a href="#parks">פארקים</a>
           <a href="#transport">תחבורה</a>
           <a href="#project">פתח תקווה</a>
-          <a href="#company-about">על החברה</a>
+          <a href="#company-about">היזם</a>
           <a href="#downloads">קבצים להורדה</a>
         </nav>
         <div class="site-header__actions">
@@ -117,7 +117,7 @@
         <a href="#parks">פארקים ושטחים ירוקים</a>
         <a href="#transport">תחבורה ונגישות</a>
         <a href="#project">פתח תקווה</a>
-        <a href="#company-about">על החברה</a>
+        <a href="#company-about">היזם</a>
         <a href="#downloads">קבצים להורדה</a>
       </nav>
       <div class="side-nav__cta">
@@ -385,7 +385,7 @@
       <div class="wrap">
         <div class="block-head">
           <div class="block-head__main">
-            <span class="kicker" data-reveal>על החברה</span>
+            <span class="kicker" data-reveal>היזם</span>
             <h2 class="display h-lg" data-reveal data-delay="1">אלקטרה מגורים</h2>
           </div>
         </div>
@@ -402,25 +402,23 @@
               אלקטרה מגורים נמצאת בצמיחה מתמדת, עם כ-7,750 יחידות דיור בשלבי תכנון, שיווק וביצוע – נתון המשקף את היקף הפעילות הרחב, היציבות והאמון שהחברה נהנית ממנו בשוק.
             </p>
           </div>
-          <div class="editorial__media editorial__media--logo" data-reveal data-delay="1">
-            <img src="/assets/images/electra-logo.svg" alt="סמל אלקטרה מגורים">
-          </div>
-        </div>
-
-        <!-- Company stats: pipeline volume across stages -->
-        <div class="company-stats" data-reveal data-delay="2">
-          <div class="company-stats__row">
-            <div class="company-stat">
-              <div class="company-stat__num"><span class="company-stat__approx">כ-</span>1,100</div>
-              <div class="company-stat__label">יחידות דיור בביצוע</div>
+          <div class="developer-side" data-reveal data-delay="1">
+            <div class="developer-side__logo">
+              <img src="/assets/images/electra-logo.svg" alt="סמל אלקטרה מגורים">
             </div>
-            <div class="company-stat">
-              <div class="company-stat__num"><span class="company-stat__approx">כ-</span>1,600</div>
-              <div class="company-stat__label">יחידות דיור בשיווק</div>
-            </div>
-            <div class="company-stat">
-              <div class="company-stat__num"><span class="company-stat__approx">כ-</span>5,200</div>
-              <div class="company-stat__label">יחידות דיור בתכנון</div>
+            <div class="developer-stats">
+              <div class="developer-stat">
+                <b><span class="developer-stat__approx">כ-</span>1,100</b>
+                <span class="developer-stat__label">יחידות דיור בביצוע</span>
+              </div>
+              <div class="developer-stat">
+                <b><span class="developer-stat__approx">כ-</span>1,600</b>
+                <span class="developer-stat__label">יחידות דיור בשיווק</span>
+              </div>
+              <div class="developer-stat">
+                <b><span class="developer-stat__approx">כ-</span>5,200</b>
+                <span class="developer-stat__label">יחידות דיור בתכנון</span>
+              </div>
             </div>
           </div>
         </div>
@@ -467,45 +465,50 @@
       </div>
     </section>
 
-    <!-- ===================== CTA ===================== -->
-    <section class="cta" id="contact">
-      <div class="cta__ghost" aria-hidden="true">ELECTRA</div>
-      <div class="wrap cta__inner">
-        <span class="kicker" data-reveal style="justify-content:center">מחיר מטרה · הגרלה 2256</span>
-        <h2 class="display h-lg" data-reveal data-delay="1" style="margin-top:1.2rem">בית חדש, בצמרת מערב</h2>
-        <p class="lead" data-reveal data-delay="2">
-          השאירו פרטים ונחזור אליכם בהקדם.
-        </p>
-        <form class="cta-form" data-reveal data-delay="3" action="#" method="post" novalidate>
-          <div class="cta-form__fields">
-            <label class="cta-form__field">
-              <span class="visually-hidden">שם מלא</span>
-              <input type="text" name="name" placeholder="שם מלא" autocomplete="name" required>
-            </label>
-            <label class="cta-form__field">
-              <span class="visually-hidden">טלפון</span>
-              <input type="tel" name="phone" placeholder="טלפון" autocomplete="tel" inputmode="tel" required>
-            </label>
-            <label class="cta-form__field">
-              <span class="visually-hidden">אימייל</span>
-              <input type="email" name="email" placeholder="אימייל" autocomplete="email">
-            </label>
+    <!-- ===================== Contact ===================== -->
+    <section class="section section--contact" id="contact">
+      <div class="wrap">
+        <div class="contact-head">
+          <span class="kicker" data-reveal>יצירת קשר</span>
+        </div>
+      </div>
+      <div class="wrap contact-section__grid">
+        <div class="contact-section__copy" data-reveal>
+          <h2 class="display h-lg">מתעניינים בפרויקט?</h2>
+          <p>השאירו פרטים ונציג מטעם אלקטרה מגורים יחזור אליכם עם מידע נוסף על הדירות, תהליך ההרשמה והשלבים הבאים.</p>
+          <div class="contact-section__media">
+            <img src="/assets/images/tower-street.jpg" alt="הדמיית פרויקט אלקטרה בצמרת מערב" loading="lazy">
           </div>
-          <label class="cta-form__consent">
-            <input type="checkbox" name="marketing_consent" value="yes" required>
-            <span class="cta-form__consent-box" aria-hidden="true"></span>
-            <span class="cta-form__consent-text">
-              אני מאשר/ת קבלת חומרים פרסומיים מחברת אלקטרה מגורים ו/או מי מטעמה ו/או שיחת טלפון שיווקית בנוגע לכל הפרויקטים וזאת גם אם פרטיי נמצאים במאגר &quot;אל תתקשרו אלי&quot; של הרשות להגנת הצרכן.
-            </span>
+        </div>
+        <form class="contact-form" data-reveal data-delay="1" id="contact-form" action="#" method="post">
+          <h3 class="contact-form__title">נשמח לחזור אליכם</h3>
+          <div class="contact-field">
+            <label for="contact-name">שם מלא</label>
+            <input id="contact-name" name="full_name" type="text" autocomplete="name" placeholder="שם מלא" required>
+          </div>
+          <div class="contact-field">
+            <label for="contact-phone">טלפון</label>
+            <input id="contact-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="rtl" placeholder="מספר טלפון" required>
+          </div>
+          <div class="contact-field">
+            <label for="contact-email">אימייל</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required>
+          </div>
+          <label class="contact-consent">
+            <input type="checkbox" name="marketing_consent" value="1" required>
+            <span>אני מאשר/ת קבלת חומרים פרסומיים מחברת אלקטרה מגורים ו/או מי מטעמה ו/או שיחת טלפון שיווקית בנוגע לכל הפרויקטים וזאת גם אם פרטיי נמצאים במאגר &quot;אל תתקשרו אלי&quot; של הרשות להגנת הצרכן.</span>
           </label>
-          <button type="submit" class="btn cta-form__submit">צרו קשר
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          </button>
-          <p class="cta-form__note">המידע שלכם נשמר אצלנו בלבד ולא יועבר לצדדים שלישיים.</p>
+          <button class="contact-submit" type="submit">שליחה</button>
         </form>
       </div>
     </section>
   </main>
+
+  <!-- Sticky contact CTA -->
+  <a href="#contact" class="sticky-cta" id="stickyCta" aria-label="צור קשר">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>צור קשר</span>
+  </a>
 
   <!-- ===================== Footer ===================== -->
   <footer class="footer">
@@ -608,6 +611,19 @@
         }
         onShScroll();
         window.addEventListener('scroll', onShScroll, { passive: true });
+      })();
+
+      /* ---- Sticky contact CTA: hide while the contact section is visible ---- */
+      (function(){
+        var stickyCta = document.getElementById('stickyCta');
+        var contactSection = document.getElementById('contact');
+        if (!stickyCta || !contactSection || !('IntersectionObserver' in window)) return;
+        var obs = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            stickyCta.classList.toggle('is-hidden', entry.isIntersecting);
+          });
+        }, { threshold: 0.18 });
+        obs.observe(contactSection);
       })();
 
       /* ---- Map banner: zoom modal + magnifier lens ---- */
