@@ -95,17 +95,17 @@ body::after {
   object-position: center !important;
 }
 .editorial__media--logo {
-  background: #fcfafa;
+  background: var(--espresso);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .editorial__media--logo > img {
   position: static !important;
-  width: auto !important;
+  width: 45% !important;
   height: auto !important;
-  max-width: 55% !important;
-  max-height: 70% !important;
+  max-width: 45% !important;
+  max-height: 60% !important;
   object-fit: contain !important;
   inset: auto !important;
 }
