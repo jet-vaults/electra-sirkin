@@ -190,20 +190,20 @@ body::after {
 .section--dark .prose-list li::before { background: var(--rose); }
 .section--dark .prose-sub { color: #ffffff; }
 
-/* Parks section custom layout */
+/* Parks section custom layout (light theme) */
 .parks-feature {
   display: flex;
   align-items: center;
   gap: clamp(1.2rem, 3vw, 2.5rem);
   padding-bottom: clamp(1.5rem, 3vw, 2.4rem);
-  border-bottom: 1px solid rgba(255,255,255,.12);
+  border-bottom: 1px solid var(--line);
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 .parks-feature__num {
   font-family: var(--serif);
   font-size: clamp(4rem, 9vw, 7rem);
   font-weight: 700;
-  color: var(--rose);
+  color: var(--accent);
   line-height: 1;
   letter-spacing: -.02em;
   flex: none;
@@ -213,12 +213,12 @@ body::after {
   font-family: var(--sans);
   font-size: clamp(1.05rem, 1.4vw, 1.3rem);
   font-weight: 600;
-  color: #fff;
+  color: var(--ink);
   letter-spacing: -.01em;
 }
 .parks-feature__text span {
   font-size: .98rem;
-  color: rgba(255,255,255,.7);
+  color: var(--muted);
   line-height: 1.65;
   max-width: 60ch;
 }
@@ -232,23 +232,23 @@ body::after {
 .park-card {
   position: relative;
   padding: clamp(1.4rem, 2.6vw, 1.8rem);
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.10);
+  background: #fff;
+  border: 1px solid var(--line);
   border-radius: 10px;
   display: flex; flex-direction: column;
   gap: .8rem;
-  transition: background .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
+  transition: box-shadow .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
 }
 .park-card:hover {
-  background: rgba(255,255,255,.07);
-  border-color: rgba(203,168,160,.35);
+  border-color: rgba(142,89,82,.35);
+  box-shadow: 0 14px 36px rgba(65,41,37,.10);
   transform: translateY(-3px);
 }
 .park-card__area {
   font-family: var(--sans);
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 700;
-  color: var(--rose);
+  color: var(--accent);
   line-height: 1;
   letter-spacing: -.02em;
 }
@@ -256,7 +256,7 @@ body::after {
   font-style: normal;
   font-size: .8rem;
   font-weight: 500;
-  color: rgba(255,255,255,.6);
+  color: var(--muted);
   letter-spacing: .04em;
   margin-inline-start: .35rem;
 }
@@ -264,13 +264,13 @@ body::after {
   font-family: var(--sans);
   font-size: 1.08rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--ink);
   letter-spacing: -.01em;
   margin: 0;
 }
 .park-card__desc {
   font-size: .92rem;
-  color: rgba(255,255,255,.7);
+  color: #4a4248;
   line-height: 1.65;
   margin: 0;
 }
@@ -280,23 +280,11 @@ body::after {
   aspect-ratio: 16 / 7;
   overflow: hidden;
   border-radius: 10px;
-  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 .parks-banner img {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.parks-closing {
-  font-family: var(--sans);
-  font-size: .98rem;
-  font-weight: 400;
-  line-height: 1.65;
-  color: rgba(255,255,255,.75);
-  text-align: center;
-  max-width: 72ch;
-  margin: 0 auto;
 }
 
 @media (max-width: 760px) {
