@@ -493,11 +493,10 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
   z-index: 1;
   pointer-events: none;
 }
-/* The full picture, height-fitted, melting into the sky on both sides.
-   Shifted left so the text panel gets open sky on the right. */
+/* The full picture, height-fitted, melting into the sky on both sides */
 .hero__pic {
   position: absolute;
-  top: 0; left: 38%;
+  top: 0; left: 50%;
   transform: translateX(-50%);
   height: 100%;
   width: auto;
@@ -798,69 +797,48 @@ body.nav-open .side-nav { transform: translateX(0); }
 body.nav-open .side-nav__backdrop { opacity: 1; pointer-events: auto; }
 body.nav-open { overflow: hidden; }
 
-/* Text panel — right side (inline start in RTL), vertically centered */
-.hero__panel {
+/* Centered title block — floats over the sky, anchored to top */
+.hero__center {
   position: absolute;
+  inset-inline: 0;
+  top: clamp(1.6rem, 5vh, 3.4rem);
   z-index: 2;
-  inset-inline-start: var(--gutter);
-  top: 44%;
-  transform: translateY(-50%);
-  max-width: min(560px, 44vw);
-  text-align: start;
+  text-align: center;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+@media (max-width: 900px) {
+  .hero__center { position: static; padding: 1.6rem 1rem .2rem; }
 }
 .hero__t {
   font-family: var(--sans);
-  font-weight: 700;
-  font-size: clamp(2.1rem, 3.6vw, 3.9rem);
-  line-height: 1.08;
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4.6vw, 4.4rem);
+  line-height: 1.1;
   letter-spacing: -.015em;
   color: #111111;
+  white-space: nowrap;
+  margin-inline: auto;
 }
 .hero__t em {
-  font-style: normal; font-weight: 700; color: #111111;
+  font-style: normal; font-weight: 600; color: #111111;
 }
+/* Subtitle sits at the bottom of the band, over the street-level fade */
 .hero__sub {
-  margin-top: 1rem;
-  max-width: 44ch;
+  position: absolute;
+  bottom: clamp(4rem, 8vh, 5.6rem);
+  inset-inline: 0;
+  z-index: 2;
+  margin: 0 auto;
+  max-width: 54ch;
+  text-align: center;
+  padding-inline: 1rem;
   color: var(--accent-deep);
   font-size: clamp(.96rem, 1.25vw, 1.08rem);
   font-weight: 600;
   line-height: 1.75;
 }
-.hero__ctas {
-  display: flex;
-  gap: .7rem;
-  margin-top: 1.6rem;
-  flex-wrap: wrap;
-}
-.hero__btn {
-  display: inline-flex;
-  align-items: center;
-  padding: .9rem 1.9rem;
-  border-radius: 100px;
-  background: var(--brand-green);
-  color: #fff;
-  font-weight: 600;
-  font-size: .96rem;
-  transition: background .3s var(--ease), transform .25s var(--ease), border-color .3s var(--ease);
-}
-.hero__btn:hover { background: var(--brand-green-deep); transform: translateY(-1px); }
-.hero__btn--ghost {
-  background: rgba(255,255,255,.82);
-  color: var(--ink);
-  border: 1px solid rgba(23,21,27,.18);
-}
-.hero__btn--ghost:hover { background: #fff; border-color: rgba(23,21,27,.4); }
 @media (max-width: 900px) {
-  .hero__panel {
-    position: static;
-    transform: none;
-    max-width: none;
-    text-align: center;
-    padding: 1.6rem 1.2rem .2rem;
-  }
-  .hero__sub { margin-inline: auto; }
-  .hero__ctas { justify-content: center; }
+  .hero__sub { position: static; order: 3; margin: .8rem auto 0; }
 }
 
 .hero__cta {
