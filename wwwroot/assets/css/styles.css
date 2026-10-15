@@ -22,6 +22,7 @@
   --line-dark:  rgba(255,255,255,.16);
 
   --gutter: clamp(1.15rem, 5vw, 5rem);
+  --stat-size: clamp(1.8rem, 2.8vw, 2.4rem); /* one size for every figure */
 
   --serif: "Noto Sans Hebrew", Arial, sans-serif; /* unified to reference site font */
   --sans:  "Noto Sans Hebrew", Arial, sans-serif;
@@ -150,8 +151,8 @@ body::after {
   letter-spacing: -.015em;
 }
 .h-xl { font-size: clamp(2.6rem, 8vw, 6.2rem); }
-.h-lg { font-size: clamp(2.1rem, 5.2vw, 4rem); }
-.h-md { font-size: clamp(1.55rem, 2.6vw, 2.3rem); }
+.h-lg { font-size: clamp(1.7rem, 3.4vw, 2.6rem); }
+.h-md { font-size: clamp(1.35rem, 2.1vw, 1.8rem); }
 
 .lead {
   font-size: clamp(1.1rem, 1.5vw, 1.4rem);
@@ -217,7 +218,7 @@ body::after {
 }
 .parks-feature__num {
   font-family: var(--serif);
-  font-size: clamp(4rem, 9vw, 7rem);
+  font-size: var(--stat-size);
   font-weight: 700;
   color: var(--accent);
   line-height: 1;
@@ -237,6 +238,11 @@ body::after {
   color: var(--muted);
   line-height: 1.65;
   max-width: 60ch;
+}
+
+@media (min-width: 761px) {
+  .parks-section .block-head__main { max-width: none; }
+  .parks-section .display.h-lg { white-space: nowrap; }
 }
 
 .parks-grid {
@@ -262,7 +268,7 @@ body::after {
 }
 .park-card__area {
   font-family: var(--sans);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-size: var(--stat-size);
   font-weight: 700;
   color: var(--accent);
   line-height: 1;
@@ -403,8 +409,8 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 }
 .site-header__inner {
   display: flex; align-items: center; justify-content: space-between;
-  /* RTL: reversed row puts the logo on the left, actions/burger on the right */
-  flex-direction: row-reverse;
+  /* RTL: natural row puts the logo on the right, actions/burger on the left */
+  flex-direction: row;
   gap: clamp(1.2rem, 2.5vw, 2.5rem);
   padding-block: 16px;
   transition: padding .4s var(--ease);
@@ -412,10 +418,10 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 .site-header.is-solid .site-header__inner { padding-block: 9px; }
 .site-header__logo { display: inline-flex; align-items: center; flex: none; }
 .site-header__logo img {
-  height: 84px; width: auto; display: block;
+  height: 104px; width: auto; display: block;
   transition: height .4s var(--ease);
 }
-.site-header.is-solid .site-header__logo img { height: 66px; }
+.site-header.is-solid .site-header__logo img { height: 80px; }
 
 .site-nav { display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(1rem, 1.7vw, 2.1rem); }
 .site-nav a {
@@ -474,10 +480,15 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 }
 .hero {
   position: relative;
-  height: 80vh;
+  height: min(80vh, 760px);
   min-height: 480px;
   overflow: hidden;
   isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+  padding-inline: var(--gutter);
+  column-gap: clamp(1rem, 3vw, 3rem);
   /* The picture's own sky continues sideways */
   background: linear-gradient(180deg, #83B6DE 0%, #AED6EF 34%, #D9ECF7 62%, #F2F9FE 100%);
   color: var(--ink);
@@ -495,12 +506,12 @@ html.js .intro__bar  { animation: introBar 1.6s var(--ease) .1s forwards; }
 }
 /* The full picture, height-fitted, melting into the sky on both sides */
 .hero__pic {
-  position: absolute;
-  top: 0; left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   height: 100%;
-  width: auto;
+  width: 100%;
   max-width: none;
+  object-fit: contain;
+  object-position: center bottom;
   z-index: 0;
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
           mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
@@ -529,18 +540,19 @@ html.js .hero.in .hero__pic { opacity: 1; transition: opacity 1.1s ease .2s; }
 
 /* Push the hero below the fixed white desktop header */
 @media (min-width: 901px) {
-  .hero-wrap { padding-top: 102px; }
+  .hero-wrap { padding-top: 137px; }
 }
 /* Mobile: the picture is wider than the screen at 80vh, so show it
    full-width at natural height below the title instead */
 @media (max-width: 900px) {
-  .hero { height: auto; min-height: 0; display: flex; flex-direction: column; }
+  .hero { height: auto; min-height: 0; display: flex; flex-direction: column; padding-inline: 0; }
   .hero::after { display: none; }
   .hero__pic {
     position: static;
     transform: none;
     width: 100%;
     height: auto;
+    object-fit: initial;
     -webkit-mask-image: none;
             mask-image: none;
     order: 2;
@@ -799,29 +811,32 @@ body.nav-open { overflow: hidden; }
 
 /* Centered title block — floats over the sky, anchored to top */
 .hero__center {
-  position: absolute;
-  inset-inline: 0;
-  top: clamp(1.6rem, 5vh, 3.4rem);
+  position: relative;
   z-index: 2;
   text-align: center;
   padding-inline: clamp(1rem, 3vw, 2rem);
+  padding-bottom: 8vh; /* sit a little above the optical middle */
 }
 @media (max-width: 900px) {
   .hero__center { position: static; padding: 1.6rem 1rem .2rem; }
+  .hero__t { white-space: normal; }
 }
 .hero__t {
   font-family: var(--sans);
-  font-weight: 600;
-  font-size: clamp(1.8rem, 4.6vw, 4.4rem);
-  line-height: 1.1;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.4vw, 3.2rem);
+  line-height: 1.15;
   letter-spacing: -.015em;
-  color: #111111;
+  color: var(--brand-green);
   white-space: nowrap;
   margin-inline: auto;
 }
 .hero__t em {
-  font-style: normal; font-weight: 600; color: #111111;
+  font-style: normal; font-weight: 600; color: var(--brand-gold);
 }
+/* Section title in the same two logo tones */
+.brand-title { color: var(--brand-green); }
+.brand-title em { font-style: normal; font-weight: 600; color: var(--brand-gold); }
 /* Subtitle sits at the bottom of the band, over the street-level fade */
 .hero__sub {
   position: absolute;
@@ -982,6 +997,7 @@ html.js .hero.in .hero__tip { opacity: 1; transition: opacity .8s ease 1.1s; }
   filter: brightness(0);
   opacity: .88;
 }
+.company__copy .kicker { margin-bottom: .8rem; }
 .company__copy .display { margin-bottom: clamp(1rem, 2vw, 1.5rem); }
 .company__copy p { color: #4a4248; margin-bottom: .95rem; }
 .company__copy p:last-of-type { margin-bottom: 0; }
@@ -1001,8 +1017,8 @@ html.js .hero.in .hero__tip { opacity: 1; transition: opacity .8s ease 1.1s; }
 }
 .company-stats strong {
   font-family: var(--sans);
-  font-weight: 600;
-  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  font-size: var(--stat-size);
   color: var(--accent-deep);
   line-height: 1.1;
 }
@@ -1229,7 +1245,7 @@ html.js .hero.in .hero__tip { opacity: 1; transition: opacity .8s ease 1.1s; }
 .figure-stat { display: flex; flex-direction: column; }
 .figure-stat b {
   font-family: var(--serif); font-weight: 700; color: var(--accent);
-  font-size: clamp(3rem, 7vw, 5.5rem); line-height: .9; letter-spacing: -.02em;
+  font-size: var(--stat-size); line-height: 1; letter-spacing: -.02em;
 }
 .figure-stat span { margin-top: .6rem; color: var(--muted); font-size: 1rem; max-width: 28ch; }
 .section--dark .figure-stat b { color: var(--rose); }
@@ -1245,7 +1261,7 @@ html.js .hero.in .hero__tip { opacity: 1; transition: opacity .8s ease 1.1s; }
 }
 .section--dark .statline { border-top-color: var(--line-dark); }
 .statline .figure-stat { text-align: center; align-items: center; }
-.statline .figure-stat b { font-size: clamp(2.4rem,5.5vw,4.4rem); }
+.statline .figure-stat b { font-size: var(--stat-size); }
 .statline .figure-stat--text b {
   font-size: clamp(1.4rem,2.6vw,2.1rem);
   font-weight: 600;
@@ -1281,7 +1297,7 @@ html.js .hero.in .hero__tip { opacity: 1; transition: opacity .8s ease 1.1s; }
 .env-row__fig {
   font-weight: 700;
   color: var(--accent);
-  font-size: clamp(1.6rem,3vw,2.4rem);
+  font-size: var(--stat-size);
   line-height: 1;
   text-align: end;
 }
