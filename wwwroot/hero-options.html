@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>הירו · 5 אפשרויות · אלקטרה בצמרת מערב</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#17151b; --cream:#f1edef; --paper:#fdfcfb; --muted:#6f6469;
+      --brand-green:#1a4728; --brand-green-deep:#123320; --brand-gold:#b9885a;
+      --sky:#7eb4dd; --sky-deep:#8cc3e6; --line:rgba(65,41,37,.16);
+      --sans:"Noto Sans Hebrew", Arial, sans-serif; --gutter:clamp(1.15rem, 5vw, 5rem);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased; }
+    img { display:block; max-width:100%; }
+    a { color:inherit; text-decoration:none; }
+
+    .intro { background:var(--brand-green); color:#fff; padding:26px var(--gutter); }
+    .intro h1 { font-size:24px; font-weight:700; margin-bottom:4px; }
+    .intro p { font-size:15px; opacity:.85; font-weight:300; }
+    .tag { position:sticky; top:0; z-index:20; background:var(--brand-gold); color:#fff; padding:10px var(--gutter); font-size:15px; display:flex; align-items:center; gap:14px; }
+    .tag b { font-size:20px; }
+    .fakehead { height:84px; background:#fff; border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; padding:0 var(--gutter); }
+    .fakehead img { height:44px; }
+    .fakehead span { display:flex; gap:10px; }
+    .end { padding:40px var(--gutter); text-align:center; font-weight:600; }
+
+    /* shared pieces */
+    .t { font-weight:700; line-height:1.1; letter-spacing:-.015em; color:var(--brand-green); }
+    .t em { font-style:normal; font-weight:600; color:var(--brand-gold); }
+    .sub { color:#3e3339; font-size:clamp(1rem, 1.2vw, 1.12rem); font-weight:500; line-height:1.75; max-width:46ch; }
+    .ctas { display:flex; gap:12px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; padding:.9rem 1.7rem; border-radius:100px; background:var(--brand-green); color:#fff; font-size:.98rem; font-weight:600; white-space:nowrap; transition:background .25s, transform .25s; }
+    .btn:hover { background:var(--brand-green-deep); transform:translateY(-1px); }
+    .btn.ghost { background:transparent; border:1.5px solid var(--brand-green); color:var(--brand-green); }
+    .btn.ghost:hover { background:var(--brand-green); color:#fff; }
+    .btn.light { background:#fff; color:var(--brand-green); }
+    .btn.light:hover { background:var(--cream); }
+    .btn.gold { background:var(--brand-gold); }
+    .btn.gold:hover { background:#a4764b; }
+    .stats { display:flex; gap:clamp(20px, 3vw, 44px); }
+    .stats div b { display:block; font-size:clamp(1.7rem, 2.4vw, 2.3rem); font-weight:700; line-height:1; }
+    .stats div span { font-size:.9rem; color:var(--muted); }
+
+    /* H1 split: picture card beside the copy, sky inside the card only */
+    .h1 { display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px, 4vw, 64px); align-items:center; padding:48px var(--gutter) 64px; min-height:640px; background:var(--paper); }
+    .h1 .copy { display:grid; gap:22px; justify-items:start; }
+    .h1 .t { font-size:clamp(2rem, 4vw, 3.6rem); }
+    .h1 .card { border-radius:22px; overflow:hidden; box-shadow:0 24px 60px rgba(23,21,27,.14); aspect-ratio:1 / 1; max-height:600px; justify-self:start; width:100%; }
+    .h1 .card img { width:100%; height:100%; object-fit:cover; object-position:center bottom; }
+
+    /* H2 full-bleed render, solid white panel overlapping at the bottom */
+    .h2 { position:relative; min-height:760px; background:var(--sky); }
+    .h2 > img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; }
+    .h2 .panel { position:absolute; bottom:0; inset-inline-start:var(--gutter); background:#fff; padding:clamp(26px, 3vw, 44px) clamp(26px, 3vw, 48px) clamp(26px, 3vw, 40px); max-width:640px; border-radius:18px 18px 0 0; display:grid; gap:18px; justify-items:start; box-shadow:0 -10px 40px rgba(23,21,27,.08); }
+    .h2 .t { font-size:clamp(1.9rem, 3.4vw, 3rem); }
+
+    /* H3 dark green editorial with a framed tall picture */
+    .h3 { background:var(--brand-green); color:#fff; display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(24px, 4vw, 72px); align-items:center; padding:64px var(--gutter) 72px; min-height:680px; }
+    .h3 .copy { display:grid; gap:26px; justify-items:start; }
+    .h3 .t { color:#fff; font-size:clamp(2rem, 4.2vw, 3.8rem); }
+    .h3 .t em { color:var(--brand-gold); }
+    .h3 .sub { color:rgba(255,255,255,.85); }
+    .h3 .stats div b { color:#fff; } .h3 .stats div span { color:rgba(255,255,255,.6); }
+    .h3 .frame { position:relative; justify-self:start; width:min(100%, 520px); }
+    .h3 .frame::before { content:""; position:absolute; inset:-14px 14px 14px -14px; border:1.5px solid var(--brand-gold); border-radius:16px; }
+    .h3 .frame img { position:relative; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:center bottom; border-radius:16px; }
+
+    /* H4 arch picture on a ground line */
+    .h4 { position:relative; display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px, 4vw, 64px); align-items:end; padding:56px var(--gutter) 0; min-height:680px; background:var(--paper); }
+    .h4::after { content:""; position:absolute; inset-inline:0; bottom:0; height:2px; background:var(--brand-green); }
+    .h4 .copy { display:grid; gap:22px; justify-items:start; padding-bottom:72px; }
+    .h4 .t { font-size:clamp(2rem, 4vw, 3.6rem); }
+    .h4 .arch { justify-self:start; width:min(100%, 480px); aspect-ratio:3 / 4; border-radius:999px 999px 0 0; overflow:hidden; background:var(--sky); }
+    .h4 .arch img { width:100%; height:100%; object-fit:cover; object-position:center bottom; }
+
+    /* H5 typographic: title across the top, wide render below */
+    .h5 { padding:56px var(--gutter) 0; background:var(--paper); }
+    .h5 .row { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap; margin-bottom:28px; }
+    .h5 .t { font-size:clamp(2.4rem, 6vw, 5.6rem); line-height:1; }
+    .h5 .side { display:grid; gap:18px; justify-items:start; max-width:520px; }
+    .h5 { border-bottom:2px solid var(--brand-green); }
+    .h5 .wide { width:auto; max-width:100%; max-height:620px; margin-inline:auto; border-radius:18px 18px 0 0; }
+
+    @media (max-width:900px) {
+      .h1, .h3, .h4 { grid-template-columns:1fr; min-height:0; }
+      .h1 { padding:32px var(--gutter) 40px; } .h1 .card { aspect-ratio:4 / 5; }
+      .h2 { min-height:0; background:none; } .h2 > img { position:static; height:auto; aspect-ratio:4 / 5; } .h2 .panel { position:static; max-width:none; border-radius:0; box-shadow:none; }
+      .h3 { padding:40px var(--gutter) 48px; } .h3 .frame { width:100%; }
+      .h4 { align-items:start; } .h4 .copy { padding-bottom:0; } .h4 .arch { width:100%; margin-top:12px; }
+      .h5 .wide { max-height:none; }
+      .stats { gap:20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="intro">
+    <h1>הירו · חמש אפשרויות</h1>
+    <p>אותו רינדור, אותם טקסטים וכפתורים. בלי טשטושים ובלי מעברי צבע – חיתוכים נקיים, הבניין עומד על הקרקע בכולם. הפס הזהוב נשאר צמוד למעלה בגלילה.</p>
+  </div>
+
+  <!-- H1 -->
+  <div class="tag" id="h1"><b>H1</b>פיצול נקי: הרינדור בכרטיס מרובע־מעוגל עם צל, הטקסט והכפתורים לצידו על רקע הדף</div>
+  <div class="fakehead"><span><a class="btn">צור קשר</a><a class="btn ghost">מלאי דירות</a></span><img src="/assets/images/logo-sirkin.png" alt=""></div>
+  <section class="h1">
+    <div class="copy">
+      <h2 class="t">אלקטרה <em>בצמרת מערב</em></h2>
+      <p class="sub">אלקטרה מגורים מקימה במסגרת תוכנית "מחיר מטרה" פרויקט בן 222 יחידות דיור, מתוכן 178 יחידות לזכאי התוכנית ו-44 יחידות לשיווק בשוק החופשי.</p>
+      <div class="ctas"><a class="btn" href="#">מלאי דירות</a><a class="btn ghost" href="#">צור קשר</a></div>
+    </div>
+    <div class="card"><img src="/assets/images/tower-street.jpg" alt=""></div>
+  </section>
+
+  <!-- H2 -->
+  <div class="tag" id="h2"><b>H2</b>רינדור שלם על רקע תכלת אחיד ברוחב המסך, פאנל לבן אטום עם הטקסט יושב על הקצה התחתון</div>
+  <div class="fakehead"><span><a class="btn">צור קשר</a><a class="btn ghost">מלאי דירות</a></span><img src="/assets/images/logo-sirkin.png" alt=""></div>
+  <section class="h2">
+    <img src="/assets/images/tower-street.jpg" alt="">
+    <div class="panel">
+      <h2 class="t">אלקטרה <em>בצמרת מערב</em></h2>
+      <p class="sub">אלקטרה מגורים מקימה במסגרת תוכנית "מחיר מטרה" פרויקט בן 222 יחידות דיור, מתוכן 178 יחידות לזכאי התוכנית ו-44 יחידות לשיווק בשוק החופשי.</p>
+      <div class="ctas"><a class="btn" href="#">מלאי דירות</a><a class="btn ghost" href="#">צור קשר</a></div>
+    </div>
+  </section>
+
+  <!-- H3 -->
+  <div class="tag" id="h3"><b>H3</b>ירוק המותג: כותרת לבנה־זהובה, שורת מספרים, הרינדור גבוה עם מסגרת זהב מוסטת</div>
+  <div class="fakehead"><span><a class="btn">צור קשר</a><a class="btn ghost">מלאי דירות</a></span><img src="/assets/images/logo-sirkin.png" alt=""></div>
+  <section class="h3">
+    <div class="copy">
+      <h2 class="t">אלקטרה <em>בצמרת מערב</em></h2>
+      <p class="sub">אלקטרה מגורים מקימה במסגרת תוכנית "מחיר מטרה" פרויקט בן 222 יחידות דיור, מתוכן 178 יחידות לזכאי התוכנית ו-44 יחידות לשיווק בשוק החופשי.</p>
+      <div class="stats"><div><b>222</b><span>יחידות דיור</span></div><div><b>178</b><span>מחיר מטרה</span></div><div><b>44</b><span>שוק חופשי</span></div><div><b>4</b><span>בניינים</span></div></div>
+      <div class="ctas"><a class="btn gold" href="#">מלאי דירות</a><a class="btn light" href="#">צור קשר</a></div>
+    </div>
+    <div class="frame"><img src="/assets/images/tower-street.jpg" alt=""></div>
+  </section>
+
+  <!-- H4 -->
+  <div class="tag" id="h4"><b>H4</b>קשת: הרינדור בתוך צורת קשת שעומדת על קו קרקע ירוק שחוצה את כל הרוחב</div>
+  <div class="fakehead"><span><a class="btn">צור קשר</a><a class="btn ghost">מלאי דירות</a></span><img src="/assets/images/logo-sirkin.png" alt=""></div>
+  <section class="h4">
+    <div class="copy">
+      <h2 class="t">אלקטרה <em>בצמרת מערב</em></h2>
+      <p class="sub">אלקטרה מגורים מקימה במסגרת תוכנית "מחיר מטרה" פרויקט בן 222 יחידות דיור, מתוכן 178 יחידות לזכאי התוכנית ו-44 יחידות לשיווק בשוק החופשי.</p>
+      <div class="ctas"><a class="btn" href="#">מלאי דירות</a><a class="btn ghost" href="#">צור קשר</a></div>
+    </div>
+    <div class="arch"><img src="/assets/images/tower-street.jpg" alt=""></div>
+  </section>
+
+  <!-- H5 -->
+  <div class="tag" id="h5"><b>H5</b>טיפוגרפי: כותרת ענקית על כל הרוחב, הטקסט והכפתורים לצידה, מתחת הרינדור השלם עומד על קו קרקע ירוק</div>
+  <div class="fakehead"><span><a class="btn">צור קשר</a><a class="btn ghost">מלאי דירות</a></span><img src="/assets/images/logo-sirkin.png" alt=""></div>
+  <section class="h5">
+    <div class="row">
+      <h2 class="t">אלקטרה <em>בצמרת מערב</em></h2>
+      <div class="side">
+        <p class="sub">אלקטרה מגורים מקימה במסגרת תוכנית "מחיר מטרה" פרויקט בן 222 יחידות דיור, מתוכן 178 יחידות לזכאי התוכנית ו-44 יחידות לשיווק בשוק החופשי.</p>
+        <div class="ctas"><a class="btn" href="#">מלאי דירות</a><a class="btn ghost" href="#">צור קשר</a></div>
+      </div>
+    </div>
+    <img class="wide" src="/assets/images/tower-street.jpg" alt="">
+  </section>
+
+  <div class="end">בחרתם? כתבו לי למשל: H3.</div>
+</body>
+</html>
